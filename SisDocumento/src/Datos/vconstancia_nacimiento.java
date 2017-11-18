@@ -5,6 +5,8 @@
  */
 package Datos;
 
+import java.sql.Date;
+
 /**
  *
  * @author Desarrollo
@@ -23,14 +25,14 @@ public class vconstancia_nacimiento {
     private String sexo;
     private String peso;
     private String talla;
-    private String fecha_nacimiento;
+    private Date fecha_nacimiento;
     private String hora_nacimiento;
     private String num_doc_nacido;
 
     public vconstancia_nacimiento() {
     }
 
-    public vconstancia_nacimiento(int idconstancia_nacimiento, int idasistenciales, String correlativo_constancia, String nombre, String apellidos, String tipo_doc, String num_doc, String direccion, String historia_clinica, String sexo, String peso, String talla, String fecha_nacimiento, String hora_nacimiento, String num_doc_nacido) {
+    public vconstancia_nacimiento(int idconstancia_nacimiento, int idasistenciales, String correlativo_constancia, String nombre, String apellidos, String tipo_doc, String num_doc, String direccion, String historia_clinica, String sexo, String peso, String talla, Date fecha_nacimiento, String hora_nacimiento, String num_doc_nacido) {
         this.idconstancia_nacimiento = idconstancia_nacimiento;
         this.idasistenciales = idasistenciales;
         this.correlativo_constancia = correlativo_constancia;
@@ -144,11 +146,11 @@ public class vconstancia_nacimiento {
         this.talla = talla;
     }
 
-    public String getFecha_nacimiento() {
+    public Date getFecha_nacimiento() {
         return fecha_nacimiento;
     }
 
-    public void setFecha_nacimiento(String fecha_nacimiento) {
+    public void setFecha_nacimiento(Date fecha_nacimiento) {
         this.fecha_nacimiento = fecha_nacimiento;
     }
 
@@ -167,10 +169,5 @@ public class vconstancia_nacimiento {
     public void setNum_doc_nacido(String num_doc_nacido) {
         this.num_doc_nacido = num_doc_nacido;
     }
-            
-    
-    
-    
-    
-    
+
 }

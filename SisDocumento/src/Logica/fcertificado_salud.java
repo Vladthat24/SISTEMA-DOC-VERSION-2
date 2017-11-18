@@ -44,7 +44,7 @@ public class fcertificado_salud {
             ResultSet rs = st.executeQuery(sql);
 
             while (rs.next()) {
-                registro[0] = rs.getString("idcertificado_medico");
+                registro[0] = rs.getString("idcertificado_salud");
                 registro[1] = rs.getString("idasistenciales");
                 registro[2] = rs.getString("nombre_asisten") + "" + rs.getString("apellidos_asisten");
                 registro[3] = rs.getString("nombre");
