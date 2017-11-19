@@ -99,7 +99,7 @@ public class frminicio extends javax.swing.JFrame {
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/memo.png"))); // NOI18N
-        jMenuItem1.setText("MEMO");
+        jMenuItem1.setText("CONS. NAC.");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -287,7 +287,7 @@ public class frminicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        frmoficios form = new frmoficios();
+        frmconstancia_nacimiento form = new frmconstancia_nacimiento();
         escritorio.add(form);
         form.toFront();
         form.setVisible(true);

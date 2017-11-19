@@ -5,8 +5,8 @@
  */
 package Presentacion;
 
-import Datos.vadministrativos;
-import Logica.fadministrativos;
+import Datos.vasistenciales;
+import Logica.fasistenciales;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -14,17 +14,18 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Desarrollo
  */
-public class frmvista_administrativos extends javax.swing.JFrame {
+public class frmvista_asisten_const_nac extends javax.swing.JFrame {
 
     /**
-     * Creates new form frmvista_administrativos
+     * Creates new form frmvista_asistenciales
      */
-    public frmvista_administrativos() {
+    public frmvista_asisten_const_nac() {
         initComponents();
         mostrar("");
         this.setLocationRelativeTo(null);
     }
-        void ocultar_columnas() {
+
+    void ocultar_columna() {
         tablalistado.getColumnModel().getColumn(0).setMaxWidth(0);
         tablalistado.getColumnModel().getColumn(0).setMinWidth(0);
         tablalistado.getColumnModel().getColumn(0).setPreferredWidth(0);
@@ -33,29 +34,38 @@ public class frmvista_administrativos extends javax.swing.JFrame {
         tablalistado.getColumnModel().getColumn(5).setMinWidth(0);
         tablalistado.getColumnModel().getColumn(5).setPreferredWidth(0);
 
-        tablalistado.getColumnModel().getColumn(8).setMaxWidth(0);
-        tablalistado.getColumnModel().getColumn(8).setMinWidth(0);
-        tablalistado.getColumnModel().getColumn(8).setPreferredWidth(0);
+        tablalistado.getColumnModel().getColumn(6).setMaxWidth(0);
+        tablalistado.getColumnModel().getColumn(6).setMinWidth(0);
+        tablalistado.getColumnModel().getColumn(6).setPreferredWidth(0);
+
+        tablalistado.getColumnModel().getColumn(7).setMaxWidth(0);
+        tablalistado.getColumnModel().getColumn(7).setMinWidth(0);
+        tablalistado.getColumnModel().getColumn(7).setPreferredWidth(0);
 
         tablalistado.getColumnModel().getColumn(10).setMaxWidth(0);
         tablalistado.getColumnModel().getColumn(10).setMinWidth(0);
         tablalistado.getColumnModel().getColumn(10).setPreferredWidth(0);
 
+        tablalistado.getColumnModel().getColumn(11).setMaxWidth(0);
+        tablalistado.getColumnModel().getColumn(11).setMinWidth(0);
+        tablalistado.getColumnModel().getColumn(11).setPreferredWidth(0);
     }
-        void mostrar(String buscar) {
+
+    void mostrar(String buscar) {
         try {
             DefaultTableModel modelo;
-            fadministrativos func = new fadministrativos();
-            vadministrativos dts = new vadministrativos();
+            fasistenciales func = new fasistenciales();
+            vasistenciales dts = new vasistenciales();
             modelo=func.mostart(buscar);
             
             tablalistado.setModel(modelo);
-            ocultar_columnas();
+            ocultar_columna();
             lblTotalregistros.setText("Total Registros "+ Integer.toString(func.totalregistros));
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(rootPane, e + "erro frmvista_asistencias 01");
         }
-    }    
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -145,8 +155,7 @@ public class frmvista_administrativos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblTotalregistros, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton1)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -154,16 +163,14 @@ public class frmvista_administrativos extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 797, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 787, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -177,11 +184,11 @@ public class frmvista_administrativos extends javax.swing.JFrame {
 
             cod = tablalistado.getValueAt(fila, 0).toString();
             valor = tablalistado.getValueAt(fila, 1).toString() + " " + tablalistado.getValueAt(fila, 2).toString();
-            valor2= tablalistado.getValueAt(fila, 3).toString();
+            valor2= tablalistado.getValueAt(fila, 6).toString();
             
-            frmoficios.txtidadministrativos.setText(cod);
-            frmoficios.lblreceptor.setText(valor);
-            frmoficios.lblcargo_institucion.setText(valor2);
+            frmconstancia_nacimiento.txtidasistenciales.setText(cod);
+            frmconstancia_nacimiento.lblnombre_apellidos_asisten.setText(valor);
+            frmconstancia_nacimiento.lblcolegiatura_asisten.setText(valor2);
             this.dispose();
         }
     }//GEN-LAST:event_tablalistadoMousePressed
@@ -189,9 +196,8 @@ public class frmvista_administrativos extends javax.swing.JFrame {
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
         // TODO add your handling code here:
         String dni;
-        dni=JOptionPane.showInputDialog("Ingrese el DNI");
+        dni = JOptionPane.showInputDialog("Ingrese el DNI");
         mostrar(dni);
-
     }//GEN-LAST:event_btnbuscarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -216,20 +222,21 @@ public class frmvista_administrativos extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmvista_administrativos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmvista_asisten_const_nac.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmvista_administrativos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmvista_asisten_const_nac.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmvista_administrativos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmvista_asisten_const_nac.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmvista_administrativos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmvista_asisten_const_nac.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmvista_administrativos().setVisible(true);
+                new frmvista_asisten_const_nac().setVisible(true);
             }
         });
     }

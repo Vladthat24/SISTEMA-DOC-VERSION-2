@@ -225,7 +225,9 @@ public class frmreg_administrativos extends javax.swing.JInternalFrame {
         btnbuscar = new javax.swing.JButton();
         btneliminar = new javax.swing.JButton();
 
+        setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setIconifiable(true);
 
         jPanel1.setBackground(new java.awt.Color(158, 179, 193));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Registro Administrativos:"));

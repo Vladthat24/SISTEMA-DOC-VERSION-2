@@ -256,28 +256,30 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
         btnbuscar = new javax.swing.JButton();
         btneliminar = new javax.swing.JButton();
 
+        setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setIconifiable(true);
 
         jPanel1.setBackground(new java.awt.Color(158, 179, 193));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Registro Asistenciales:"));
 
         txtnombre.setBackground(new java.awt.Color(158, 179, 193));
-        txtnombre.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nombre:", 0, 0, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtnombre.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nombre:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
 
         txtapellidos.setBackground(new java.awt.Color(158, 179, 193));
-        txtapellidos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Apellidos:", 0, 0, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtapellidos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Apellidos:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
 
         txtcargo_institucion.setBackground(new java.awt.Color(158, 179, 193));
-        txtcargo_institucion.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cargos en la Institucion:", 0, 0, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtcargo_institucion.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cargos en la Institucion:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
 
         txtmodalidad_contrato.setBackground(new java.awt.Color(158, 179, 193));
-        txtmodalidad_contrato.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Modalidad de Contrato:", 0, 0, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtmodalidad_contrato.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Modalidad de Contrato:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
 
         txtcelular.setBackground(new java.awt.Color(158, 179, 193));
-        txtcelular.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Celular:", 0, 0, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtcelular.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Celular:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
 
         lblfecha_registro.setBackground(new java.awt.Color(158, 179, 193));
-        lblfecha_registro.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fecha de Registro", 0, 0, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        lblfecha_registro.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fecha de Registro", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
 
         btnnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/document_add.png"))); // NOI18N
         btnnuevo.setText("Nuevo");
@@ -301,12 +303,12 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
         cboprofesion.setBackground(new java.awt.Color(158, 179, 193));
         cboprofesion.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         cboprofesion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Medico ", "Tec. Enfermeria", "Obtetricia", "Psicologos", "Lic. en Enfermeria", "Nutricionista", " " }));
-        cboprofesion.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Profesión:", 0, 0, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        cboprofesion.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Profesión:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
 
         cbocolegiatura.setBackground(new java.awt.Color(158, 179, 193));
         cbocolegiatura.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         cbocolegiatura.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "CMP", "COP", "CEP", "CPP", "CNP" }));
-        cbocolegiatura.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Colegiatura:", 0, 0, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        cbocolegiatura.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Colegiatura:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
 
         chekcolegiatura.setText("Con Colegiatura");
         chekcolegiatura.addActionListener(new java.awt.event.ActionListener() {
@@ -316,10 +318,10 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
         });
 
         txtnum_colegiatura.setBackground(new java.awt.Color(158, 179, 193));
-        txtnum_colegiatura.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Numero de Colegiatura:", 0, 0, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtnum_colegiatura.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Numero de Colegiatura:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
 
         txtemail.setBackground(new java.awt.Color(158, 179, 193));
-        txtemail.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Correo:", 0, 0, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtemail.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Correo:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -357,10 +359,10 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
 
         cbotipo_doc.setBackground(new java.awt.Color(158, 179, 193));
         cbotipo_doc.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "DNI", "PASAPORTE", " " }));
-        cbotipo_doc.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", 0, 0, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        cbotipo_doc.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
 
         txtnum_doc.setBackground(new java.awt.Color(158, 179, 193));
-        txtnum_doc.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Numero de Doc.:", 0, 0, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtnum_doc.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Numero de Doc.:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
         txtnum_doc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtnum_docActionPerformed(evt);
@@ -479,7 +481,7 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tablalistado);
 
-        lbltotalregistros.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registro:", 0, 0, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        lbltotalregistros.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registro:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
 
         btnbuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/search.png"))); // NOI18N
         btnbuscar.addActionListener(new java.awt.event.ActionListener() {

@@ -5,9 +5,8 @@
  */
 package Logica;
 
-import Datos.vasistenciales;
 import Datos.vconstancia_nacimiento;
-import Datos.vrecepcion;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -27,20 +26,19 @@ public class fconstancia_nacimiento {
 
     public Integer totalregistros;
 
-    public DefaultTableModel mostart(String buscar) {
+    public DefaultTableModel mostrar(String buscar) {
         DefaultTableModel modelo;
 
-        String[] titulos = {"ID","idasistenciales", "nombre_asiste", "apellidos_asisten", "colegiatura_asiten", "N° Correlativo", "Nombre", "Apellidos","Tipo_Doc", "N° Doc","Direccion",
-        "N° Historia","sexo","peso","talla","Fecha Naci","Hora","N° Doc. Nacido"};
-        String[] registro = new String[18];
+        String[] titulos = {"ID", "idasistenciales", "nombre_asiste", "apellidos_asisten", "colegiatura_asiten", "N° Correlativo", "Nombre", "Apellidos", "Tipo_Doc", "N° Doc", "Direccion", "N° Historia", "sexo", "peso", "talla", "Fecha Naci", "Hora", "N° Doc. Nacido","fecha_nacimiento_letra","fecha_registro"};
+        String[] registro = new String[20];
 
         totalregistros = 0;
         modelo = new DefaultTableModel(null, titulos);
-        sql = "select idconstancia_nacimiento,idasistenciales,(select nombre from de asistenciales where idasistenciales=idasistenciales)as nombre_asisten,"
+//        sql="select idconstancia_nacimiento,idasistenciales,(select nombre fr)";
+        sql = "select idconstancia_nacimiento,idasistenciales,(select nombre from asistenciales where idasistenciales=idasistenciales)as nombre_asisten,"
                 + "(select apellidos from asistenciales where idasistenciales=idasistenciales)as apellidos_asisten,"
                 + "(select colegiatura from asistenciales where idasistenciales=idasistenciales)as colegiatura_asisten,"
-                + "correlativo_constancia,nombre,apellidos,tipo_doc,num_doc,direccion,historia_clinica,sexo,peso,talla,fecha_nacimiento,hora_nacimiento,num_doc_nacido"
-                + " from constancia_nacimiento where num_doc like '%"+buscar+"%' order by idconstancia_nacimiento desc";
+                + "correlativo_constancia,nombre,apellidos,tipo_doc,num_doc,direccion,historia_clinica,sexo,peso,talla,fecha_nacimiento,hora_nacimiento,num_doc_nacido,fecha_nacimiento_letra,fecha_registro from constancia_nacimiento where num_doc like'%" + buscar + "%' order by idconstancia_nacimiento desc";
 
         try {
             Statement st = cn.createStatement();
@@ -49,8 +47,8 @@ public class fconstancia_nacimiento {
             while (rs.next()) {
                 registro[0] = rs.getString("idconstancia_nacimiento");
                 registro[1] = rs.getString("idasistenciales");
-                registro[2] = rs.getString("nombre_asisten")+" "+ rs.getString("apellidos_asisten");
-                registro[3] = rs.getString("colegiatura");
+                registro[2] = rs.getString("nombre_asisten") + " " + rs.getString("apellidos_asisten");
+                registro[3] = rs.getString("colegiatura_asisten");
                 registro[4] = rs.getString("correlativo_constancia");
                 registro[5] = rs.getString("nombre");
                 registro[6] = rs.getString("apellidos");
@@ -64,6 +62,8 @@ public class fconstancia_nacimiento {
                 registro[14] = rs.getString("fecha_nacimiento");
                 registro[15] = rs.getString("hora_nacimiento");
                 registro[16] = rs.getString("num_doc_nacido");
+                registro[17] = rs.getString("fecha_nacimiento_letra");
+                registro[18] = rs.getString("fecha_registro");
 
                 totalregistros = totalregistros + 1;
                 modelo.addRow(registro);
@@ -71,7 +71,7 @@ public class fconstancia_nacimiento {
             return modelo;
 
         } catch (Exception e) {
-            JOptionPane.showConfirmDialog(null, e + "error fconstancia_nacimiento 01");
+            JOptionPane.showConfirmDialog(null, e + "error fconstancia_nacimiento 01-");
             return null;
         }
 
@@ -79,8 +79,8 @@ public class fconstancia_nacimiento {
 
     public boolean insertar(vconstancia_nacimiento dts) {
         sql = "insert into constancia_nacimiento (idconstancia_nacimiento,idasistenciales,correlativo_constancia,nombre,apellidos,tipo_doc,num_doc,"
-                +"direccion,historia_clinica,sexo,peso,talla,fecha_nacimiento,hora_nacimiento,num_doc_nacido)"
-                +"values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                + "direccion,historia_clinica,sexo,peso,talla,fecha_nacimiento,hora_nacimiento,num_doc_nacido,fecha_nacimiento_letra,fecha_registro)"
+                + "values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement pst = cn.prepareStatement(sql);
 
@@ -99,6 +99,8 @@ public class fconstancia_nacimiento {
             pst.setDate(13, dts.getFecha_nacimiento());
             pst.setString(14, dts.getHora_nacimiento());
             pst.setString(15, dts.getNum_doc_nacido());
+            pst.setString(16, dts.getFecha_nacimiento_letra());
+            pst.setString(17, dts.getFecha_registro());
 
             int n = pst.executeUpdate();
             if (n != 0) {
@@ -115,12 +117,11 @@ public class fconstancia_nacimiento {
 
     public boolean editar(vconstancia_nacimiento dts) {
         sql = "update constancia_nacimiento set idconstancia_nacimiento=?,idasistenciales=?,correlativo_constancia=?,nombre=?,apellidos=?,"
-                + "tipo_doc=?,num_doc=?,direccion=?,historia_clinica=?,sexo=?,peso=?,talla=?,fecha_nacimiento=?,hora_nacimiento=?,num_doc_nacido=?";
+                + "tipo_doc=?,num_doc=?,direccion=?,historia_clinica=?,sexo=?,peso=?,talla=?,fecha_nacimiento=?,hora_nacimiento=?,num_doc_nacido=?,fecha_nacimiento_letra=?,fecha_registro=?";
 
         try {
             PreparedStatement pst = cn.prepareStatement(sql);
 
-            
             pst.setInt(1, dts.getIdconstancia_nacimiento());
             pst.setInt(2, dts.getIdasistenciales());
             pst.setString(3, dts.getCorrelativo_constancia());
@@ -136,7 +137,9 @@ public class fconstancia_nacimiento {
             pst.setDate(13, dts.getFecha_nacimiento());
             pst.setString(14, dts.getHora_nacimiento());
             pst.setString(15, dts.getNum_doc_nacido());
-            
+            pst.setString(16, dts.getFecha_nacimiento_letra());
+            pst.setString(17, dts.getFecha_registro());
+
             int n = pst.executeUpdate();
             if (n != 0) {
                 return true;

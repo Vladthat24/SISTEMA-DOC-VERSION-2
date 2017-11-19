@@ -28,11 +28,12 @@ public class vconstancia_nacimiento {
     private Date fecha_nacimiento;
     private String hora_nacimiento;
     private String num_doc_nacido;
-
+    private String fecha_nacimiento_letra;
+    private String fecha_registro;
     public vconstancia_nacimiento() {
     }
 
-    public vconstancia_nacimiento(int idconstancia_nacimiento, int idasistenciales, String correlativo_constancia, String nombre, String apellidos, String tipo_doc, String num_doc, String direccion, String historia_clinica, String sexo, String peso, String talla, Date fecha_nacimiento, String hora_nacimiento, String num_doc_nacido) {
+    public vconstancia_nacimiento(int idconstancia_nacimiento, int idasistenciales, String correlativo_constancia, String nombre, String apellidos, String tipo_doc, String num_doc, String direccion, String historia_clinica, String sexo, String peso, String talla, Date fecha_nacimiento, String hora_nacimiento, String num_doc_nacido, String fecha_nacimiento_letra, String fecha_registro) {
         this.idconstancia_nacimiento = idconstancia_nacimiento;
         this.idasistenciales = idasistenciales;
         this.correlativo_constancia = correlativo_constancia;
@@ -48,6 +49,8 @@ public class vconstancia_nacimiento {
         this.fecha_nacimiento = fecha_nacimiento;
         this.hora_nacimiento = hora_nacimiento;
         this.num_doc_nacido = num_doc_nacido;
+        this.fecha_nacimiento_letra = fecha_nacimiento_letra;
+        this.fecha_registro = fecha_registro;
     }
 
     public int getIdconstancia_nacimiento() {
@@ -170,4 +173,21 @@ public class vconstancia_nacimiento {
         this.num_doc_nacido = num_doc_nacido;
     }
 
+    public String getFecha_nacimiento_letra() {
+        return fecha_nacimiento_letra;
+    }
+
+    public void setFecha_nacimiento_letra(String fecha_nacimiento_letra) {
+        this.fecha_nacimiento_letra = fecha_nacimiento_letra;
+    }
+
+    public String getFecha_registro() {
+        return fecha_registro;
+    }
+
+    public void setFecha_registro(String fecha_registro) {
+        this.fecha_registro = fecha_registro;
+    }
+
+ 
 }
