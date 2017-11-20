@@ -27,7 +27,7 @@ public class fcertificado_salud {
 
     public Integer totalregistros;
 
-    public DefaultTableModel mostart(String buscar) {
+    public DefaultTableModel mostrar(String buscar) {
         DefaultTableModel modelo;
 
         String[] titulos = {"ID", "idasistenciales", "nombre_asisten", "apellido_asisten", "Nombres", "Apellidos", "Edad", "Tipo Doc", "N° Doc", "direccion", "serelogia", "examen_rx", "fecha_registro"};
@@ -37,7 +37,7 @@ public class fcertificado_salud {
         modelo = new DefaultTableModel(null, titulos);
         sql = "select idcertificado_salud, idasistenciales, (select nombre from asistenciales where idasistenciales=idasistenciales)as nombre_asisten,"
                 + "(select apellidos from asistenciales where idasistenciales=idasistenciales)as apellidos_asisten,"
-                + "edad,tipo_doc,num_doc,direccion,serelogia,examen_rx,fecha_registro from certificado_salud where num_doc like '%" + buscar + "%' order by idcertificado_salud desc";
+                + "nombre,apellidos,edad,tipo_doc,num_doc,direccion,serelogia,examen_rx,fecha_registro from certificado_salud where num_doc like '%" + buscar + "%' order by idcertificado_salud desc";
 
         try {
             Statement st = cn.createStatement();
@@ -70,7 +70,7 @@ public class fcertificado_salud {
     }
 
     public boolean insertar(vcertificado_salud dts) {
-        sql = "insert into certificados_salud (idcertificados_salud,idasistenciales,nombre,apellidos,edad,tipo_doc,num_doc,"
+        sql = "insert into certificado_salud (idcertificado_salud,idasistenciales,nombre,apellidos,edad,tipo_doc,num_doc,"
                 + "direccion,serelogia,examen_rx,fecha_registro)"
                 + "values (?,?,?,?,?,?,?,?,?,?,?)";
         try {

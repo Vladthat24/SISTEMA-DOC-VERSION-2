@@ -27,19 +27,20 @@ public class finforme_medico {
 
     public Integer totalregistros;
 
-    public DefaultTableModel mostart(String buscar) {
+    public DefaultTableModel mostrar(String buscar) {
         DefaultTableModel modelo;
 
-        String[] titulos = {"ID", "idasistenciales", "nombres_asis", "apellidos_asis", "N° Correlativo", "Nombre Paciente", "Apellidos Paciente", "N° Historia", "direccion", "sexo", "edad", "Tipo Doc", "N° Doc", "fecha_registro"};
-        String[] registro = new String[14];
+        String[] titulos = {"ID", "idasistenciales", "nombre y apelldios","Colegiatura","N° Correlativo", "Nombre Paciente", "Apellidos Paciente", "N° Historia", "direccion", "sexo", "edad", "Tipo Doc", "N° Doc", "fecha_registro","diagnostico"};
+        String[] registro = new String[15];
 
         totalregistros = 0;
         modelo = new DefaultTableModel(null, titulos);
         sql = "select idinforme_medico,idasistenciales, (select nombre from asistenciales where idasistenciales=idasistenciales)as nombre_asisten,"
                 + "(select apellidos from asistenciales where idasistenciales=idasistenciales)as apellidos_asisten,"
-                + "(select colegiatura from asistenciales where idasistenciales=idasistenciales)as colegiatura_asisten"
-                + "correlativo_informemedico,nombre_paciente,apellidos_paciente,historia_clinica,direccion,sexo,edad,tipo_documento,num_documento,fecha_registro"
-                + " from informe_medico where num_documento like '%" + buscar + "%' order by idoficios desc";
+                + "(select colegiatura from asistenciales where idasistenciales=idasistenciales)as colegiatura_asisten,"
+                + "(select num_colegiatura from asistenciales where idasistenciales=idasistenciales)as num_colegiatura_asisten,"
+                + "correlativo_informemedico,nombre_paciente,apellidos_paciente,historia_clinica,direccion,sexo,edad,tipo_documento,num_documento,fecha_registro,diagnostico"
+                + " from informe_medico where num_documento like '%" + buscar + "%' order by idinforme_medico desc";
 
         try {
             Statement st = cn.createStatement();
@@ -49,8 +50,8 @@ public class finforme_medico {
                 registro[0] = rs.getString("idinforme_medico");
                 registro[1] = rs.getString("idasistenciales");
                 registro[2] = rs.getString("nombre_asisten") + " " + rs.getString("apellidos_asisten");
-                registro[3] = rs.getString("colegiatura_asisten");
-                registro[4] = rs.getString("correlativo_inromemedico");
+                registro[3] = rs.getString("colegiatura_asisten")+ "" + rs.getString("num_colegiatura_asisten");
+                registro[4] = rs.getString("correlativo_informemedico");
                 registro[5] = rs.getString("nombre_paciente");
                 registro[6] = rs.getString("apellidos_paciente");
                 registro[7] = rs.getString("historia_clinica");
@@ -60,6 +61,7 @@ public class finforme_medico {
                 registro[11] = rs.getString("tipo_documento");
                 registro[12] = rs.getString("num_documento");
                 registro[13] = rs.getString("fecha_registro");
+                registro[14] = rs.getString("diagnostico");
 
                 totalregistros = totalregistros + 1;
                 modelo.addRow(registro);
@@ -75,8 +77,8 @@ public class finforme_medico {
 
     public boolean insertar(vinforme_medico dts) {
         sql = "insert into informe_medico (idinforme_medico,idasistenciales,correlativo_informemedico,nombre_paciente,apellidos_paciente,historia_clinica,"
-                + "direccion,sexo,edad,tipo_documento,num_documento,fecha_registro)"
-                + "values (?,?,?,?,?,?,?,?,?,?,?,?)";
+                + "direccion,sexo,edad,tipo_documento,num_documento,fecha_registro,diagnostico)"
+                + "values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement pst = cn.prepareStatement(sql);
 
@@ -92,6 +94,7 @@ public class finforme_medico {
             pst.setString(10, dts.getTipo_documento());
             pst.setString(11, dts.getNum_documento());
             pst.setString(12, dts.getFecha_registro());
+            pst.setString(13, dts.getDiagnostico());
 
             int n = pst.executeUpdate();
             if (n != 0) {
@@ -108,7 +111,7 @@ public class finforme_medico {
 
     public boolean editar(vinforme_medico dts) {
         sql = "update informe_medico set idinforme_medico=?,idasistenciales=?,correlativo_informemedico=?,nombre_paciente,apellidos_paciente,"
-                + "historia_clinica=?,direccion=?,sexo=?,edad=?,tipo_documento=?,num_documento=?,fecha_registro=?";
+                + "historia_clinica=?,direccion=?,sexo=?,edad=?,tipo_documento=?,num_documento=?,fecha_registro=?,diagnostico=?";
 
         try {
             PreparedStatement pst = cn.prepareStatement(sql);
@@ -125,6 +128,7 @@ public class finforme_medico {
             pst.setString(10, dts.getTipo_documento());
             pst.setString(11, dts.getNum_documento());
             pst.setString(12, dts.getFecha_registro());
+            pst.setString(13, dts.getDiagnostico());
             
 
             int n = pst.executeUpdate();

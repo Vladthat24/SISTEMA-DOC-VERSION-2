@@ -5,9 +5,9 @@
  */
 package Presentacion;
 
-import Datos.vasistenciales;
+import Datos.vcertificado_salud;
 import Datos.vconstancia_nacimiento;
-import Logica.fasistenciales;
+import Logica.fcertificado_salud;
 import Logica.fconstancia_nacimiento;
 import java.sql.Date;
 import java.util.Calendar;
@@ -34,16 +34,35 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
         Calendar today = Calendar.getInstance();
         int fhoy_dia = today.get(Calendar.DAY_OF_MONTH);
         int fhoy_mes = today.get(Calendar.MONTH) + 1;
+        String mes = null;
+        if (fhoy_mes == 01) {
+            mes = "Enero";
+        } else if (fhoy_mes == 02) {
+            mes = "Febreso";
+        } else if (fhoy_mes == 03) {
+            mes = "Marzo";
+        } else if (fhoy_mes == 04) {
+            mes = "Abril";
+        } else if (fhoy_mes == 05) {
+            mes = "Mayo";
+        } else if (fhoy_mes == 06) {
+            mes = "Junio";
+        } else if (fhoy_mes == 07) {
+            mes = "Julio";
+        } else if (fhoy_mes == 10) {
+            mes = "Octubre";
+        } else if (fhoy_mes == 11) {
+            mes = "Noviembre";
+        } else if (fhoy_mes == 12) {
+            mes = "Diciembre";
+        }
+
         int fhoy_year = today.get(Calendar.YEAR);
-        lblfecha_registro.setText(fhoy_dia + "/" + fhoy_mes + "/" + fhoy_year);
+        lblfecha_registro.setText(fhoy_dia + " de " + mes + " del " + fhoy_year);
     }
 
     void guardar() {
-        if (txtcorrelativo.getText().length() == 0) {
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar el correlativo");
-            txtcorrelativo.requestFocus();
-            return;
-        }
+
         if (txtnombre.getText().length() == 0) {
             JOptionPane.showConfirmDialog(rootPane, "Debes ingresar el nombre");
             txtnombre.requestFocus();
@@ -53,67 +72,44 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
             txtapellidos.requestFocus();
             return;
         }
-        if (txthora_nacimiento.getText().length() == 0) {
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar la hora de nacimiento");
-            txthora_nacimiento.requestFocus();
-            return;
+        if (txtedad.getText().length() == 0) {
+            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar la edad");
+            txtedad.requestFocus();
         }
         if (txtnum_doc.getText().length() == 0) {
             JOptionPane.showConfirmDialog(rootPane, "Debes ingresar el numero de documento");
             txtnum_doc.requestFocus();
             return;
         }
-        if (txtnum_doc_nacido.getText().length() == 0) {
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar el numero de documento del nacido");
-            txtnum_doc_nacido.requestFocus();
+        if (txtserologia.getText().length() == 0) {
+            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar la serologia");
+            txtserologia.requestFocus();
             return;
         }
-        if (txtpeso.getText().length() == 0) {
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar el peso");
-            txtpeso.requestFocus();
-        }
-        if (txttalla.getText().length() == 0) {
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar la talla");
-            txttalla.requestFocus();
-        }
-        if (txtnum_historia.getText().length() == 0) {
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar el N° de historia");
-            txtnum_historia.requestFocus();
+        if (txtexamenrx.getText().length() == 0) {
+            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar el examen rx");
+            txtexamenrx.requestFocus();
         }
         if (txtdireccion.getText().length() == 0) {
             JOptionPane.showConfirmDialog(rootPane, "Debes ingresar la direccion");
             txtdireccion.requestFocus();
         }
 
-        vconstancia_nacimiento dts = new vconstancia_nacimiento();
-        fconstancia_nacimiento func = new fconstancia_nacimiento();
-
+        vcertificado_salud dts = new vcertificado_salud();
+        fcertificado_salud func = new fcertificado_salud();
 
         dts.setIdasistenciales(Integer.parseInt(txtidasistenciales.getText()));
-        dts.setCorrelativo_constancia(txtcorrelativo.getText());
         dts.setNombre(txtnombre.getText());
         dts.setApellidos(txtapellidos.getText());
+        dts.setEdad(txtedad.getText());
         int seleccionado = cbotipo_doc.getSelectedIndex();
         dts.setTipo_doc((String) cbotipo_doc.getItemAt(seleccionado));
         dts.setNum_doc(txtnum_doc.getText());
         dts.setDireccion(txtdireccion.getText());
-        dts.setHistoria_clinica(txtnum_historia.getText());
-        seleccionado = cbosexo.getSelectedIndex();
-        dts.setSexo((String) cbosexo.getItemAt(seleccionado));
-        dts.setPeso(txtpeso.getText());
-        dts.setTalla(txttalla.getText());
-
-        Calendar cal;
-        int d, m, a;
-        cal = dcofecha_nacimiento.getCalendar();
-        d = cal.get(Calendar.DAY_OF_MONTH);
-        m = cal.get(Calendar.MONTH);
-        a = cal.get(Calendar.YEAR) - 1900;
-        dts.setFecha_nacimiento(new Date(d, m, a));
-        dts.setHora_nacimiento(txthora_nacimiento.getText());
-        dts.setNum_doc_nacido(txtnum_doc_nacido.getText());
-        dts.setFecha_nacimiento_letra(lblfecha_nacimiento_doc.getText());
+        dts.setSerelogia(txtserologia.getText());
+        dts.setExamen_rx(txtexamenrx.getText());
         dts.setFecha_registro(lblfecha_registro.getText());
+
         if (accion.equals("guardar")) {
             if (func.insertar(dts)) {
                 JOptionPane.showMessageDialog(rootPane, "El Registro fue ingresado exitosamente");
@@ -122,7 +118,7 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
 
             }
         } else if (accion.equals("editar")) {
-            dts.setIdconstancia_nacimiento(Integer.parseInt(txtidconstancia_nacimiento.getText()));
+            dts.setIdcertificado_salud(Integer.parseInt(txtidcertificado_salud.getText()));
             if (func.editar(dts)) {
                 JOptionPane.showConfirmDialog(rootPane, "El Registro fue editado exitosamente");
                 mostrar("");
@@ -150,59 +146,36 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
         tablalistado.getColumnModel().getColumn(3).setMinWidth(0);
         tablalistado.getColumnModel().getColumn(3).setPreferredWidth(0);
 
-        tablalistado.getColumnModel().getColumn(4).setMaxWidth(0);
-        tablalistado.getColumnModel().getColumn(4).setMinWidth(0);
-        tablalistado.getColumnModel().getColumn(4).setPreferredWidth(0);
-
-        tablalistado.getColumnModel().getColumn(8).setMaxWidth(0);
-        tablalistado.getColumnModel().getColumn(8).setMinWidth(0);
-        tablalistado.getColumnModel().getColumn(8).setPreferredWidth(0);
+        tablalistado.getColumnModel().getColumn(9).setMaxWidth(0);
+        tablalistado.getColumnModel().getColumn(9).setMinWidth(0);
+        tablalistado.getColumnModel().getColumn(9).setPreferredWidth(0);
 
         tablalistado.getColumnModel().getColumn(10).setMaxWidth(0);
         tablalistado.getColumnModel().getColumn(10).setMinWidth(0);
         tablalistado.getColumnModel().getColumn(10).setPreferredWidth(0);
 
+        tablalistado.getColumnModel().getColumn(11).setMaxWidth(0);
+        tablalistado.getColumnModel().getColumn(11).setMinWidth(0);
+        tablalistado.getColumnModel().getColumn(11).setPreferredWidth(0);
+
         tablalistado.getColumnModel().getColumn(12).setMaxWidth(0);
         tablalistado.getColumnModel().getColumn(12).setMinWidth(0);
         tablalistado.getColumnModel().getColumn(12).setPreferredWidth(0);
 
-        tablalistado.getColumnModel().getColumn(13).setMaxWidth(0);
-        tablalistado.getColumnModel().getColumn(13).setMinWidth(0);
-        tablalistado.getColumnModel().getColumn(13).setPreferredWidth(0);
-
-        tablalistado.getColumnModel().getColumn(14).setMaxWidth(0);
-        tablalistado.getColumnModel().getColumn(14).setMinWidth(0);
-        tablalistado.getColumnModel().getColumn(14).setPreferredWidth(0);
-
-        tablalistado.getColumnModel().getColumn(1).setMaxWidth(0);
-        tablalistado.getColumnModel().getColumn(18).setMinWidth(0);
-        tablalistado.getColumnModel().getColumn(18).setPreferredWidth(0);
-
-        tablalistado.getColumnModel().getColumn(19).setMaxWidth(0);
-        tablalistado.getColumnModel().getColumn(19).setMinWidth(0);
-        tablalistado.getColumnModel().getColumn(19).setPreferredWidth(0);
-
     }
 
     void inhabilitar() {
-        txtidconstancia_nacimiento.setVisible(false);
+        txtidcertificado_salud.setVisible(false);
         txtidasistenciales.setVisible(false);
-        
 
-        txtcorrelativo.setEnabled(false);
         lblnombre_apellidos_asisten.setEnabled(false);
-        lblcolegiatura_asisten.setEnabled(false);
         txtnombre.setEnabled(false);
         txtapellidos.setEnabled(false);
-        dcofecha_nacimiento.setEnabled(false);
-        txthora_nacimiento.setEnabled(false);
-        cbosexo.setEnabled(false);
+        txtedad.setEnabled(false);
         cbotipo_doc.setEnabled(false);
         txtnum_doc.setEnabled(false);
-        txtnum_doc_nacido.setEnabled(false);
-        txtpeso.setEnabled(false);
-        txttalla.setEnabled(false);
-        txtnum_historia.setEnabled(false);
+        txtserologia.setEnabled(false);
+        txtexamenrx.setEnabled(false);
         txtdireccion.setEnabled(false);
         lblfecha_registro.setVisible(false);
 
@@ -213,43 +186,32 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
 
         lbltotalregistros.setEnabled(false);
 
-        txtcorrelativo.setText("");
+        lblnombre_apellidos_asisten.setText("");
         txtnombre.setText("");
         txtapellidos.setText("");
-        txthora_nacimiento.setText("");
+        txtedad.setText("");
         txtnum_doc.setText("");
-        txtnum_doc_nacido.setText("");
-        txtpeso.setText("");
-        txttalla.setText("");
-        txtnum_historia.setText("");
+        txtserologia.setText("");
+        txtexamenrx.setText("");
         txtdireccion.setText("");
         lblfecha_registro.setText("");
-        lblnombre_apellidos_asisten.setText("");
-        lblcolegiatura_asisten.setText("");
-        lblfecha_nacimiento_doc.setText("");
 
     }
 
     void habilitar() {
-        txtidconstancia_nacimiento.setVisible(false);
+        txtidcertificado_salud.setVisible(false);
         txtidasistenciales.setVisible(false);
 
         lblnombre_apellidos_asisten.setEnabled(true);
-        lblcolegiatura_asisten.setEnabled(true);
-        txtcorrelativo.setEnabled(true);
         txtnombre.setEnabled(true);
         txtapellidos.setEnabled(true);
-        dcofecha_nacimiento.setEnabled(true);
-        txthora_nacimiento.setEnabled(true);
-        cbosexo.setEnabled(true);
+        txtedad.setEnabled(true);
         cbotipo_doc.setEnabled(true);
         txtnum_doc.setEnabled(true);
-        txtnum_doc_nacido.setEnabled(true);
-        txtpeso.setEnabled(true);
-        txttalla.setEnabled(true);
-        txtnum_historia.setEnabled(true);
+        txtserologia.setEnabled(true);
+        txtexamenrx.setEnabled(true);
         txtdireccion.setEnabled(true);
-        lblfecha_registro.setVisible(false);
+        lblfecha_registro.setVisible(true);
 
         btnguardar.setEnabled(true);
         btnbuscar.setEnabled(true);
@@ -258,37 +220,22 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
 
         lbltotalregistros.setEnabled(true);
 
-        txtcorrelativo.setText("");
+        lblnombre_apellidos_asisten.setText("");
         txtnombre.setText("");
         txtapellidos.setText("");
-        txthora_nacimiento.setText("");
+        txtedad.setText("");
         txtnum_doc.setText("");
-        txtnum_doc_nacido.setText("");
-        txtpeso.setText("");
-        txttalla.setText("");
-        txtnum_historia.setText("");
-        txtdireccion.setText("");
-        txtcorrelativo.setText("");
-        txtnombre.setText("");
-        txtapellidos.setText("");
-        txthora_nacimiento.setText("");
-        txtnum_doc.setText("");
-        txtnum_doc_nacido.setText("");
-        txtpeso.setText("");
-        txttalla.setText("");
-        txtnum_historia.setText("");
+        txtserologia.setText("");
+        txtexamenrx.setText("");
         txtdireccion.setText("");
         lblfecha_registro.setText("");
-        lblnombre_apellidos_asisten.setText("");
-        lblcolegiatura_asisten.setText("");
-        lblfecha_nacimiento_doc.setText("");
 
     }
 
     void mostrar(String buscar) {
         try {
             DefaultTableModel modelo;
-            fconstancia_nacimiento func = new fconstancia_nacimiento();
+            fcertificado_salud func = new fcertificado_salud();
             modelo = func.mostrar(buscar);
 
             tablalistado.setModel(modelo);
@@ -296,7 +243,7 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
             lbltotalregistros.setText("Total Registros " + Integer.toString(func.totalregistros));
 
         } catch (Exception e) {
-            JOptionPane.showConfirmDialog(null, e + "error frm_constancia_nacimeinto 01");
+            JOptionPane.showConfirmDialog(null, e + "error frm_certificado_salud 01");
         }
     }
 
@@ -311,7 +258,6 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         txtidasistenciales = new javax.swing.JTextField();
-        txtcorrelativo = new javax.swing.JTextField();
         txtapellidos = new javax.swing.JTextField();
         lblfecha_registro = new javax.swing.JLabel();
         btnnuevo = new javax.swing.JButton();
@@ -319,20 +265,14 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
         jPanel3 = new javax.swing.JPanel();
         cbotipo_doc = new javax.swing.JComboBox<String>();
         txtnum_doc = new javax.swing.JTextField();
-        cbosexo = new javax.swing.JComboBox<String>();
-        txtpeso = new javax.swing.JTextField();
-        txtnum_historia = new javax.swing.JTextField();
-        txttalla = new javax.swing.JTextField();
-        dcofecha_nacimiento = new com.toedter.calendar.JDateChooser();
-        txthora_nacimiento = new javax.swing.JTextField();
-        txtnum_doc_nacido = new javax.swing.JTextField();
+        txtserologia = new javax.swing.JTextField();
+        txtexamenrx = new javax.swing.JTextField();
         txtnombre = new javax.swing.JTextField();
         txtdireccion = new javax.swing.JTextField();
-        lblfecha_nacimiento_doc = new javax.swing.JLabel();
         lblnombre_apellidos_asisten = new javax.swing.JLabel();
-        lblcolegiatura_asisten = new javax.swing.JLabel();
         btnasistencial = new javax.swing.JButton();
-        txtidconstancia_nacimiento = new javax.swing.JTextField();
+        txtidcertificado_salud = new javax.swing.JTextField();
+        txtedad = new javax.swing.JTextField();
         lbltitulo = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -346,10 +286,7 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
         setIconifiable(true);
 
         jPanel1.setBackground(new java.awt.Color(158, 179, 193));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Registro Constancias:"));
-
-        txtcorrelativo.setBackground(new java.awt.Color(158, 179, 193));
-        txtcorrelativo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "N° Correlativo:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Registro Certificados:"));
 
         txtapellidos.setBackground(new java.awt.Color(158, 179, 193));
         txtapellidos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Apellidos:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
@@ -388,100 +325,41 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
             }
         });
 
-        cbosexo.setBackground(new java.awt.Color(158, 179, 193));
-        cbosexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Masculino", "Femenino", " " }));
-        cbosexo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Sexo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtserologia.setBackground(new java.awt.Color(158, 179, 193));
+        txtserologia.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Serologia:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
 
-        txtpeso.setBackground(new java.awt.Color(158, 179, 193));
-        txtpeso.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Peso:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
-        txtpeso.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtpesoActionPerformed(evt);
-            }
-        });
-
-        txtnum_historia.setBackground(new java.awt.Color(158, 179, 193));
-        txtnum_historia.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "N° Historia:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
-        txtnum_historia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtnum_historiaActionPerformed(evt);
-            }
-        });
-
-        txttalla.setBackground(new java.awt.Color(158, 179, 193));
-        txttalla.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Talla:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
-        txttalla.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txttallaActionPerformed(evt);
-            }
-        });
-
-        dcofecha_nacimiento.setBackground(new java.awt.Color(158, 179, 193));
-        dcofecha_nacimiento.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        dcofecha_nacimiento.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                dcofecha_nacimientoPropertyChange(evt);
-            }
-        });
-
-        txthora_nacimiento.setBackground(new java.awt.Color(158, 179, 193));
-        txthora_nacimiento.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Hora Nac.:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
-
-        txtnum_doc_nacido.setBackground(new java.awt.Color(158, 179, 193));
-        txtnum_doc_nacido.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "N° Doc Nacido:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtexamenrx.setBackground(new java.awt.Color(158, 179, 193));
+        txtexamenrx.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Examen RX:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(cbotipo_doc, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(9, 9, 9)
-                                .addComponent(txtnum_doc, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(txtpeso, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(txttalla, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(10, 10, 10)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtnum_historia, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
-                            .addComponent(txtnum_doc_nacido)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(dcofecha_nacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txthora_nacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbosexo, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(19, 19, 19)
+                .addComponent(cbotipo_doc, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtnum_doc, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtserologia)
+                    .addComponent(txtexamenrx, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE))
+                .addGap(21, 21, 21))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txthora_nacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(cbosexo, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(dcofecha_nacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 23, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtnum_doc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(cbotipo_doc, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtnum_doc_nacido)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txttalla, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtpeso, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtnum_historia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(cbotipo_doc, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtserologia, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtexamenrx, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         txtnombre.setBackground(new java.awt.Color(158, 179, 193));
@@ -490,13 +368,8 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
         txtdireccion.setBackground(new java.awt.Color(158, 179, 193));
         txtdireccion.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Direccion:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
 
-        lblfecha_nacimiento_doc.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-
         lblnombre_apellidos_asisten.setBackground(new java.awt.Color(158, 179, 193));
         lblnombre_apellidos_asisten.setBorder(javax.swing.BorderFactory.createTitledBorder("Nombres y Apelldios del Asistencial:"));
-
-        lblcolegiatura_asisten.setBackground(new java.awt.Color(158, 179, 193));
-        lblcolegiatura_asisten.setBorder(javax.swing.BorderFactory.createTitledBorder("Colegiatura:"));
 
         btnasistencial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/asistencial.png"))); // NOI18N
         btnasistencial.addActionListener(new java.awt.event.ActionListener() {
@@ -505,7 +378,10 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
             }
         });
 
-        txtidconstancia_nacimiento.setText("jTextField1");
+        txtidcertificado_salud.setText("jTextField1");
+
+        txtedad.setBackground(new java.awt.Color(158, 179, 193));
+        txtedad.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Edad:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -515,80 +391,65 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
+                        .addComponent(lblfecha_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnnuevo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnguardar))
+                    .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtapellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lblfecha_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(26, 26, 26)
-                                .addComponent(btnnuevo)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtapellidos)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblnombre_apellidos_asisten, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnguardar))
-                            .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(lblcolegiatura_asisten, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnasistencial))
-                                .addComponent(txtnombre, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 18, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(lblnombre_apellidos_asisten, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnasistencial))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtcorrelativo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(lblfecha_nacimiento_doc, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtedad)))
+                        .addGap(24, 24, 24)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtidasistenciales)
-                            .addComponent(txtidconstancia_nacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                        .addGap(24, 24, 24))))
+                            .addComponent(txtidcertificado_salud, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
+                .addGap(0, 5, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(txtidasistenciales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtidconstancia_nacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblfecha_nacimiento_doc, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtcorrelativo, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblnombre_apellidos_asisten, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23)
+                        .addComponent(txtidcertificado_salud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtedad, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblcolegiatura_asisten, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtapellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblnombre_apellidos_asisten, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnasistencial, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtapellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnnuevo)
                         .addComponent(btnguardar))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblfecha_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lblfecha_registro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         lbltitulo.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
-        lbltitulo.setText(".:: CONSTANCIA DE NACIMIENTO ::.");
+        lbltitulo.setText(".:: CERTIFICADO DE SALUD ::.");
 
         jPanel4.setBackground(new java.awt.Color(88, 170, 168));
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Listado de Constancias:"));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Listado de Certificados:"));
 
         tablalistado.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         tablalistado.setModel(new javax.swing.table.DefaultTableModel(
@@ -635,7 +496,7 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnbuscar)
                     .addComponent(btneliminar))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 10, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbltotalregistros, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -667,8 +528,7 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -677,8 +537,7 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
@@ -706,25 +565,18 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
         accion = "editar";
         int fila = tablalistado.rowAtPoint(evt.getPoint());
 
-        txtidconstancia_nacimiento.setText(tablalistado.getValueAt(fila, 0).toString());
+        txtidcertificado_salud.setText(tablalistado.getValueAt(fila, 0).toString());
         txtidasistenciales.setText(tablalistado.getValueAt(fila, 1).toString());
         lblnombre_apellidos_asisten.setText(tablalistado.getValueAt(fila, 2).toString());
-        lblcolegiatura_asisten.setText(tablalistado.getValueAt(fila, 3).toString());
-        txtcorrelativo.setText(tablalistado.getValueAt(fila, 4).toString());
-        txtnombre.setText(tablalistado.getValueAt(fila, 5).toString());
-        txtapellidos.setText(tablalistado.getValueAt(fila, 6).toString());
-        cbotipo_doc.setSelectedItem(tablalistado.getValueAt(fila, 7).toString());
-        txtnum_doc.setText(tablalistado.getValueAt(fila, 8).toString());
-        txtdireccion.setText(tablalistado.getValueAt(fila, 9).toString());
-        txtnum_historia.setText(tablalistado.getValueAt(fila, 10).toString());
-        cbosexo.setSelectedItem(tablalistado.getValueAt(fila, 11).toString());
-        txtpeso.setText(tablalistado.getValueAt(fila, 12).toString());
-        txttalla.setText(tablalistado.getValueAt(fila, 13).toString());
-        dcofecha_nacimiento.setDate(Date.valueOf(tablalistado.getValueAt(fila, 14).toString()));
-        txthora_nacimiento.setText(tablalistado.getValueAt(fila, 15).toString());
-        txtnum_doc_nacido.setText(tablalistado.getValueAt(fila, 16).toString());
-        lblfecha_nacimiento_doc.setText(tablalistado.getValueAt(fila, 17).toString());
-        lblfecha_registro.setText(tablalistado.getValueAt(fila, 18).toString());
+        txtnombre.setText(tablalistado.getValueAt(fila, 3).toString());
+        txtapellidos.setText(tablalistado.getValueAt(fila, 4).toString());
+        txtedad.setText(tablalistado.getValueAt(fila, 5).toString());
+        cbotipo_doc.setSelectedItem(tablalistado.getValueAt(fila, 6).toString());
+        txtnum_doc.setText(tablalistado.getValueAt(fila, 7).toString());
+        txtdireccion.setText(tablalistado.getValueAt(fila, 8).toString());
+        txtserologia.setText(tablalistado.getValueAt(fila, 9).toString());
+        txtexamenrx.setText(tablalistado.getValueAt(fila, 10).toString());
+        lblfecha_registro.setText(tablalistado.getValueAt(fila, 11).toString());
     }//GEN-LAST:event_tablalistadoMouseClicked
 
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
@@ -736,13 +588,13 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
         // TODO add your handling code here:
-        if (!txtidconstancia_nacimiento.getText().equals("")) {
+        if (!txtidcertificado_salud.getText().equals("")) {
             int confirmacion = JOptionPane.showConfirmDialog(rootPane, "Estas seguro de eliminarlo");
             if (confirmacion == 0) {
-                fconstancia_nacimiento func = new fconstancia_nacimiento();
-                vconstancia_nacimiento dts = new vconstancia_nacimiento();
+                fcertificado_salud func = new fcertificado_salud();
+                vcertificado_salud dts = new vcertificado_salud();
 
-                dts.setIdconstancia_nacimiento(Integer.parseInt(txtidconstancia_nacimiento.getText()));
+                dts.setIdcertificado_salud(Integer.parseInt(txtidcertificado_salud.getText()));
                 func.eliminar(dts);
                 mostrar("");
                 inhabilitar();
@@ -754,57 +606,9 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtnum_docActionPerformed
 
-    private void txtpesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpesoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtpesoActionPerformed
-
-    private void txtnum_historiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnum_historiaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtnum_historiaActionPerformed
-
-    private void txttallaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttallaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txttallaActionPerformed
-
-    private void dcofecha_nacimientoPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_dcofecha_nacimientoPropertyChange
-        // TODO add your handling code here:
-        try {
-            int fnac_dia = dcofecha_nacimiento.getCalendar().get(Calendar.DAY_OF_MONTH);
-            int fnac_mes = dcofecha_nacimiento.getCalendar().get(Calendar.MONTH) + 1;
-            String mes = null;
-            if (fnac_mes == 01) {
-                mes = "Enero";
-            } else if (fnac_mes == 02) {
-                mes = "Febreso";
-            } else if (fnac_mes == 03) {
-                mes = "Marzo";
-            } else if (fnac_mes == 04) {
-                mes = "Abril";
-            } else if (fnac_mes == 05) {
-                mes = "Mayo";
-            } else if (fnac_mes == 06) {
-                mes = "Junio";
-            } else if (fnac_mes == 07) {
-                mes = "Julio";
-            } else if (fnac_mes == 10) {
-                mes = "Octubre";
-            } else if (fnac_mes == 11) {
-                mes = "Noviembre";
-            } else if (fnac_mes == 12) {
-                mes = "Diciembre";
-            }
-            int fnac_year = dcofecha_nacimiento.getCalendar().get(Calendar.YEAR);
-
-            lblfecha_nacimiento_doc.setText(fnac_dia + " de " + mes + " del " + fnac_year);
-        } catch (Exception e) {
-        }
-
-
-    }//GEN-LAST:event_dcofecha_nacimientoPropertyChange
-
     private void btnasistencialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnasistencialActionPerformed
         // TODO add your handling code here:
-        frmvista_asisten_const_nac from = new frmvista_asisten_const_nac();
+        frmvista_asisten_certi_salud from = new frmvista_asisten_certi_salud();
         from.toFront();
         from.setVisible(true);
     }//GEN-LAST:event_btnasistencialActionPerformed
@@ -857,31 +661,24 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnguardar;
     private javax.swing.JButton btnnuevo;
-    private javax.swing.JComboBox<String> cbosexo;
     private javax.swing.JComboBox<String> cbotipo_doc;
-    private com.toedter.calendar.JDateChooser dcofecha_nacimiento;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    public static javax.swing.JLabel lblcolegiatura_asisten;
-    private javax.swing.JLabel lblfecha_nacimiento_doc;
     private javax.swing.JLabel lblfecha_registro;
     public static javax.swing.JLabel lblnombre_apellidos_asisten;
     private javax.swing.JLabel lbltitulo;
     private javax.swing.JLabel lbltotalregistros;
     private javax.swing.JTable tablalistado;
     private javax.swing.JTextField txtapellidos;
-    private javax.swing.JTextField txtcorrelativo;
     private javax.swing.JTextField txtdireccion;
-    private javax.swing.JTextField txthora_nacimiento;
+    private javax.swing.JTextField txtedad;
+    private javax.swing.JTextField txtexamenrx;
     public static javax.swing.JTextField txtidasistenciales;
-    private javax.swing.JTextField txtidconstancia_nacimiento;
+    private javax.swing.JTextField txtidcertificado_salud;
     private javax.swing.JTextField txtnombre;
     private javax.swing.JTextField txtnum_doc;
-    private javax.swing.JTextField txtnum_doc_nacido;
-    private javax.swing.JTextField txtnum_historia;
-    private javax.swing.JTextField txtpeso;
-    private javax.swing.JTextField txttalla;
+    private javax.swing.JTextField txtserologia;
     // End of variables declaration//GEN-END:variables
 }

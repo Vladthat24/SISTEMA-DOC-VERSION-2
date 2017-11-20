@@ -14,12 +14,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Desarrollo
  */
-public class frmvista_asisten_const_nac extends javax.swing.JFrame {
+public class frmvista_asisten_inf_medico extends javax.swing.JFrame {
 
     /**
      * Creates new form frmvista_asistenciales
      */
-    public frmvista_asisten_const_nac() {
+    public frmvista_asisten_inf_medico() {
         initComponents();
         mostrar("");
         this.setLocationRelativeTo(null);
@@ -184,11 +184,11 @@ public class frmvista_asisten_const_nac extends javax.swing.JFrame {
 
             cod = tablalistado.getValueAt(fila, 0).toString();
             valor = tablalistado.getValueAt(fila, 1).toString() + " " + tablalistado.getValueAt(fila, 2).toString();
-            valor2= tablalistado.getValueAt(fila, 5).toString() + " " + tablalistado.getValueAt(fila, 6).toString();
+            valor2 = tablalistado.getValueAt(fila, 5).toString() + " " +tablalistado.getValueAt(fila, 6).toString();
             
-            frmconstancia_nacimiento.txtidasistenciales.setText(cod);
-            frmconstancia_nacimiento.lblnombre_apellidos_asisten.setText(valor);
-            frmconstancia_nacimiento.lblcolegiatura_asisten.setText(valor2);
+            frminforme_medico.txtidasistenciales.setText(cod);
+            frminforme_medico.lblnombre_apellidos_asisten.setText(valor);
+            frminforme_medico.lblcolegiatura.setText(valor2);
             this.dispose();
         }
     }//GEN-LAST:event_tablalistadoMousePressed
@@ -222,21 +222,27 @@ public class frmvista_asisten_const_nac extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmvista_asisten_const_nac.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmvista_asisten_inf_medico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmvista_asisten_const_nac.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmvista_asisten_inf_medico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmvista_asisten_const_nac.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmvista_asisten_inf_medico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmvista_asisten_const_nac.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmvista_asisten_inf_medico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmvista_asisten_const_nac().setVisible(true);
+                new frmvista_asisten_inf_medico().setVisible(true);
             }
         });
     }

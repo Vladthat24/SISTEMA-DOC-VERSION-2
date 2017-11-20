@@ -38,6 +38,7 @@ public class fconstancia_nacimiento {
         sql = "select idconstancia_nacimiento,idasistenciales,(select nombre from asistenciales where idasistenciales=idasistenciales)as nombre_asisten,"
                 + "(select apellidos from asistenciales where idasistenciales=idasistenciales)as apellidos_asisten,"
                 + "(select colegiatura from asistenciales where idasistenciales=idasistenciales)as colegiatura_asisten,"
+                + "(select num_colegiatura from asistenciales where idasistenciales=idasistenciales)as num_colegiatura_asisten,"
                 + "correlativo_constancia,nombre,apellidos,tipo_doc,num_doc,direccion,historia_clinica,sexo,peso,talla,fecha_nacimiento,hora_nacimiento,num_doc_nacido,fecha_nacimiento_letra,fecha_registro from constancia_nacimiento where num_doc like'%" + buscar + "%' order by idconstancia_nacimiento desc";
 
         try {
@@ -48,7 +49,7 @@ public class fconstancia_nacimiento {
                 registro[0] = rs.getString("idconstancia_nacimiento");
                 registro[1] = rs.getString("idasistenciales");
                 registro[2] = rs.getString("nombre_asisten") + " " + rs.getString("apellidos_asisten");
-                registro[3] = rs.getString("colegiatura_asisten");
+                registro[3] = rs.getString("colegiatura_asisten")+ " "+rs.getString("num_colegiatura_asisten");
                 registro[4] = rs.getString("correlativo_constancia");
                 registro[5] = rs.getString("nombre");
                 registro[6] = rs.getString("apellidos");

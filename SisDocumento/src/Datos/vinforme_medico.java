@@ -22,11 +22,12 @@ public class vinforme_medico {
     private String tipo_documento;
     private String num_documento;
     private String fecha_registro;
+    private String diagnostico;
 
     public vinforme_medico() {
     }
 
-    public vinforme_medico(int idinforme_medico, int idasistenciales, String correlativo_informemedico, String nombre_paciente, String apellidos_paciente, String historia_clinica, String direccion, String sexo, String edad, String tipo_documento, String num_documento, String fecha_registro) {
+    public vinforme_medico(int idinforme_medico, int idasistenciales, String correlativo_informemedico, String nombre_paciente, String apellidos_paciente, String historia_clinica, String direccion, String sexo, String edad, String tipo_documento, String num_documento, String fecha_registro, String diagnostico) {
         this.idinforme_medico = idinforme_medico;
         this.idasistenciales = idasistenciales;
         this.correlativo_informemedico = correlativo_informemedico;
@@ -39,6 +40,7 @@ public class vinforme_medico {
         this.tipo_documento = tipo_documento;
         this.num_documento = num_documento;
         this.fecha_registro = fecha_registro;
+        this.diagnostico = diagnostico;
     }
 
     public int getIdinforme_medico() {
@@ -137,7 +139,14 @@ public class vinforme_medico {
         this.fecha_registro = fecha_registro;
     }
 
-    
+    public String getDiagnostico() {
+        return diagnostico;
+    }
+
+    public void setDiagnostico(String diagnostico) {
+        this.diagnostico = diagnostico;
+    }
+
     
     
 }
