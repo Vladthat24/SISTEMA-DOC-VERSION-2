@@ -12,19 +12,15 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Desarrollo/Documents/GitHub/SistemaDoc/SisDocumento/src/reports/reporte_oficios.jrxml</file>
+            <file>file:/C:/Users/Desarrollo/Documents/GitHub/SistemaDoc/SisDocumento/src/Presentacion/frmh_paciente.java</file>
+            <file>file:/C:/Users/Desarrollo/Documents/GitHub/SistemaDoc/SisDocumento/src/reports/imprimir_oficios.java</file>
+            <file>file:/C:/Users/Desarrollo/Documents/GitHub/SistemaDoc/SisDocumento/src/reports/imprimir_oficio.jrxml</file>
             <file>file:/C:/Users/Desarrollo/Documents/GitHub/SistemaDoc/SisDocumento/src/Presentacion/frmoficios.java</file>
-            <file>file:/C:/Users/Desarrollo/Documents/GitHub/SistemaDoc/SisDocumento/src/Presentacion/frminicio.java</file>
-            <file>file:/C:/Users/Desarrollo/Documents/GitHub/SistemaDoc/SisDocumento/src/Logica/foficios.java</file>
-            <file>file:/C:/Users/Desarrollo/Documents/GitHub/SistemaDoc/SisDocumento/src/Presentacion/frmreg_administrativos.java</file>
-            <file>file:/C:/Users/Desarrollo/Documents/GitHub/SistemaDoc/SisDocumento/src/Datos/vconstancia_nacimiento.java</file>
-            <file>file:/C:/Users/Desarrollo/Documents/GitHub/SistemaDoc/SisDocumento/src/Presentacion/frmvistatrabajador.java</file>
             <file>file:/C:/Users/Desarrollo/Documents/GitHub/SistemaDoc/SisDocumento/src/Logica/fh_paciente.java</file>
-            <file>file:/C:/Users/Desarrollo/Documents/GitHub/SistemaDoc/SisDocumento/src/Presentacion/frmconstancia_nacimiento.java</file>
-            <file>file:/C:/Users/Desarrollo/Documents/GitHub/SistemaDoc/SisDocumento/src/Presentacion/frmvista_administrativos.java</file>
-            <file>file:/C:/Users/Desarrollo/Documents/GitHub/SistemaDoc/SisDocumento/src/Presentacion/frminforme_medico.java</file>
-            <file>file:/C:/Users/Desarrollo/Documents/GitHub/SistemaDoc/SisDocumento/src/Presentacion/frmreg_asistenciales.java</file>
-            <file>file:/C:/Users/Desarrollo/Documents/GitHub/SistemaDoc/SisDocumento/src/Logica/fconstancia_nacimiento.java</file>
-            <file>file:/C:/Users/Desarrollo/Documents/GitHub/SistemaDoc/SisDocumento/src/Presentacion/frmvista_asistenciales.java</file>
+            <file>file:/C:/Users/Desarrollo/Documents/GitHub/SistemaDoc/SisDocumento/src/Logica/foficios.java</file>
+            <file>file:/C:/Users/Desarrollo/Documents/GitHub/SistemaDoc/SisDocumento/src/Presentacion/frmreportes.java</file>
+            <file>file:/C:/Users/Desarrollo/Documents/GitHub/SistemaDoc/SisDocumento/src/reports/reporte_oficio.java</file>
         </group>
     </open-files>
 </project-private>
