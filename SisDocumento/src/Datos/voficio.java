@@ -12,9 +12,10 @@ package Datos;
 public class voficio {
     
     private int idoficios;
-    private int idadministrativos;
-    private int idasistenciales;
+    private int idtrabajador;
     private String num_correlativo;
+    private String receptor;
+    private String cargo_receptor;
     private String atencion;
     private String asunto;
     private String cuerpo;
@@ -24,11 +25,12 @@ public class voficio {
     public voficio() {
     }
 
-    public voficio(int idoficios, int idadministrativos, int idasistenciales, String num_correlativo, String atencion, String asunto, String cuerpo, String membrete, String fecha) {
+    public voficio(int idoficios, int idtrabajador, String num_correlativo, String receptor, String cargo_receptor, String atencion, String asunto, String cuerpo, String membrete, String fecha) {
         this.idoficios = idoficios;
-        this.idadministrativos = idadministrativos;
-        this.idasistenciales = idasistenciales;
+        this.idtrabajador = idtrabajador;
         this.num_correlativo = num_correlativo;
+        this.receptor = receptor;
+        this.cargo_receptor = cargo_receptor;
         this.atencion = atencion;
         this.asunto = asunto;
         this.cuerpo = cuerpo;
@@ -44,20 +46,12 @@ public class voficio {
         this.idoficios = idoficios;
     }
 
-    public int getIdadministrativos() {
-        return idadministrativos;
+    public int getIdtrabajador() {
+        return idtrabajador;
     }
 
-    public void setIdadministrativos(int idadministrativos) {
-        this.idadministrativos = idadministrativos;
-    }
-
-    public int getIdasistenciales() {
-        return idasistenciales;
-    }
-
-    public void setIdasistenciales(int idasistenciales) {
-        this.idasistenciales = idasistenciales;
+    public void setIdtrabajador(int idtrabajador) {
+        this.idtrabajador = idtrabajador;
     }
 
     public String getNum_correlativo() {
@@ -66,6 +60,22 @@ public class voficio {
 
     public void setNum_correlativo(String num_correlativo) {
         this.num_correlativo = num_correlativo;
+    }
+
+    public String getReceptor() {
+        return receptor;
+    }
+
+    public void setReceptor(String receptor) {
+        this.receptor = receptor;
+    }
+
+    public String getCargo_receptor() {
+        return cargo_receptor;
+    }
+
+    public void setCargo_receptor(String cargo_receptor) {
+        this.cargo_receptor = cargo_receptor;
     }
 
     public String getAtencion() {
@@ -107,9 +117,8 @@ public class voficio {
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
-    
-    
-    
+
+   
     
     
 }

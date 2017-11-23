@@ -37,6 +37,8 @@ public class frminicio extends javax.swing.JFrame {
         escritorio = new javax.swing.JDesktopPane();
         lblidacceso = new javax.swing.JLabel();
         lblacceso = new javax.swing.JLabel();
+        lblnombre_apellidos_trabajador = new javax.swing.JLabel();
+        lblidtrabjador = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         mnusisreserva = new javax.swing.JMenu();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
@@ -70,6 +72,16 @@ public class frminicio extends javax.swing.JFrame {
         lblacceso.setText("jLabel7");
         escritorio.add(lblacceso);
         lblacceso.setBounds(20, 40, 130, 16);
+
+        lblnombre_apellidos_trabajador.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        lblnombre_apellidos_trabajador.setText("jLabel7");
+        escritorio.add(lblnombre_apellidos_trabajador);
+        lblnombre_apellidos_trabajador.setBounds(20, 110, 240, 30);
+
+        lblidtrabjador.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        lblidtrabjador.setText("jLabel7");
+        escritorio.add(lblidtrabjador);
+        lblidtrabjador.setBounds(20, 70, 240, 30);
 
         menuBar.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -296,10 +308,10 @@ public class frminicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        frmreg_administrativos form = new frmreg_administrativos();
-        escritorio.add(form);
-        form.toFront();
-        form.setVisible(true);
+//        frmreg_administrativos form = new frmreg_administrativos();
+//        escritorio.add(form);
+//        form.toFront();
+//        form.setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -374,6 +386,8 @@ public class frminicio extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator1;
     public static javax.swing.JLabel lblacceso;
     public static javax.swing.JLabel lblidacceso;
+    public static javax.swing.JLabel lblidtrabjador;
+    public static javax.swing.JLabel lblnombre_apellidos_trabajador;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem menuacceso;
     public static javax.swing.JMenu menutrabajador;

@@ -6,7 +6,7 @@
 package Presentacion;
 
 import Datos.vtrabajador;
-import Logica.fh_paciente;
+
 import Logica.ftrabajador;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -31,6 +31,14 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
     }
     private String accion = "guardar";
 
+    void fecha_actual() {
+        Calendar today = Calendar.getInstance();
+        int fhoy_dia = today.get(Calendar.DAY_OF_MONTH);
+        int fhoy_mes = today.get(Calendar.MONTH) + 1;
+        int fhoy_year = today.get(Calendar.YEAR);
+        lblfecha_registro.setText(fhoy_dia + "/" + fhoy_mes + "/" + fhoy_year);
+    }
+
     void ocultar_columnas() {
         tablalistado.getColumnModel().getColumn(0).setMaxWidth(0);
         tablalistado.getColumnModel().getColumn(0).setMinWidth(0);
@@ -51,7 +59,6 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
         txtcelular.setEnabled(false);
         txtemail.setEnabled(false);
         lblfecha_registro.setEnabled(false);
-
 
         btnguardar.setEnabled(false);
         btneliminar.setEnabled(false);
@@ -294,7 +301,6 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
             }
         });
 
-        lblfecha_registro.setText("00 / 00 / 0000");
         lblfecha_registro.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fecha de Registro:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -329,8 +335,8 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
                         .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblfecha_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblfecha_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -359,10 +365,10 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
                     .addComponent(txtcelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblfecha_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(lblfecha_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnnuevo)
                     .addComponent(btnguardar))
@@ -370,7 +376,7 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
         );
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText(".:: TRABAJADOR ::.");
+        jLabel1.setText(".:: ADMINISTRATIVOS ::.");
 
         jPanel2.setBackground(new java.awt.Color(93, 173, 170));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Listado de Trabajador"));
@@ -492,6 +498,7 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
         habilitar();
         btnguardar.setText("Guardar");
         accion = "guardar";
+        fecha_actual();
     }//GEN-LAST:event_btnnuevoActionPerformed
 
     private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
@@ -549,10 +556,7 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
         dts.setTipo_documento((String) cbotipo_documento.getItemAt(seleccionado));
         dts.setNum_documento(txtnum_documento.getText());
         dts.setCelular(txtcelular.getText());
-        dts.setEmail(txtemail.getText());
-        Calendar cal = Calendar.getInstance();
-        String fecha = cal.get(cal.DATE) + " / " + (cal.get(cal.MONTH) + 1) + " / " + (cal.get(cal.YEAR));
-        dts.setFecha_registro(fecha);
+        dts.setFecha_registro(lblfecha_registro.getText());
 
         if (accion.equals("guardar")) {
             if (func.insertar(dts)) {
@@ -661,11 +665,11 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
     private void txtnombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnombreKeyTyped
         // TODO add your handling code here
         char c = evt.getKeyChar();
-        int limite=30;
+        int limite = 30;
         if (Character.isDigit(c)) {
             evt.consume();
         }
-        if(txtnombre.getText().length()==limite){
+        if (txtnombre.getText().length() == limite) {
             evt.consume();
         }
     }//GEN-LAST:event_txtnombreKeyTyped
@@ -673,11 +677,11 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
     private void txtapaternoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtapaternoKeyTyped
         // TODO add your handling code here:
         char c = evt.getKeyChar();
-        int limite=30;
+        int limite = 30;
         if (Character.isDigit(c)) {
             evt.consume();
         }
-        if(txtapaterno.getText().length()==limite){
+        if (txtapaterno.getText().length() == limite) {
             evt.consume();
         }
     }//GEN-LAST:event_txtapaternoKeyTyped
@@ -685,11 +689,11 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
     private void txtamaternoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtamaternoKeyTyped
         // TODO add your handling code here:
         char c = evt.getKeyChar();
-        int limite=30;
+        int limite = 30;
         if (Character.isDigit(c)) {
             evt.consume();
         }
-        if(txtamaterno.getText().length()==limite){
+        if (txtamaterno.getText().length() == limite) {
             evt.consume();
         }
     }//GEN-LAST:event_txtamaternoKeyTyped
@@ -721,11 +725,11 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
     private void txtemailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtemailKeyTyped
         // TODO add your handling code here:
         char c = evt.getKeyChar();
-        int limite=30;
+        int limite = 30;
         if (Character.isDigit(c)) {
             evt.consume();
         }
-        if(txtemail.getText().length()==limite){
+        if (txtemail.getText().length() == limite) {
             evt.consume();
         }
     }//GEN-LAST:event_txtemailKeyTyped
@@ -733,11 +737,11 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
     private void txtdireccionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtdireccionKeyTyped
         // TODO add your handling code here:
         char c = evt.getKeyChar();
-        int limite=30;
+        int limite = 30;
         if (Character.isDigit(c)) {
             evt.consume();
         }
-        if(txtdireccion.getText().length()==limite){
+        if (txtdireccion.getText().length() == limite) {
             evt.consume();
         }
     }//GEN-LAST:event_txtdireccionKeyTyped
@@ -747,26 +751,26 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtcargo_intitucionActionPerformed
 
     private void txtcargo_intitucionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcargo_intitucionKeyTyped
-      char c =evt.getKeyChar();
-      int limite =34;
-      if(Character.isDigit(c)){
-          evt.consume();
-      }
-      if(txtcargo_intitucion.getText().length() == limite){
-          evt.consume();
-      }
-        
+        char c = evt.getKeyChar();
+        int limite = 34;
+        if (Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtcargo_intitucion.getText().length() == limite) {
+            evt.consume();
+        }
+
     }//GEN-LAST:event_txtcargo_intitucionKeyTyped
 
     private void txtmodalidad_contratoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtmodalidad_contratoKeyTyped
-             char c =evt.getKeyChar();
-      int limite =34;
-      if(Character.isDigit(c)){
-          evt.consume();
-      }
-      if(txtmodalidad_contrato.getText().length() == limite){
-          evt.consume();
-      }
+        char c = evt.getKeyChar();
+        int limite = 34;
+        if (Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtmodalidad_contrato.getText().length() == limite) {
+            evt.consume();
+        }
     }//GEN-LAST:event_txtmodalidad_contratoKeyTyped
 
     /**
@@ -796,15 +800,15 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblfecha_registro;
     private javax.swing.JLabel lbltotalregistros;
     private javax.swing.JTable tablalistado;
-    private javax.swing.JTextField txtamaterno;
-    private javax.swing.JTextField txtapaterno;
+    public static javax.swing.JTextField txtamaterno;
+    public static javax.swing.JTextField txtapaterno;
     private javax.swing.JTextField txtcargo_intitucion;
     private javax.swing.JTextField txtcelular;
     private javax.swing.JTextField txtdireccion;
     private javax.swing.JTextField txtemail;
     private javax.swing.JTextField txtidtrabajador;
     private javax.swing.JTextField txtmodalidad_contrato;
-    private javax.swing.JTextField txtnombre;
+    public static javax.swing.JTextField txtnombre;
     private javax.swing.JTextField txtnum_documento;
     // End of variables declaration//GEN-END:variables
 }

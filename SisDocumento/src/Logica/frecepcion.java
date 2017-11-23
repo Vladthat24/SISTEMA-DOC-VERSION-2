@@ -30,12 +30,15 @@ public class frecepcion {
     public DefaultTableModel mostar(String buscar) {
         DefaultTableModel modelo;
 
-        String[] titulos = {"ID", "Correlativo", "Referencia", "Asunto", "Fecha", "Emisor", "Recepcionado", "Observaciones"};
-        String[] registro = new String[8];
+        String[] titulos = {"ID","idtrabajador","nombre y apellido", "Correlativo", "Referencia", "Asunto", "Fecha", "Emisor", "Recepcionado", "Observaciones"};
+        String[] registro = new String[10];
 
         totalregistros = 0;
         modelo = new DefaultTableModel(null, titulos);
-        sql = "select idrecepcion,correlativo,referencia,asunto,fecha,emisor,recepcionado,observaciones "
+        sql = "select idrecepcion,idtrabajador,(select nombre from persona_trabajador where idptrabajador=idptrabajador)as nombre_trab,"
+                + "(select apaterno from persona_trabajador where idptrabajador=idptrabajador)as apaterno_trab,"
+                + "(select amaterno from persona_trabajador where idptrabajador=idptrabajdor)as amaterno_trab,"
+                +"correlativo,referencia,asunto,fecha,emisor,recepcionado,observaciones "
                 + " from recepcion where correlativo like '%" + buscar + "%' or asunto like '%" + buscar + "%' or emisor like '%"
                 + buscar + "%' order by idrecepcion desc";
 
@@ -44,13 +47,15 @@ public class frecepcion {
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
                 registro[0] = rs.getString("idrecepcion");
-                registro[1] = rs.getString("correlativo");
-                registro[2] = rs.getString("referencia");
-                registro[3] = rs.getString("asunto");
-                registro[4] = rs.getString("fecha");
-                registro[5] = rs.getString("emisor");
-                registro[6] = rs.getString("recepcionado");
-                registro[7] = rs.getString("observaciones");
+                registro[1] = rs.getString("idtrabajador");
+                registro[2] = rs.getString("nombre_trab")+" "+rs.getString("apaterno_trab")+" "+rs.getString("amaterno_trab");
+                registro[3] = rs.getString("correlativo");
+                registro[4] = rs.getString("referencia");
+                registro[5] = rs.getString("asunto");
+                registro[6] = rs.getString("fecha");
+                registro[7] = rs.getString("emisor");
+                registro[8] = rs.getString("recepcionado");
+                registro[9] = rs.getString("observaciones");
 
                 totalregistros = totalregistros + 1;
                 modelo.addRow(registro);
@@ -63,19 +68,20 @@ public class frecepcion {
     }
 
     public boolean insertar(vrecepcion dts) {
-        sql = "insert into recepcion (idrecepcion,correlativo,referencia,asunto,fecha,emisor,recepcionado,observaciones)"
-                + "values(?,?,?,?,?,?,?,?)";
+        sql = "insert into recepcion (idrecepcion,idtrabajador,correlativo,referencia,asunto,fecha,emisor,recepcionado,observaciones)"
+                + "values(?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement pst = cn.prepareStatement(sql);
 
             pst.setInt(1, dts.getIdrecepcion());
-            pst.setString(2, dts.getCorelativo());
-            pst.setString(3, dts.getReferencia());
-            pst.setString(4, dts.getAsunto());
-            pst.setString(5, dts.getFecha());
-            pst.setString(6, dts.getEmisor());
-            pst.setString(7, dts.getRecepcionado());
-            pst.setString(8, dts.getObservaciones());
+            pst.setInt(2, dts.getIdtrabajador());
+            pst.setString(3, dts.getCorrelativo());
+            pst.setString(4, dts.getReferencia());
+            pst.setString(5, dts.getAsunto());
+            pst.setString(6, dts.getFecha());
+            pst.setString(7, dts.getEmisor());
+            pst.setString(8, dts.getRecepcionado());
+            pst.setString(9, dts.getObservaciones());
 
             int n = pst.executeUpdate();
             if (n != 0) {
@@ -92,20 +98,21 @@ public class frecepcion {
     }
 
     public boolean editar(vrecepcion dts) {
-        sql = "update recepcion set correlativo=?,referencia=?,asunto=?,fecha=?,emisor=?,recepcionado=?,observaciones=? "
+        sql = "update recepcion set idtrabajador=?,correlativo=?,referencia=?,asunto=?,fecha=?,emisor=?,recepcionado=?,observaciones=? "
                 + "where idrecepcion=?";
 
         try {
             PreparedStatement pst = cn.prepareStatement(sql);
-
-            pst.setString(1, dts.getCorelativo());
-            pst.setString(2, dts.getReferencia());
-            pst.setString(3, dts.getAsunto());
-            pst.setString(4, dts.getFecha());
-            pst.setString(5, dts.getEmisor());
-            pst.setString(6, dts.getRecepcionado());
-            pst.setString(7, dts.getObservaciones());
-            pst.setInt(8, dts.getIdrecepcion());
+            
+            pst.setInt(1,dts.getIdtrabajador());
+            pst.setString(2, dts.getCorrelativo());
+            pst.setString(3, dts.getReferencia());
+            pst.setString(4, dts.getAsunto());
+            pst.setString(5, dts.getFecha());
+            pst.setString(6, dts.getEmisor());
+            pst.setString(7, dts.getRecepcionado());
+            pst.setString(8, dts.getObservaciones());
+            pst.setInt(9, dts.getIdrecepcion());
 
             int n = pst.executeUpdate();
             if (n != 0) {

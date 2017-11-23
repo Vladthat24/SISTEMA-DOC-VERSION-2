@@ -12,6 +12,7 @@ package Datos;
 public class vrecepcion {
 
     private int idrecepcion;
+    private int idtrabajador;
     private String correlativo;
     private String referencia;
     private String asunto;
@@ -23,9 +24,10 @@ public class vrecepcion {
     public vrecepcion() {
     }
 
-    public vrecepcion(int idrecepcion, String corelativo, String referencia, String asunto, String fecha, String emisor, String recepcionado, String observaciones) {
+    public vrecepcion(int idrecepcion, int idtrabajador, String correlativo, String referencia, String asunto, String fecha, String emisor, String recepcionado, String observaciones) {
         this.idrecepcion = idrecepcion;
-        this.correlativo = corelativo;
+        this.idtrabajador = idtrabajador;
+        this.correlativo = correlativo;
         this.referencia = referencia;
         this.asunto = asunto;
         this.fecha = fecha;
@@ -42,12 +44,20 @@ public class vrecepcion {
         this.idrecepcion = idrecepcion;
     }
 
-    public String getCorelativo() {
+    public int getIdtrabajador() {
+        return idtrabajador;
+    }
+
+    public void setIdtrabajador(int idtrabajador) {
+        this.idtrabajador = idtrabajador;
+    }
+
+    public String getCorrelativo() {
         return correlativo;
     }
 
-    public void setCorelativo(String corelativo) {
-        this.correlativo = corelativo;
+    public void setCorrelativo(String correlativo) {
+        this.correlativo = correlativo;
     }
 
     public String getReferencia() {
@@ -97,9 +107,7 @@ public class vrecepcion {
     public void setObservaciones(String observaciones) {
         this.observaciones = observaciones;
     }
-    
-    
-    
+
     
     
     

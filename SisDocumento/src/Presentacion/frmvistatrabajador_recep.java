@@ -5,64 +5,43 @@
  */
 package Presentacion;
 
-import Datos.vasistenciales;
-import Logica.fasistenciales;
+import Datos.vtrabajador;
+import Logica.ftrabajador;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
 /**
  *
- * @author Desarrollo
+ * @author INFORMATICA
  */
-public class frmvista_asistenciales extends javax.swing.JFrame {
+public class frmvistatrabajador_recep extends javax.swing.JFrame {
 
     /**
-     * Creates new form frmvista_asistenciales
+     * Creates new form frmvistatrabajador
      */
-    public frmvista_asistenciales() {
+    public frmvistatrabajador_recep() {
         initComponents();
         mostrar("");
         this.setLocationRelativeTo(null);
     }
-
-    void ocultar_columna() {
-        tablalistado.getColumnModel().getColumn(0).setMaxWidth(0);
-        tablalistado.getColumnModel().getColumn(0).setMinWidth(0);
-        tablalistado.getColumnModel().getColumn(0).setPreferredWidth(0);
-
-        tablalistado.getColumnModel().getColumn(5).setMaxWidth(0);
-        tablalistado.getColumnModel().getColumn(5).setMinWidth(0);
-        tablalistado.getColumnModel().getColumn(5).setPreferredWidth(0);
-
-        tablalistado.getColumnModel().getColumn(6).setMaxWidth(0);
-        tablalistado.getColumnModel().getColumn(6).setMinWidth(0);
-        tablalistado.getColumnModel().getColumn(6).setPreferredWidth(0);
-
-        tablalistado.getColumnModel().getColumn(7).setMaxWidth(0);
-        tablalistado.getColumnModel().getColumn(7).setMinWidth(0);
-        tablalistado.getColumnModel().getColumn(7).setPreferredWidth(0);
-
-        tablalistado.getColumnModel().getColumn(10).setMaxWidth(0);
-        tablalistado.getColumnModel().getColumn(10).setMinWidth(0);
-        tablalistado.getColumnModel().getColumn(10).setPreferredWidth(0);
-
-        tablalistado.getColumnModel().getColumn(11).setMaxWidth(0);
-        tablalistado.getColumnModel().getColumn(11).setMinWidth(0);
-        tablalistado.getColumnModel().getColumn(11).setPreferredWidth(0);
+    void ocultar_columna(){
+        tablelistado.getColumnModel().getColumn(0).setMaxWidth(0);
+        tablelistado.getColumnModel().getColumn(0).setMinWidth(0);
+        tablelistado.getColumnModel().getColumn(0).setPreferredWidth(0);
+        
+                
     }
-
-    void mostrar(String buscar) {
+    void mostrar(String buscar){
         try {
             DefaultTableModel modelo;
-            fasistenciales func = new fasistenciales();
-            vasistenciales dts = new vasistenciales();
-            modelo=func.mostart(buscar);
+            ftrabajador func = new ftrabajador();
+            vtrabajador dts = new vtrabajador();
+            modelo= func.mostrar(buscar);
             
-            tablalistado.setModel(modelo);
+            tablelistado.setModel(modelo);
             ocultar_columna();
             lblTotalregistros.setText("Total Registros "+ Integer.toString(func.totalregistros));
         } catch (Exception e) {
-            JOptionPane.showConfirmDialog(rootPane, e + "erro frmvista_asistencias 01");
+            JOptionPane.showConfirmDialog(rootPane, e + "error 01");
         }
     }
 
@@ -77,7 +56,7 @@ public class frmvista_asistenciales extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tablalistado = new javax.swing.JTable();
+        tablelistado = new javax.swing.JTable();
         btnbuscar = new javax.swing.JButton();
         lblTotalregistros = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -88,8 +67,8 @@ public class frmvista_asistenciales extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(90, 173, 167));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Listrado Trabajador"));
 
-        tablalistado.setBackground(new java.awt.Color(158, 179, 193));
-        tablalistado.setModel(new javax.swing.table.DefaultTableModel(
+        tablelistado.setBackground(new java.awt.Color(158, 179, 193));
+        tablelistado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -100,12 +79,12 @@ public class frmvista_asistenciales extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tablalistado.addMouseListener(new java.awt.event.MouseAdapter() {
+        tablelistado.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                tablalistadoMousePressed(evt);
+                tablelistadoMousePressed(evt);
             }
         });
-        jScrollPane1.setViewportView(tablalistado);
+        jScrollPane1.setViewportView(tablelistado);
 
         btnbuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/search.png"))); // NOI18N
         btnbuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -155,7 +134,8 @@ public class frmvista_asistenciales extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblTotalregistros, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)))
+                    .addComponent(jButton1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -163,42 +143,44 @@ public class frmvista_asistenciales extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 787, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 797, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(17, 17, 17)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tablalistadoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablalistadoMousePressed
-        // TODO add your handling code here:
-        if (evt.getClickCount() == 2) {
-            int fila = tablalistado.getSelectedRow();
-            String cod, valor,valor2;
-
-            cod = tablalistado.getValueAt(fila, 0).toString();
-            valor = tablalistado.getValueAt(fila, 1).toString() + " " + tablalistado.getValueAt(fila, 2).toString();
-            valor2= tablalistado.getValueAt(fila, 3).toString();
-            
-            frmoficios.txtidasistenciales.setText(cod);
-            frmoficios.lblreceptor.setText(valor);
-            frmoficios.lblcargo_institucion.setText(valor2);
-            this.dispose();
-        }
-    }//GEN-LAST:event_tablalistadoMousePressed
-
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
         // TODO add your handling code here:
         String dni;
-        dni = JOptionPane.showInputDialog("Ingrese el DNI");
+        dni=JOptionPane.showInputDialog("Ingrese el DNI");
         mostrar(dni);
+        
     }//GEN-LAST:event_btnbuscarActionPerformed
+
+    private void tablelistadoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablelistadoMousePressed
+        // TODO add your handling code here:
+        if(evt.getClickCount()==2){
+            int fila=tablelistado.getSelectedRow();
+            String cod, valor;
+            
+            cod = tablelistado.getValueAt(fila, 0).toString();
+            valor= tablelistado.getValueAt(fila, 1).toString()+ " " + tablelistado.getValueAt(fila, 2).toString()+" "+tablelistado.getValueAt(fila, 3);
+            
+           frmrecepciondoc.txtidtrabajador.setText(cod);
+           frmrecepciondoc.lblnombre_apellidos_trab.setText(valor);
+           
+           this.dispose();
+        }
+    }//GEN-LAST:event_tablelistadoMousePressed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -222,20 +204,21 @@ public class frmvista_asistenciales extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmvista_asistenciales.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmvistatrabajador_recep.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmvista_asistenciales.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmvistatrabajador_recep.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmvista_asistenciales.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmvistatrabajador_recep.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmvista_asistenciales.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmvistatrabajador_recep.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmvista_asistenciales().setVisible(true);
+                new frmvistatrabajador_recep().setVisible(true);
             }
         });
     }
@@ -246,6 +229,6 @@ public class frmvista_asistenciales extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTotalregistros;
-    private javax.swing.JTable tablalistado;
+    private javax.swing.JTable tablelistado;
     // End of variables declaration//GEN-END:variables
 }

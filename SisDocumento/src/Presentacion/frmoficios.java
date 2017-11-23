@@ -43,6 +43,21 @@ public class frmoficios extends javax.swing.JInternalFrame {
     private String accion = "guardar";
 
     void guardar() {
+        if (txtreceptor.getText().length() == 0) {
+            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar el receptor del documento");
+            txtreceptor.requestFocus();
+            return;
+        }
+        if (txtcargo_receptor.getText().length() == 0) {
+            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar el cargo del receptor");
+            txtcargo_receptor.requestFocus();
+            return;
+        }
+        if (lblnombre_apellido_trab.getText().length() == 0) {
+            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar los datos del trabajador que realizo el documento");
+            lblnombre_apellido_trab.requestFocus();
+            return;
+        }
 
         if (txtnum_correlativo.getText().length() == 0) {
             JOptionPane.showConfirmDialog(rootPane, "Debes ingresar el Correlativo");
@@ -68,11 +83,10 @@ public class frmoficios extends javax.swing.JInternalFrame {
         voficio dts = new voficio();
         foficios func = new foficios();
 
-        dts.setIdadministrativos(Integer.parseInt(txtidadministrativos.getText()));
-
-        dts.setIdasistenciales(Integer.parseInt(txtidasistenciales.getText()));
-
+        dts.setIdtrabajador(Integer.parseInt(txtidtrabajador.getText()));
         dts.setNum_correlativo(txtnum_correlativo.getText());
+        dts.setReceptor(txtreceptor.getText());
+        dts.setCargo_receptor(txtcargo_receptor.getText());
         dts.setAtencion(txtatencion.getText());
         dts.setAsunto(txtasunto.getText());
         dts.setCuerpo(txtcuerpo.getText());
@@ -133,70 +147,64 @@ public class frmoficios extends javax.swing.JInternalFrame {
 
     void inhabilitar() {
         txtidoficios.setVisible(false);
-        txtidadministrativos.setVisible(false);
-        txtidasistenciales.setVisible(false);
+        txtidtrabajador.setVisible(false);
 
+        txtreceptor.setEnabled(false);
+        txtcargo_receptor.setEnabled(false);
         txtnum_correlativo.setEnabled(false);
-        lblreceptor.setEnabled(false);
-        lblcargo_institucion.setEnabled(false);
-        radio_admin.setEnabled(false);
-        radio_asisten.setEnabled(false);
-        btn_admin.setEnabled(false);
-        btn_aisten.setEnabled(false);
-
         txtatencion.setEnabled(false);
         txtasunto.setEnabled(false);
         txtcuerpo.setEnabled(false);
         lblfecha_registro.setEnabled(false);
         txtmembrete.setEnabled(false);
+        lblnombre_apellido_trab.setEnabled(false);
 
         btnguardar.setEnabled(false);
         btnbuscar.setEnabled(false);
         btneliminar.setEnabled(false);
         btnreportes.setEnabled(false);
+        btntrabajador.setEnabled(false);
 
         txtnum_correlativo.setText("");
+        txtreceptor.setText("");
+        txtcargo_receptor.setText("");
+        lblnombre_apellido_trab.setText("");
         txtatencion.setText("");
         txtasunto.setText("");
         txtcuerpo.setText("");
         txtmembrete.setText("");
-        lblreceptor.setText("");
-        lblcargo_institucion.setText("");
         lblfecha_registro.setText("");
 
     }
 
     void habilitar() {
         txtidoficios.setVisible(false);
-        txtidadministrativos.setVisible(false);
-        txtidasistenciales.setVisible(false);
+        txtidtrabajador.setVisible(false);
 
+        txtreceptor.setEnabled(true);
+        txtcargo_receptor.setEnabled(true);
         txtnum_correlativo.setEnabled(true);
-        lblreceptor.setEnabled(true);
-        lblcargo_institucion.setEnabled(true);
-        radio_admin.setEnabled(true);
-        radio_asisten.setEnabled(true);
-        btn_admin.setEnabled(false);
-        btn_aisten.setEnabled(false);
-
         txtatencion.setEnabled(true);
         txtasunto.setEnabled(true);
         txtcuerpo.setEnabled(true);
         lblfecha_registro.setEnabled(true);
         txtmembrete.setEnabled(true);
+        lblnombre_apellido_trab.setEnabled(true);
 
         btnguardar.setEnabled(true);
         btnbuscar.setEnabled(true);
         btneliminar.setEnabled(true);
         btnreportes.setEnabled(true);
+        btntrabajador.setEnabled(true);
 
         txtnum_correlativo.setText("");
+        txtreceptor.setText("");
+        txtcargo_receptor.setText("");
+        lblnombre_apellido_trab.setText("");
         txtatencion.setText("");
         txtasunto.setText("");
         txtcuerpo.setText("");
         txtmembrete.setText("");
-        lblreceptor.setText("");
-        lblcargo_institucion.setText("");
         lblfecha_registro.setText("");
     }
 
@@ -230,22 +238,19 @@ public class frmoficios extends javax.swing.JInternalFrame {
         txtcuerpo = new javax.swing.JTextArea();
         jPanel4 = new javax.swing.JPanel();
         txtnum_correlativo = new javax.swing.JTextField();
-        lblreceptor = new javax.swing.JLabel();
-        txtidasistenciales = new javax.swing.JTextField();
-        txtidadministrativos = new javax.swing.JTextField();
+        txtidtrabajador = new javax.swing.JTextField();
         txtidoficios = new javax.swing.JTextField();
-        lblcargo_institucion = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        radio_asisten = new javax.swing.JRadioButton();
-        radio_admin = new javax.swing.JRadioButton();
-        btn_admin = new javax.swing.JButton();
-        btn_aisten = new javax.swing.JButton();
+        btntrabajador = new javax.swing.JButton();
+        lblnombre_apellido_trab = new javax.swing.JLabel();
+        lblfecha_registro = new javax.swing.JLabel();
+        txtmembrete = new javax.swing.JTextField();
         txtatencion = new javax.swing.JTextField();
         txtasunto = new javax.swing.JTextField();
         btnnuevo = new javax.swing.JButton();
         btnguardar = new javax.swing.JButton();
-        lblfecha_registro = new javax.swing.JLabel();
-        txtmembrete = new javax.swing.JTextField();
+        txtreceptor = new javax.swing.JTextField();
+        txtcargo_receptor = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablalistado = new javax.swing.JTable();
@@ -274,84 +279,56 @@ public class frmoficios extends javax.swing.JInternalFrame {
         txtnum_correlativo.setBackground(new java.awt.Color(158, 178, 193));
         txtnum_correlativo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "N° Correlativo:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 11))); // NOI18N
 
-        lblreceptor.setBackground(new java.awt.Color(158, 179, 193));
-        lblreceptor.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Receptor:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 11))); // NOI18N
-
-        txtidasistenciales.setText("jTextField3");
-
-        txtidadministrativos.setText("jTextField2");
+        txtidtrabajador.setText("jTextField2");
 
         txtidoficios.setText("jTextField1");
 
-        lblcargo_institucion.setBackground(new java.awt.Color(158, 179, 193));
-        lblcargo_institucion.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cargo:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 11))); // NOI18N
-
         jPanel3.setBackground(new java.awt.Color(158, 179, 193));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Trabajador:"));
 
-        radio_asisten.setBackground(new java.awt.Color(158, 179, 193));
-        btngroup_registro.add(radio_asisten);
-        radio_asisten.setText("Asistenciales");
-        radio_asisten.addActionListener(new java.awt.event.ActionListener() {
+        btntrabajador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/asistencial.png"))); // NOI18N
+        btntrabajador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radio_asistenActionPerformed(evt);
+                btntrabajadorActionPerformed(evt);
             }
         });
 
-        radio_admin.setBackground(new java.awt.Color(158, 179, 193));
-        btngroup_registro.add(radio_admin);
-        radio_admin.setText("Administrativos");
-        radio_admin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radio_adminActionPerformed(evt);
-            }
-        });
+        lblnombre_apellido_trab.setBackground(new java.awt.Color(158, 178, 193));
+        lblnombre_apellido_trab.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 11))); // NOI18N
 
-        btn_admin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/admin.png"))); // NOI18N
-        btn_admin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_adminActionPerformed(evt);
-            }
-        });
+        lblfecha_registro.setBackground(new java.awt.Color(158, 178, 193));
+        lblfecha_registro.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fecha de Registro:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 11))); // NOI18N
 
-        btn_aisten.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/asistencial.png"))); // NOI18N
-        btn_aisten.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_aistenActionPerformed(evt);
-            }
-        });
+        txtmembrete.setBackground(new java.awt.Color(158, 178, 193));
+        txtmembrete.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Iniciales:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 11))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(radio_admin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_admin, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                .addComponent(radio_asisten)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_aisten, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(txtmembrete, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblfecha_registro, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(lblnombre_apellido_trab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btntrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(12, 12, 12))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btntrabajador)
+                    .addComponent(lblnombre_apellido_trab, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_aisten)
-                            .addComponent(btn_admin)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(radio_admin))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(radio_asisten)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblfecha_registro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtmembrete, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)))
         );
 
         txtatencion.setBackground(new java.awt.Color(158, 178, 193));
@@ -376,79 +353,70 @@ public class frmoficios extends javax.swing.JInternalFrame {
             }
         });
 
-        lblfecha_registro.setBackground(new java.awt.Color(158, 178, 193));
-        lblfecha_registro.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fecha de Registro:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 11))); // NOI18N
+        txtreceptor.setBackground(new java.awt.Color(158, 178, 193));
+        txtreceptor.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nombres y Apellidos:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 11))); // NOI18N
 
-        txtmembrete.setBackground(new java.awt.Color(158, 178, 193));
-        txtmembrete.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Iniciales:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 11))); // NOI18N
+        txtcargo_receptor.setBackground(new java.awt.Color(158, 178, 193));
+        txtcargo_receptor.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cargo:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 11))); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addComponent(txtnum_correlativo, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnnuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnguardar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(txtnum_correlativo, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnnuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnguardar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtidasistenciales, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtidadministrativos, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtidoficios, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(lblreceptor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txtasunto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
-                                    .addComponent(txtatencion, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblcargo_institucion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                            .addComponent(txtidtrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtidoficios, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(lblfecha_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(txtmembrete, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtreceptor, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtcargo_receptor, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtatencion)
+                            .addComponent(txtasunto))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtidoficios)
-                        .addComponent(txtidadministrativos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtidasistenciales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtnum_correlativo, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnnuevo)
-                        .addComponent(btnguardar)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(txtidoficios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtidtrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtnum_correlativo, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btnnuevo)
+                                .addComponent(btnguardar)))
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtreceptor, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtcargo_receptor, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblreceptor, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblcargo_institucion, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtmembrete, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblfecha_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(7, 7, 7)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtatencion, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtasunto, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -457,9 +425,9 @@ public class frmoficios extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -574,28 +542,15 @@ public class frmoficios extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void radio_adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio_adminActionPerformed
-        // TODO add your handling code here:
-        if (radio_admin.isSelected()) {
-            btn_admin.setEnabled(true);
-            btn_aisten.setEnabled(false);
-            
-
-        } else {
-            btn_admin.setEnabled(false);
-            btn_aisten.setEnabled(true);
-        }
-    }//GEN-LAST:event_radio_adminActionPerformed
 
     private void btnnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnuevoActionPerformed
         // TODO add your handling code here:
@@ -622,33 +577,20 @@ public class frmoficios extends javax.swing.JInternalFrame {
         int fila = tablalistado.rowAtPoint(evt.getPoint());
 
         txtidoficios.setText(tablalistado.getValueAt(fila, 0).toString());
-        txtidadministrativos.setText(tablalistado.getValueAt(fila, 1).toString());
-        lblreceptor.setText(tablalistado.getValueAt(fila, 2).toString());
-        lblcargo_institucion.setText(tablalistado.getValueAt(fila, 3).toString());
-        txtidasistenciales.setText(tablalistado.getValueAt(fila, 4).toString());
-        lblreceptor.setText(tablalistado.getValueAt(fila, 5).toString());
-        lblcargo_institucion.setText(tablalistado.getValueAt(fila, 6).toString());
-        txtnum_correlativo.setText(tablalistado.getValueAt(fila, 7).toString());
-        txtatencion.setText(tablalistado.getValueAt(fila, 8).toString());
-        txtasunto.setText(tablalistado.getValueAt(fila, 9).toString());
-        txtcuerpo.setText(tablalistado.getValueAt(fila, 10).toString());
-        txtmembrete.setText(tablalistado.getValueAt(fila, 11).toString());
-        lblfecha_registro.setText(tablalistado.getValueAt(fila, 12).toString());
+        txtidtrabajador.setText(tablalistado.getValueAt(fila, 1).toString());
+        lblnombre_apellido_trab.setText(tablalistado.getValueAt(fila, 2).toString());
+        txtnum_correlativo.setText(tablalistado.getValueAt(fila, 3).toString());
+        txtreceptor.setText(tablalistado.getValueAt(fila, 4).toString());
+        txtcargo_receptor.setText(tablalistado.getValueAt(fila, 5).toString());
+        txtatencion.setText(tablalistado.getValueAt(fila, 6).toString());
+        txtasunto.setText(tablalistado.getValueAt(fila, 7).toString());
+        txtcuerpo.setText(tablalistado.getValueAt(fila, 8).toString());
+        txtmembrete.setText(tablalistado.getValueAt(fila, 9).toString());
+        lblfecha_registro.setText(tablalistado.getValueAt(fila, 10).toString());
         fecha_inicial = lblfecha_registro.getText();
         fecha_final = lblfecha_registro.getText();
-        idoficios=Integer.parseInt(txtidoficios.getText());
+        idoficios = Integer.parseInt(txtidoficios.getText());
     }//GEN-LAST:event_tablalistadoMouseClicked
-
-    private void radio_asistenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio_asistenActionPerformed
-        // TODO add your handling code here:
-        if (radio_asisten.isSelected()) {
-            btn_aisten.setEnabled(true);
-            btn_admin.setEnabled(false);
-        } else {
-            btn_aisten.setEnabled(false);
-            btn_admin.setEnabled(true);
-        }
-    }//GEN-LAST:event_radio_asistenActionPerformed
 
     private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
         // TODO add your handling code here:
@@ -672,19 +614,12 @@ public class frmoficios extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btneliminarActionPerformed
 
-    private void btn_adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_adminActionPerformed
-        // TODO add your handling code here:
-        frmvista_administrativos from = new frmvista_administrativos();
-        from.toFront();
-        from.setVisible(true);
-    }//GEN-LAST:event_btn_adminActionPerformed
-
-    private void btn_aistenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aistenActionPerformed
+    private void btntrabajadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntrabajadorActionPerformed
         // TODO add your handling code here:+
-        frmvista_asistenciales from = new frmvista_asistenciales();
+        frmvistatrabajador_oficios from = new frmvistatrabajador_oficios();
         from.toFront();
         from.setVisible(true);
-    }//GEN-LAST:event_btn_aistenActionPerformed
+    }//GEN-LAST:event_btntrabajadorActionPerformed
 
     private void btnreportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreportesActionPerformed
         // TODO add your handling code here:
@@ -708,8 +643,6 @@ public class frmoficios extends javax.swing.JInternalFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_admin;
-    private javax.swing.JButton btn_aisten;
     private javax.swing.JButton btnbuscar;
     private javax.swing.JButton btneliminar;
     private javax.swing.ButtonGroup btngroup_registro;
@@ -717,26 +650,25 @@ public class frmoficios extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnimprimir1;
     private javax.swing.JButton btnnuevo;
     private javax.swing.JButton btnreportes;
+    private javax.swing.JButton btntrabajador;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    public static javax.swing.JLabel lblcargo_institucion;
     private javax.swing.JLabel lblfecha_registro;
-    public static javax.swing.JLabel lblreceptor;
+    public static javax.swing.JLabel lblnombre_apellido_trab;
     private javax.swing.JLabel lbltotalregistro;
-    private javax.swing.JRadioButton radio_admin;
-    private javax.swing.JRadioButton radio_asisten;
     private javax.swing.JTable tablalistado;
     private javax.swing.JTextField txtasunto;
     private javax.swing.JTextField txtatencion;
+    private javax.swing.JTextField txtcargo_receptor;
     private javax.swing.JTextArea txtcuerpo;
-    public static javax.swing.JTextField txtidadministrativos;
-    public static javax.swing.JTextField txtidasistenciales;
     private javax.swing.JTextField txtidoficios;
+    public static javax.swing.JTextField txtidtrabajador;
     private javax.swing.JTextField txtmembrete;
     private javax.swing.JTextField txtnum_correlativo;
+    private javax.swing.JTextField txtreceptor;
     // End of variables declaration//GEN-END:variables
 }
