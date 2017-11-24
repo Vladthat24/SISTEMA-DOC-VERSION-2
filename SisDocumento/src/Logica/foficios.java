@@ -29,7 +29,7 @@ public class foficios {
     public DefaultTableModel mostrar(String buscar) {
         DefaultTableModel modelo;
 
-        String[] titulos = {"ID", "idtrabajor", "nombre_apellidos", "N° Correlativo", "receptor", "cargo_receptor", "Atencion", "Asunto", "Cuerpo", "Membrete", "FechaRegistro"};
+        String[] titulos = {"ID", "idtrabajor", "nombre_apellidos", "N° Correlativo", "receptor", "cargo_receptor", "Atencion", "Asunto", "Cuerpo", "Iniciales", "FechaRegistro"};
         String[] registro = new String[11];
 
         totalregistros = 0;
@@ -37,7 +37,7 @@ public class foficios {
         sql = "select idoficios,idtrabajador,(select nombre from persona_trabajador where idptrabajador=idptrabajador) as nombre_trab,"
                 + "(select apaterno from persona_trabajador where idptrabajador=idptrabajador)as apaterno_trab,"
                 + "(select amaterno from persona_trabajador where idptrabajador=idptrabajador)as amaterno_trab,"
-                + "num_correlativo,receptor,cargo_receptor,atencion,asunto,cuerpo,membrete,fecha from oficio where num_correlativo like '%" + buscar + "%' order by idoficios desc";
+                + "num_correlativo,receptor,cargo_receptor,atencion,asunto,cuerpo,iniciales,fecha from oficio where num_correlativo like '%" + buscar + "%' order by idoficios desc";
 
         try {
             Statement st = cn.createStatement();
@@ -53,7 +53,7 @@ public class foficios {
                 registro[6] = rs.getString("atencion");
                 registro[7] = rs.getString("asunto");
                 registro[8] = rs.getString("cuerpo");
-                registro[9] = rs.getString("membrete");
+                registro[9] = rs.getString("iniciales");
                 registro[10] = rs.getString("fecha");
 
                 totalregistros = totalregistros + 1;
@@ -69,7 +69,7 @@ public class foficios {
     }
 
     public boolean insertar(voficio dts) {
-        sql = "insert into oficio (idoficios,idtrabajador,num_correlativo,receptor,cargo_receptor,atencion,asunto,cuerpo,membrete,fecha)"
+        sql = "insert into oficio (idoficios,idtrabajador,num_correlativo,receptor,cargo_receptor,atencion,asunto,cuerpo,iniciales,fecha)"
                 + "values (?,?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement pst = cn.prepareStatement(sql);
@@ -82,7 +82,7 @@ public class foficios {
             pst.setString(6, dts.getAtencion());
             pst.setString(7, dts.getAsunto());
             pst.setString(8, dts.getCuerpo());
-            pst.setString(9, dts.getMembrete());
+            pst.setString(9, dts.getIniciales());
             pst.setString(10, dts.getFecha());
 
             int n = pst.executeUpdate();
@@ -99,20 +99,20 @@ public class foficios {
     }
 
     public boolean editar(voficio dts) {
-        sql = "update oficio set idoficios=?,idtrabajador=?,num_correlativo=?,receptor=?,cargo_receptor=?,atencion=?,asunto=?,cuerpo=?,membrete=?,fecha=?";
+        sql = "update oficio set idoficios=?,idtrabajador=?,num_correlativo=?,receptor=?,cargo_receptor=?,atencion=?,asunto=?,cuerpo=?,iniciales=?,fecha=?";
 
         try {
             PreparedStatement pst = cn.prepareStatement(sql);
 
             pst.setInt(1, dts.getIdoficios());
             pst.setInt(2, dts.getIdtrabajador());
-            pst.setString(4, dts.getNum_correlativo());
-            pst.setString(5, dts.getReceptor());
-            pst.setString(6, dts.getCargo_receptor());
+            pst.setString(3, dts.getNum_correlativo());
+            pst.setString(4, dts.getReceptor());
+            pst.setString(5, dts.getCargo_receptor());
             pst.setString(6, dts.getAtencion());
             pst.setString(7, dts.getAsunto());
             pst.setString(8, dts.getCuerpo());
-            pst.setString(9, dts.getMembrete());
+            pst.setString(9, dts.getIniciales());
             pst.setString(10, dts.getFecha());
 
             int n = pst.executeUpdate();

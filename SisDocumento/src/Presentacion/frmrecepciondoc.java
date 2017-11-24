@@ -81,7 +81,7 @@ public class frmrecepciondoc extends javax.swing.JInternalFrame {
         } else if (accion.equals("editar")) {
             dts.setIdrecepcion(Integer.parseInt(txtidrecepcion.getText()));
             if (func.editar(dts)) {
-                JOptionPane.showConfirmDialog(rootPane, "El Registro de la Recepcion fue editado exitosamente");
+                JOptionPane.showMessageDialog(rootPane, "El Registro de la Recepcion fue editado exitosamente");
                 mostrar("");
                 inhabilitar();
                 checkobservaciones.setSelected(false);
@@ -485,6 +485,7 @@ public class frmrecepciondoc extends javax.swing.JInternalFrame {
         btnguardar.setText("Editar");
         habilitar();
         btneliminar.setEnabled(true);
+        accion="editar";
 
         int fila = tablalistado.rowAtPoint(evt.getPoint());
 
@@ -531,6 +532,10 @@ public class frmrecepciondoc extends javax.swing.JInternalFrame {
 
     private void btntrabajadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntrabajadorActionPerformed
         // TODO add your handling code here:
+        frmvistatrabajador_recep from = new frmvistatrabajador_recep();
+        from.toFront();
+        from.setVisible(true);
+        
     }//GEN-LAST:event_btntrabajadorActionPerformed
 
     /**

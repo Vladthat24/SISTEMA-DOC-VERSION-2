@@ -37,8 +37,6 @@ public class frminicio extends javax.swing.JFrame {
         escritorio = new javax.swing.JDesktopPane();
         lblidacceso = new javax.swing.JLabel();
         lblacceso = new javax.swing.JLabel();
-        lblnombre_apellidos_trabajador = new javax.swing.JLabel();
-        lblidtrabjador = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         mnusisreserva = new javax.swing.JMenu();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
@@ -53,7 +51,6 @@ public class frminicio extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         menutrabajador = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
         menuacceso = new javax.swing.JMenuItem();
         mnuayuda = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -72,16 +69,6 @@ public class frminicio extends javax.swing.JFrame {
         lblacceso.setText("jLabel7");
         escritorio.add(lblacceso);
         lblacceso.setBounds(20, 40, 130, 16);
-
-        lblnombre_apellidos_trabajador.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        lblnombre_apellidos_trabajador.setText("jLabel7");
-        escritorio.add(lblnombre_apellidos_trabajador);
-        lblnombre_apellidos_trabajador.setBounds(20, 110, 240, 30);
-
-        lblidtrabjador.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        lblidtrabjador.setText("jLabel7");
-        escritorio.add(lblidtrabjador);
-        lblidtrabjador.setBounds(20, 70, 240, 30);
 
         menuBar.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -181,16 +168,6 @@ public class frminicio extends javax.swing.JFrame {
         menutrabajador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/configuraciones.png"))); // NOI18N
         menutrabajador.setText("Configuraciones");
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/trabajador.png"))); // NOI18N
-        jMenuItem2.setText("Trabajador");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        menutrabajador.add(jMenuItem2);
-
         menuacceso.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
         menuacceso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/acceso.png"))); // NOI18N
         menuacceso.setText("Acceso");
@@ -256,14 +233,6 @@ public class frminicio extends javax.swing.JFrame {
 
     }//GEN-LAST:event_aboutMenuItemActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-//         TODO add your handling code here:
-        frmtrabajador form = new frmtrabajador();
-        escritorio.add(form);
-        form.toFront();
-        form.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
     private void mnusalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnusalirMouseClicked
         // TODO add your handling code here:
         this.dispose();
@@ -308,10 +277,10 @@ public class frminicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-//        frmreg_administrativos form = new frmreg_administrativos();
-//        escritorio.add(form);
-//        form.toFront();
-//        form.setVisible(true);
+        frmtrabajador form = new frmtrabajador();
+        escritorio.add(form);
+        form.toFront();
+        form.setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -376,7 +345,6 @@ public class frminicio extends javax.swing.JFrame {
     public static javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
@@ -386,8 +354,6 @@ public class frminicio extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator1;
     public static javax.swing.JLabel lblacceso;
     public static javax.swing.JLabel lblidacceso;
-    public static javax.swing.JLabel lblidtrabjador;
-    public static javax.swing.JLabel lblnombre_apellidos_trabajador;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem menuacceso;
     public static javax.swing.JMenu menutrabajador;

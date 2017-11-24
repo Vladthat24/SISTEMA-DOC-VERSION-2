@@ -120,7 +120,7 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
         } else if (accion.equals("editar")) {
             dts.setIdcertificado_salud(Integer.parseInt(txtidcertificado_salud.getText()));
             if (func.editar(dts)) {
-                JOptionPane.showConfirmDialog(rootPane, "El Registro fue editado exitosamente");
+                JOptionPane.showMessageDialog(rootPane, "El Registro fue editado exitosamente");
                 mostrar("");
                 inhabilitar();
 

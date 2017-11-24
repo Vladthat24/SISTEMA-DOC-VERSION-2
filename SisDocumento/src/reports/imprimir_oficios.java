@@ -27,7 +27,7 @@ import org.apache.commons.collections.map.HashedMap;
 
 public class imprimir_oficios {
     public Connection connection= new conexion().conectar();
-    public void reportePacientes(int idoficios){
+    public void reportePacientes(int num_correlativo){
         Map p = new HashedMap();
         JasperReport report;
         JasperPrint print;
@@ -35,7 +35,7 @@ public class imprimir_oficios {
 
             report=JasperCompileManager.compileReport(new File("").getAbsolutePath()+
                     "/src/reports/imprimir_oficio.jrxml");
-            p.put("idoficios", idoficios);
+            p.put("num_correlativo", num_correlativo);
            
             print= JasperFillManager.fillReport(report, p,connection);
             JasperViewer view= new JasperViewer(print,false);

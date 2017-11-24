@@ -110,7 +110,7 @@ public class finforme_medico {
     }
 
     public boolean editar(vinforme_medico dts) {
-        sql = "update informe_medico set idinforme_medico=?,idasistenciales=?,correlativo_informemedico=?,nombre_paciente,apellidos_paciente,"
+        sql = "update informe_medico set idinforme_medico=?,idasistenciales=?,correlativo_informemedico=?,nombre_paciente=?,apellidos_paciente=?,"
                 + "historia_clinica=?,direccion=?,sexo=?,edad=?,tipo_documento=?,num_documento=?,fecha_registro=?,diagnostico=?";
 
         try {

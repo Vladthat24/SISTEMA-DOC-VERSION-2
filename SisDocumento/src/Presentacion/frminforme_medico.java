@@ -127,7 +127,7 @@ public class frminforme_medico extends javax.swing.JInternalFrame {
         } else if (accion.equals("editar")) {
             dts.setIdinforme_medico(Integer.parseInt(txtidinforme_medico.getText()));
             if (func.editar(dts)) {
-                JOptionPane.showConfirmDialog(rootPane, "El Registro fue editado exitosamente");
+                JOptionPane.showMessageDialog(rootPane, "El Registro fue editado exitosamente");
                 mostrar("");
                 inhabilitar();
 

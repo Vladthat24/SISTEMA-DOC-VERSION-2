@@ -102,7 +102,7 @@ public class fcertificado_salud {
     }
 
     public boolean editar(vcertificado_salud dts) {
-        sql = "update certificado_salud set idcertificados_salud=?,idasistenciales=?,nombre=?,apellidos=?,edad=?,tipo_doc=?,num_doc=?,direccion=?,serelogia=?,examen_rx=?,fecha_registro=?";
+        sql = "update certificado_salud set idcertificado_salud=?,idasistenciales=?,nombre=?,apellidos=?,edad=?,tipo_doc=?,num_doc=?,direccion=?,serelogia=?,examen_rx=?,fecha_registro=?";
 
         try {
             PreparedStatement pst = cn.prepareStatement(sql);

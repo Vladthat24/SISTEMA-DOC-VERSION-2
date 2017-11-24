@@ -245,7 +245,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="txtmembrete" min="-2" pref="94" max="-2" attributes="0"/>
+                                  <Component id="txtiniciales" min="-2" pref="94" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="lblfecha_registro" pref="184" max="32767" attributes="0"/>
                               </Group>
@@ -269,7 +269,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="lblfecha_registro" max="32767" attributes="0"/>
-                              <Component id="txtmembrete" pref="55" max="32767" attributes="0"/>
+                              <Component id="txtiniciales" pref="55" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -317,7 +317,7 @@
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtmembrete">
+                <Component class="javax.swing.JTextField" name="txtiniciales">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="c1" green="b2" red="9e" type="rgb"/>

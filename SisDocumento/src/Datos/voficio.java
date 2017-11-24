@@ -19,13 +19,13 @@ public class voficio {
     private String atencion;
     private String asunto;
     private String cuerpo;
-    private String membrete;
+    private String iniciales;
     private String fecha;
 
     public voficio() {
     }
 
-    public voficio(int idoficios, int idtrabajador, String num_correlativo, String receptor, String cargo_receptor, String atencion, String asunto, String cuerpo, String membrete, String fecha) {
+    public voficio(int idoficios, int idtrabajador, String num_correlativo, String receptor, String cargo_receptor, String atencion, String asunto, String cuerpo, String iniciales, String fecha) {
         this.idoficios = idoficios;
         this.idtrabajador = idtrabajador;
         this.num_correlativo = num_correlativo;
@@ -34,7 +34,7 @@ public class voficio {
         this.atencion = atencion;
         this.asunto = asunto;
         this.cuerpo = cuerpo;
-        this.membrete = membrete;
+        this.iniciales = iniciales;
         this.fecha = fecha;
     }
 
@@ -102,12 +102,12 @@ public class voficio {
         this.cuerpo = cuerpo;
     }
 
-    public String getMembrete() {
-        return membrete;
+    public String getIniciales() {
+        return iniciales;
     }
 
-    public void setMembrete(String membrete) {
-        this.membrete = membrete;
+    public void setIniciales(String iniciales) {
+        this.iniciales = iniciales;
     }
 
     public String getFecha() {
@@ -119,6 +119,5 @@ public class voficio {
     }
 
    
-    
     
 }

@@ -21,7 +21,7 @@ public class frmoficios extends javax.swing.JInternalFrame {
 
     String fecha_inicial;
     String fecha_final;
-    int idoficios;
+    int num_correlativo;
 
     /**
      * Creates new form frmoficios
@@ -79,6 +79,10 @@ public class frmoficios extends javax.swing.JInternalFrame {
             txtcuerpo.requestFocus();
             return;
         }
+        if (txtiniciales.getText().length() == 0) {
+            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar los iniciales del trabajador que realizo el documento");
+            txtiniciales.requestFocus();
+        }
 
         voficio dts = new voficio();
         foficios func = new foficios();
@@ -90,19 +94,19 @@ public class frmoficios extends javax.swing.JInternalFrame {
         dts.setAtencion(txtatencion.getText());
         dts.setAsunto(txtasunto.getText());
         dts.setCuerpo(txtcuerpo.getText());
-        dts.setMembrete(txtmembrete.getText());
+        dts.setIniciales(txtiniciales.getText());
         dts.setFecha(lblfecha_registro.getText());
 
         if (accion.equals("guardar")) {
             if (func.insertar(dts)) {
-                JOptionPane.showConfirmDialog(rootPane, "El Registro fue ingresado satisfactoriamente");
+                JOptionPane.showMessageDialog(rootPane, "El Registro fue ingresado satisfactoriamente");
                 mostrar("");
                 inhabilitar();
             }
         } else if (accion.equals("editar")) {
             dts.setIdoficios(Integer.parseInt(txtidoficios.getText()));
             if (func.editar(dts)) {
-                JOptionPane.showConfirmDialog(rootPane, "El Registro fue editaro satisfactoriamente");
+                JOptionPane.showMessageDialog(rootPane, "El Registro fue editaro satisfactoriamente");
                 mostrar("");
                 inhabilitar();
             }
@@ -156,7 +160,7 @@ public class frmoficios extends javax.swing.JInternalFrame {
         txtasunto.setEnabled(false);
         txtcuerpo.setEnabled(false);
         lblfecha_registro.setEnabled(false);
-        txtmembrete.setEnabled(false);
+        txtiniciales.setEnabled(false);
         lblnombre_apellido_trab.setEnabled(false);
 
         btnguardar.setEnabled(false);
@@ -172,7 +176,7 @@ public class frmoficios extends javax.swing.JInternalFrame {
         txtatencion.setText("");
         txtasunto.setText("");
         txtcuerpo.setText("");
-        txtmembrete.setText("");
+        txtiniciales.setText("");
         lblfecha_registro.setText("");
 
     }
@@ -188,7 +192,7 @@ public class frmoficios extends javax.swing.JInternalFrame {
         txtasunto.setEnabled(true);
         txtcuerpo.setEnabled(true);
         lblfecha_registro.setEnabled(true);
-        txtmembrete.setEnabled(true);
+        txtiniciales.setEnabled(true);
         lblnombre_apellido_trab.setEnabled(true);
 
         btnguardar.setEnabled(true);
@@ -204,7 +208,7 @@ public class frmoficios extends javax.swing.JInternalFrame {
         txtatencion.setText("");
         txtasunto.setText("");
         txtcuerpo.setText("");
-        txtmembrete.setText("");
+        txtiniciales.setText("");
         lblfecha_registro.setText("");
     }
 
@@ -244,7 +248,7 @@ public class frmoficios extends javax.swing.JInternalFrame {
         btntrabajador = new javax.swing.JButton();
         lblnombre_apellido_trab = new javax.swing.JLabel();
         lblfecha_registro = new javax.swing.JLabel();
-        txtmembrete = new javax.swing.JTextField();
+        txtiniciales = new javax.swing.JTextField();
         txtatencion = new javax.swing.JTextField();
         txtasunto = new javax.swing.JTextField();
         btnnuevo = new javax.swing.JButton();
@@ -299,8 +303,8 @@ public class frmoficios extends javax.swing.JInternalFrame {
         lblfecha_registro.setBackground(new java.awt.Color(158, 178, 193));
         lblfecha_registro.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fecha de Registro:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 11))); // NOI18N
 
-        txtmembrete.setBackground(new java.awt.Color(158, 178, 193));
-        txtmembrete.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Iniciales:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 11))); // NOI18N
+        txtiniciales.setBackground(new java.awt.Color(158, 178, 193));
+        txtiniciales.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Iniciales:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 11))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -310,7 +314,7 @@ public class frmoficios extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(txtmembrete, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtiniciales, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblfecha_registro, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -328,7 +332,7 @@ public class frmoficios extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblfecha_registro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtmembrete, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)))
+                    .addComponent(txtiniciales, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)))
         );
 
         txtatencion.setBackground(new java.awt.Color(158, 178, 193));
@@ -585,11 +589,11 @@ public class frmoficios extends javax.swing.JInternalFrame {
         txtatencion.setText(tablalistado.getValueAt(fila, 6).toString());
         txtasunto.setText(tablalistado.getValueAt(fila, 7).toString());
         txtcuerpo.setText(tablalistado.getValueAt(fila, 8).toString());
-        txtmembrete.setText(tablalistado.getValueAt(fila, 9).toString());
+        txtiniciales.setText(tablalistado.getValueAt(fila, 9).toString());
         lblfecha_registro.setText(tablalistado.getValueAt(fila, 10).toString());
         fecha_inicial = lblfecha_registro.getText();
         fecha_final = lblfecha_registro.getText();
-        idoficios = Integer.parseInt(txtidoficios.getText());
+        num_correlativo = Integer.parseInt(txtnum_correlativo.getText());
     }//GEN-LAST:event_tablalistadoMouseClicked
 
     private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
@@ -632,7 +636,7 @@ public class frmoficios extends javax.swing.JInternalFrame {
 
     private void btnimprimir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnimprimir1ActionPerformed
         imprimir_oficios gw = new imprimir_oficios();
-        gw.reportePacientes(idoficios);
+        gw.reportePacientes(num_correlativo);
     }//GEN-LAST:event_btnimprimir1ActionPerformed
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -667,7 +671,7 @@ public class frmoficios extends javax.swing.JInternalFrame {
     private javax.swing.JTextArea txtcuerpo;
     private javax.swing.JTextField txtidoficios;
     public static javax.swing.JTextField txtidtrabajador;
-    private javax.swing.JTextField txtmembrete;
+    private javax.swing.JTextField txtiniciales;
     private javax.swing.JTextField txtnum_correlativo;
     private javax.swing.JTextField txtreceptor;
     // End of variables declaration//GEN-END:variables
