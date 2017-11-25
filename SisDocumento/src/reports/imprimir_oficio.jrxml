@@ -42,10 +42,6 @@
 				<textElement/>
 				<text><![CDATA["Año del buen Servicio al Ciudadano"]]></text>
 			</staticText>
-			<image>
-				<reportElement x="16" y="23" width="333" height="38"/>
-				<imageExpression class="java.lang.String"><![CDATA["C:\\Users\\ycondori\\Documents\\GitHub\\SistemaDoc\\SisDocumento\\build\\classes\\Files\\cintillooficial.jpg"]]></imageExpression>
-			</image>
 		</band>
 	</title>
 	<pageHeader>

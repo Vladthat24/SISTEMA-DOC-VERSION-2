@@ -249,10 +249,7 @@ public class frminicio extends javax.swing.JFrame {
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
-        Acercade form = new Acercade();
-        escritorio.add(form);
-        form.toFront();
-        form.setVisible(true);
+    
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void mnusalirKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mnusalirKeyPressed
