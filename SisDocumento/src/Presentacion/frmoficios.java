@@ -30,6 +30,8 @@ public class frmoficios extends javax.swing.JInternalFrame {
         initComponents();
         mostrar("");
         inhabilitar();
+        txtcuerpo.setLineWrap(true);
+        txtcuerpo.setWrapStyleWord(true);
     }
 
     void fecha_actual() {
