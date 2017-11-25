@@ -64,34 +64,33 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
 
         vasistenciales dts = new vasistenciales();
         fasistenciales func = new fasistenciales();
-        
-        
+
         dts.setNombre(txtnombre.getText());
         dts.setApellidos(txtapellidos.getText());
         dts.setCargo_institucion(txtcargo_institucion.getText());
         dts.setModalidad_contrato(txtmodalidad_contrato.getText());
-        int seleccionado= cbocolegiatura.getSelectedIndex();
+        int seleccionado = cbocolegiatura.getSelectedIndex();
         dts.setColegiatura((String) cbocolegiatura.getItemAt(seleccionado));
         dts.setNum_colegiatura(txtnum_colegiatura.getText());
-        seleccionado= cboprofesion.getSelectedIndex();
+        seleccionado = cboprofesion.getSelectedIndex();
         dts.setProfesion((String) cboprofesion.getItemAt(seleccionado));
-        seleccionado= cbotipo_doc.getSelectedIndex();
+        seleccionado = cbotipo_doc.getSelectedIndex();
         dts.setTipo_documento((String) cbotipo_doc.getItemAt(seleccionado));
         dts.setNum_documento(txtnum_doc.getText());
         dts.setCelular(txtcelular.getText());
         dts.setFecha_registro(lblfecha_registro.getText());
         dts.setEmail(txtemail.getText());
-        
-        if(accion.equals("guardar")){
-            if(func.insertar(dts)){
+
+        if (accion.equals("guardar")) {
+            if (func.insertar(dts)) {
                 JOptionPane.showMessageDialog(rootPane, "El Registro fue ingresado exitosamente");
                 mostrar("");
                 inhabilitar();
                 chekcolegiatura.setSelected(false);
             }
-        }else if(accion.equals("editar")){
+        } else if (accion.equals("editar")) {
             dts.setIdasistenciales(Integer.parseInt(txtidasistenciales.getText()));
-            if(func.editar(dts)){
+            if (func.editar(dts)) {
                 JOptionPane.showConfirmDialog(rootPane, "El Registro fue editado exitosamente");
                 mostrar("");
                 inhabilitar();
@@ -148,6 +147,8 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
         btnguardar.setEnabled(false);
         btnbuscar.setEnabled(false);
         btneliminar.setEnabled(false);
+        btnimpresora.setEnabled(false);
+        btnreportes.setEnabled(false);
 
         lbltotalregistros.setEnabled(false);
 
@@ -182,6 +183,8 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
         btnguardar.setEnabled(true);
         btnbuscar.setEnabled(true);
         btneliminar.setEnabled(true);
+        btnimpresora.setEnabled(true);
+        btnreportes.setEnabled(true);
 
         lbltotalregistros.setEnabled(true);
 
@@ -572,7 +575,7 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         habilitar();
         btnguardar.setText("Guardar");
-        accion="guardar";
+        accion = "guardar";
         chekcolegiatura.setSelected(false);
         seleccionColegiatura();
         fecha_actual();
@@ -581,7 +584,7 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
     private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
         // TODO add your handling code here:
         guardar();
-        
+
     }//GEN-LAST:event_btnguardarActionPerformed
 
     private void tablalistadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablalistadoMouseClicked
@@ -589,9 +592,9 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
         btnguardar.setText("Editar");
         habilitar();
         btneliminar.setEnabled(true);
-        accion="editar";
-        int fila=tablalistado.rowAtPoint(evt.getPoint());
-        
+        accion = "editar";
+        int fila = tablalistado.rowAtPoint(evt.getPoint());
+
         txtidasistenciales.setText(tablalistado.getValueAt(fila, 0).toString());
         txtnombre.setText(tablalistado.getValueAt(fila, 1).toString());
         txtapellidos.setText(tablalistado.getValueAt(fila, 2).toString());
@@ -610,7 +613,7 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
         // TODO add your handling code here:
         String dni;
-        dni=JOptionPane.showInputDialog("Ingrese el nombre, apellido,cargo,dni");
+        dni = JOptionPane.showInputDialog("Ingrese el nombre, apellido,cargo,dni");
         mostrar(dni);
     }//GEN-LAST:event_btnbuscarActionPerformed
 
@@ -621,12 +624,12 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
         // TODO add your handling code here:
-        if(!txtidasistenciales.getText().equals("")){
-            int confirmacion=JOptionPane.showConfirmDialog(rootPane,"Estas seguro de eliminarlo");
-            if(confirmacion==0){
-                fasistenciales func= new fasistenciales();
-                vasistenciales dts= new vasistenciales();
-                
+        if (!txtidasistenciales.getText().equals("")) {
+            int confirmacion = JOptionPane.showConfirmDialog(rootPane, "Estas seguro de eliminarlo");
+            if (confirmacion == 0) {
+                fasistenciales func = new fasistenciales();
+                vasistenciales dts = new vasistenciales();
+
                 dts.setIdasistenciales(Integer.parseInt(txtidasistenciales.getText()));
                 func.eliminar(dts);
                 mostrar("");

@@ -436,7 +436,7 @@
                   <Component id="jScrollPane2" min="-2" pref="519" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="btnimprimir1" alignment="0" max="32767" attributes="0"/>
+                      <Component id="btnimprimir" alignment="0" max="32767" attributes="0"/>
                       <Component id="btneliminar" alignment="0" max="32767" attributes="0"/>
                       <Component id="btnbuscar" alignment="0" min="-2" pref="43" max="-2" attributes="0"/>
                       <Component id="btnreportes" max="32767" attributes="0"/>
@@ -460,7 +460,7 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="btneliminar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="btnimprimir1" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnimprimir" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="btnreportes" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -563,7 +563,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btnimprimir1">
+        <Component class="javax.swing.JButton" name="btnimprimir">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Files/impresora.png"/>
@@ -575,7 +575,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnimprimir1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnimprimirActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

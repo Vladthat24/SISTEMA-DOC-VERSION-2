@@ -21,7 +21,7 @@ public class frminicio extends javax.swing.JFrame {
         initComponents();
         lblidacceso.setVisible(false);
         this.setExtendedState(frminicio.MAXIMIZED_BOTH);
-        this.setTitle(".::SAPT/DRS SJM - VMT::.");
+        this.setTitle(".:: C.M.I. Daniel Alcides Carrion - Sistema de Gestion de Documento ::.");
 //        setIconImage(new ImageIcon(getClass().getResource("../Files/icodeinicio")).getImage());
     }
 

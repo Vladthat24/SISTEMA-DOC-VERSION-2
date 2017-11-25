@@ -183,7 +183,8 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
         btnbuscar.setEnabled(false);
         btneliminar.setEnabled(false);
         btnasistencial.setEnabled(false);
-
+        btnimpresora.setEnabled(false);
+        btnreporte.setEnabled(false);
         lbltotalregistros.setEnabled(false);
 
         lblnombre_apellidos_asisten.setText("");
@@ -217,6 +218,9 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
         btnbuscar.setEnabled(true);
         btneliminar.setEnabled(true);
         btnasistencial.setEnabled(true);
+
+        btnimpresora.setEnabled(true);
+        btnreporte.setEnabled(true);
 
         lbltotalregistros.setEnabled(true);
 

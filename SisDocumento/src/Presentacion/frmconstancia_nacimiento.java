@@ -88,7 +88,6 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
         vconstancia_nacimiento dts = new vconstancia_nacimiento();
         fconstancia_nacimiento func = new fconstancia_nacimiento();
 
-
         dts.setIdasistenciales(Integer.parseInt(txtidasistenciales.getText()));
         dts.setCorrelativo_constancia(txtcorrelativo.getText());
         dts.setNombre(txtnombre.getText());
@@ -210,7 +209,8 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
         btnbuscar.setEnabled(false);
         btneliminar.setEnabled(false);
         btnasistencial.setEnabled(false);
-
+        btnimprimir.setEnabled(false);
+        btnreportes.setEnabled(false);
         lbltotalregistros.setEnabled(false);
 
         txtcorrelativo.setText("");
@@ -256,6 +256,8 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
         btnbuscar.setEnabled(true);
         btneliminar.setEnabled(true);
         btnasistencial.setEnabled(true);
+        btnimprimir.setEnabled(true);
+        btnreportes.setEnabled(true);
 
         lbltotalregistros.setEnabled(true);
 

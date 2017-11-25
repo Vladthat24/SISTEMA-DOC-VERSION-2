@@ -36,8 +36,30 @@ public class frmoficios extends javax.swing.JInternalFrame {
         Calendar today = Calendar.getInstance();
         int fhoy_dia = today.get(Calendar.DAY_OF_MONTH);
         int fhoy_mes = today.get(Calendar.MONTH) + 1;
+        String mes = null;
+        if (fhoy_mes == 01) {
+            mes = "Enero";
+        } else if (fhoy_mes == 02) {
+            mes = "Febreso";
+        } else if (fhoy_mes == 03) {
+            mes = "Marzo";
+        } else if (fhoy_mes == 04) {
+            mes = "Abril";
+        } else if (fhoy_mes == 05) {
+            mes = "Mayo";
+        } else if (fhoy_mes == 06) {
+            mes = "Junio";
+        } else if (fhoy_mes == 07) {
+            mes = "Julio";
+        } else if (fhoy_mes == 10) {
+            mes = "Octubre";
+        } else if (fhoy_mes == 11) {
+            mes = "Noviembre";
+        } else if (fhoy_mes == 12) {
+            mes = "Diciembre";
+        }
         int fhoy_year = today.get(Calendar.YEAR);
-        lblfecha_registro.setText(fhoy_dia + "/" + fhoy_mes + "/" + fhoy_year);
+        lblfecha_registro.setText(fhoy_dia + " de " + mes + " del " + fhoy_year);
     }
 
     private String accion = "guardar";
@@ -168,6 +190,8 @@ public class frmoficios extends javax.swing.JInternalFrame {
         btneliminar.setEnabled(false);
         btnreportes.setEnabled(false);
         btntrabajador.setEnabled(false);
+        btnimprimir.setEnabled(false);
+        btnreportes.setEnabled(false);
 
         txtnum_correlativo.setText("");
         txtreceptor.setText("");
@@ -200,10 +224,12 @@ public class frmoficios extends javax.swing.JInternalFrame {
         btneliminar.setEnabled(true);
         btnreportes.setEnabled(true);
         btntrabajador.setEnabled(true);
+        btnimprimir.setEnabled(true);
+        btnreportes.setEnabled(true);
 
         txtnum_correlativo.setText("");
-        txtreceptor.setText("");
-        txtcargo_receptor.setText("");
+        txtreceptor.setText("M.C.OLIVERA CARHUALLANQUI HUBERT");
+        txtcargo_receptor.setText("Medico Jefe de la Administracion de la DRS SJM-VMT");
         lblnombre_apellido_trab.setText("");
         txtatencion.setText("");
         txtasunto.setText("");
@@ -262,7 +288,7 @@ public class frmoficios extends javax.swing.JInternalFrame {
         btneliminar = new javax.swing.JButton();
         btnreportes = new javax.swing.JButton();
         lbltotalregistro = new javax.swing.JLabel();
-        btnimprimir1 = new javax.swing.JButton();
+        btnimprimir = new javax.swing.JButton();
 
         setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -493,11 +519,11 @@ public class frmoficios extends javax.swing.JInternalFrame {
         lbltotalregistro.setBackground(new java.awt.Color(65, 191, 187));
         lbltotalregistro.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registro : ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 11))); // NOI18N
 
-        btnimprimir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/impresora.png"))); // NOI18N
-        btnimprimir1.setBorder(new javax.swing.border.MatteBorder(null));
-        btnimprimir1.addActionListener(new java.awt.event.ActionListener() {
+        btnimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/impresora.png"))); // NOI18N
+        btnimprimir.setBorder(new javax.swing.border.MatteBorder(null));
+        btnimprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnimprimir1ActionPerformed(evt);
+                btnimprimirActionPerformed(evt);
             }
         });
 
@@ -510,7 +536,7 @@ public class frmoficios extends javax.swing.JInternalFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnimprimir1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnimprimir, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btneliminar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnbuscar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnreportes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -530,7 +556,7 @@ public class frmoficios extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btneliminar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnimprimir1)
+                        .addComponent(btnimprimir)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnreportes)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -639,10 +665,10 @@ public class frmoficios extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnreportesActionPerformed
 
 
-    private void btnimprimir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnimprimir1ActionPerformed
+    private void btnimprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnimprimirActionPerformed
         imprimir_oficios gw = new imprimir_oficios();
         gw.reportePacientes(num_correlativo);
-    }//GEN-LAST:event_btnimprimir1ActionPerformed
+    }//GEN-LAST:event_btnimprimirActionPerformed
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -656,7 +682,7 @@ public class frmoficios extends javax.swing.JInternalFrame {
     private javax.swing.JButton btneliminar;
     private javax.swing.ButtonGroup btngroup_registro;
     private javax.swing.JButton btnguardar;
-    private javax.swing.JButton btnimprimir1;
+    private javax.swing.JButton btnimprimir;
     private javax.swing.JButton btnnuevo;
     private javax.swing.JButton btnreportes;
     private javax.swing.JButton btntrabajador;
