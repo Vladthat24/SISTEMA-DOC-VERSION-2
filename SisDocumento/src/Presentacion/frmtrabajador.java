@@ -182,6 +182,7 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
         setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setIconifiable(true);
+        setTitle("C.M.I. Daniel Alcides Carrion - Sistema de Gestion de Documento");
 
         jPanel1.setBackground(new java.awt.Color(158, 179, 193));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Registro de Trabajador"));

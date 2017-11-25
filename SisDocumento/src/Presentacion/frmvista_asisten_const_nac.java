@@ -83,6 +83,7 @@ public class frmvista_asisten_const_nac extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("C.M.I. Daniel Alcides Carrion - Sistema de Gestion de Documento");
         setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(90, 173, 167));
@@ -163,7 +164,7 @@ public class frmvista_asisten_const_nac extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 787, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 787, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(

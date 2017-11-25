@@ -62,6 +62,7 @@ public class frmvistatrabajador extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("C.M.I. Daniel Alcides Carrion - Sistema de Gestion de Documento");
         setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(90, 173, 167));

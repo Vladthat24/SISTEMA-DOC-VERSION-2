@@ -125,6 +125,8 @@ public class frmrecepciondoc extends javax.swing.JInternalFrame {
         btnbuscar.setEnabled(false);
         btneliminar.setEnabled(false);
         btntrabajador.setEnabled(false);
+        
+        lbltotalregistros.setEnabled(false);
 
         txtcorrelativo.setText("");
         txtreferencia.setText("");
@@ -151,6 +153,8 @@ public class frmrecepciondoc extends javax.swing.JInternalFrame {
         btnbuscar.setEnabled(true);
         btneliminar.setEnabled(true);
         btntrabajador.setEnabled(true);
+        
+        lbltotalregistros.setEnabled(true);
 
         txtcorrelativo.setText("");
         txtreferencia.setText("");

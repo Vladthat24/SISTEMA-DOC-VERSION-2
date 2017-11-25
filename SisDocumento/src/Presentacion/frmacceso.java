@@ -52,7 +52,9 @@ public class frmacceso extends javax.swing.JInternalFrame {
         txtpassword.setEnabled(false);
 
         cboacceso.setEnabled(false);
-
+        
+        lbltotalregistro.setEnabled(false);
+        
         btnbuscar.setEnabled(false);
         btneliminar.setEnabled(false);
         btnguardar.setEnabled(false);
@@ -73,6 +75,8 @@ public class frmacceso extends javax.swing.JInternalFrame {
         txtpassword.setEnabled(true);
 
         cboacceso.setEnabled(true);
+        
+        lbltotalregistro.setEnabled(true);
 
         btnbuscar.setEnabled(true);
         btneliminar.setEnabled(true);
@@ -149,7 +153,7 @@ public class frmacceso extends javax.swing.JInternalFrame {
         setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setIconifiable(true);
-        setTitle("DRS SJM - VMT / Area de Informatica ");
+        setTitle("C.M.I. Daniel Alcides Carrion - Sistema de Gestion de Documento");
 
         jPanel1.setBackground(new java.awt.Color(158, 178, 193));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Registro de Acceso"));
@@ -363,16 +367,18 @@ public class frmacceso extends javax.swing.JInternalFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btneliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnimprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbltotalregistro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnimprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addComponent(lbltotalregistro, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jLabel5.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
