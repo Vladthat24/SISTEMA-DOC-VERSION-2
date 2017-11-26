@@ -102,7 +102,7 @@ public class frminforme_medico extends javax.swing.JInternalFrame {
         vinforme_medico dts = new vinforme_medico();
         finforme_medico func = new finforme_medico();
 
-        dts.setIdasistenciales(Integer.parseInt(txtidasistenciales.getText()));
+        dts.setIdiasistenciales(Integer.parseInt(txtidasistenciales.getText()));
         dts.setCorrelativo_informemedico(txtcorrelativo.getText());
         dts.setNombre_paciente(txtnombre.getText());
         dts.setApellidos_paciente(txtapellidos.getText());

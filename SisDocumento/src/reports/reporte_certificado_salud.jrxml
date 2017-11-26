@@ -10,10 +10,10 @@
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[select idcertificado_salud, idasistenciales, (select nombre from asistenciales where idasistenciales=idasistenciales)as nombre_asisten,(select apellidos from asistenciales where idasistenciales=idasistenciales)as apellidos_asisten,nombre,apellidos,edad,tipo_doc,num_doc,direccion,serelogia,examen_rx,fecha_registro from certificado_salud where fecha_registro between $P{fecha_inicial} and $P{fecha_final};]]>
+		<![CDATA[select idcertificado_salud, idcerasistenciales, (select nombre from asistenciales where idasistenciales=idasistenciales)as nombre_asisten,(select apellidos from asistenciales where idasistenciales=idasistenciales)as apellidos_asisten,nombre,apellidos,edad,tipo_doc,num_doc,direccion,serelogia,examen_rx,fecha_registro from certificado_salud where fecha_registro between $P{fecha_inicial} and $P{fecha_final};]]>
 	</queryString>
 	<field name="idcertificado_salud" class="java.lang.Integer"/>
-	<field name="idasistenciales" class="java.lang.Integer"/>
+	<field name="idcerasistenciales" class="java.lang.Integer"/>
 	<field name="nombre_asisten" class="java.lang.String"/>
 	<field name="apellidos_asisten" class="java.lang.String"/>
 	<field name="nombre" class="java.lang.String"/>

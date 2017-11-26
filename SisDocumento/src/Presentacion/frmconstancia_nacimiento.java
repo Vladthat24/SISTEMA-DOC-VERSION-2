@@ -13,6 +13,8 @@ import java.sql.Date;
 import java.util.Calendar;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import reports.imprimir_certificado_salud;
+import reports.imprimir_constancia_nacimiento;
 
 /**
  *
@@ -23,6 +25,7 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
     /**
      * Creates new form frmreg_asistenciales
      */
+    int num_doc;
     public frmconstancia_nacimiento() {
         initComponents();
         mostrar("");
@@ -84,11 +87,15 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
             JOptionPane.showConfirmDialog(rootPane, "Debes ingresar la direccion");
             txtdireccion.requestFocus();
         }
+        if (txtiniciales.getText().length() == 0) {
+            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar las iniciales del trabajador que realizo el documento");
+            txtiniciales.requestFocus();
+        }
 
         vconstancia_nacimiento dts = new vconstancia_nacimiento();
         fconstancia_nacimiento func = new fconstancia_nacimiento();
 
-        dts.setIdasistenciales(Integer.parseInt(txtidasistenciales.getText()));
+        dts.setIdcasistenciales(Integer.parseInt(txtidasistenciales.getText()));
         dts.setCorrelativo_constancia(txtcorrelativo.getText());
         dts.setNombre(txtnombre.getText());
         dts.setApellidos(txtapellidos.getText());
@@ -113,6 +120,8 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
         dts.setNum_doc_nacido(txtnum_doc_nacido.getText());
         dts.setFecha_nacimiento_letra(lblfecha_nacimiento_doc.getText());
         dts.setFecha_registro(lblfecha_registro.getText());
+        dts.setIniciales(txtiniciales.getText());
+
         if (accion.equals("guardar")) {
             if (func.insertar(dts)) {
                 JOptionPane.showMessageDialog(rootPane, "El Registro fue ingresado exitosamente");
@@ -181,6 +190,10 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
         tablalistado.getColumnModel().getColumn(19).setMinWidth(0);
         tablalistado.getColumnModel().getColumn(19).setPreferredWidth(0);
 
+        tablalistado.getColumnModel().getColumn(20).setMaxWidth(0);
+        tablalistado.getColumnModel().getColumn(20).setMinWidth(0);
+        tablalistado.getColumnModel().getColumn(20).setPreferredWidth(0);
+
     }
 
     void inhabilitar() {
@@ -204,6 +217,7 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
         txtnum_historia.setEnabled(false);
         txtdireccion.setEnabled(false);
         lblfecha_registro.setEnabled(false);
+        txtiniciales.setEnabled(false);
 
         btnguardar.setEnabled(false);
         btnbuscar.setEnabled(false);
@@ -251,6 +265,7 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
         txtnum_historia.setEnabled(true);
         txtdireccion.setEnabled(true);
         lblfecha_registro.setEnabled(true);
+        txtiniciales.setEnabled(true);
 
         btnguardar.setEnabled(true);
         btnbuscar.setEnabled(true);
@@ -336,6 +351,7 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
         lblcolegiatura_asisten = new javax.swing.JLabel();
         btnasistencial = new javax.swing.JButton();
         txtidconstancia_nacimiento = new javax.swing.JTextField();
+        txtiniciales = new javax.swing.JTextField();
         lbltitulo = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -466,7 +482,7 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtnum_historia, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtnum_doc_nacido, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(24, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -520,6 +536,14 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
 
         txtidconstancia_nacimiento.setText("jTextField1");
 
+        txtiniciales.setBackground(new java.awt.Color(158, 179, 193));
+        txtiniciales.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Iniciales:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtiniciales.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtinicialesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -527,17 +551,6 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblfecha_nacimiento_doc, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(79, 79, 79)
-                        .addComponent(btnnuevo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnguardar)
-                        .addGap(29, 29, 29)
-                        .addComponent(txtidasistenciales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(txtidconstancia_nacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -554,9 +567,27 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
                                 .addComponent(txtnombre)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtapellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtdireccion, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addContainerGap())))
+                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblfecha_nacimiento_doc, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(79, 79, 79)
+                                .addComponent(btnnuevo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnguardar)
+                                .addGap(42, 42, 42))
+                            .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtidasistenciales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28)
+                                .addComponent(txtidconstancia_nacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(78, 78, 78))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtiniciales, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -567,9 +598,9 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
                         .addComponent(btnasistencial, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblfecha_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtcorrelativo, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblfecha_registro, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                            .addComponent(txtcorrelativo))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblnombre_apellidos_asisten, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -580,18 +611,20 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
                     .addComponent(txtapellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtiniciales, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(11, 11, 11)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblfecha_nacimiento_doc, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(btnnuevo)
                                 .addComponent(btnguardar))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
+                        .addGap(98, 98, 98)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtidconstancia_nacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtidasistenciales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -762,6 +795,9 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
         txtnum_doc_nacido.setText(tablalistado.getValueAt(fila, 16).toString());
         lblfecha_nacimiento_doc.setText(tablalistado.getValueAt(fila, 17).toString());
         lblfecha_registro.setText(tablalistado.getValueAt(fila, 18).toString());
+        txtiniciales.setText(tablalistado.getValueAt(fila, 19).toString());
+        
+        num_doc=Integer.parseInt(txtnum_doc.getText());
     }//GEN-LAST:event_tablalistadoMouseClicked
 
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
@@ -855,9 +891,13 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnreportesActionPerformed
 
     private void btnimprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnimprimirActionPerformed
-//        imprimir_oficios gw = new imprimir_oficios();
-//        gw.reportePacientes(num_correlativo);
+        imprimir_constancia_nacimiento gw = new imprimir_constancia_nacimiento();
+        gw.reportePacientes(num_doc);
     }//GEN-LAST:event_btnimprimirActionPerformed
+
+    private void txtinicialesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtinicialesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtinicialesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -925,6 +965,7 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txthora_nacimiento;
     public static javax.swing.JTextField txtidasistenciales;
     private javax.swing.JTextField txtidconstancia_nacimiento;
+    private javax.swing.JTextField txtiniciales;
     private javax.swing.JTextField txtnombre;
     private javax.swing.JTextField txtnum_doc;
     private javax.swing.JTextField txtnum_doc_nacido;

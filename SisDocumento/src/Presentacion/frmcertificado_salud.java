@@ -104,7 +104,7 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
         vcertificado_salud dts = new vcertificado_salud();
         fcertificado_salud func = new fcertificado_salud();
 
-        dts.setIdasistenciales(Integer.parseInt(txtidasistenciales.getText()));
+        dts.setIdcerasistenciales(Integer.parseInt(txtidasistenciales.getText()));
         dts.setNombre(txtnombre.getText());
         dts.setApellidos(txtapellidos.getText());
         dts.setEdad(txtedad.getText());

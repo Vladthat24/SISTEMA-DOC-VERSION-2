@@ -39,7 +39,7 @@ public class imprimir_oficios {
            
             print= JasperFillManager.fillReport(report, p,connection);
             JasperViewer view= new JasperViewer(print,false);
-            view.setTitle("ficha de paciente");
+            view.setTitle("C.M.I. Daniel Alcides Carrion");
             view.setVisible(true);
             
         } catch (Exception e) {

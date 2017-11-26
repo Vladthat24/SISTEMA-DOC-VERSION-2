@@ -25,7 +25,7 @@ import org.apache.commons.collections.map.HashedMap;
  */
 
 
-public class imprimir_certificado_salud {
+public class imprimir_constancia_nacimiento {
     public Connection connection= new conexion().conectar();
     public void reportePacientes(int num_doc){
         Map p = new HashedMap();
@@ -34,7 +34,7 @@ public class imprimir_certificado_salud {
         try {
 
             report=JasperCompileManager.compileReport(new File("").getAbsolutePath()+
-                    "/src/reports/imprimir_certificado_salud.jrxml");
+                    "/src/reports/imprimir_constancia_nacimiento.jrxml");
             p.put("num_doc", num_doc);
            
             print= JasperFillManager.fillReport(report, p,connection);

@@ -11,7 +11,7 @@ package Datos;
  */
 public class vinforme_medico {
     private int idinforme_medico;
-    private int idasistenciales;
+    private int idiasistenciales;
     private String correlativo_informemedico;
     private String nombre_paciente;
     private String apellidos_paciente;
@@ -27,9 +27,9 @@ public class vinforme_medico {
     public vinforme_medico() {
     }
 
-    public vinforme_medico(int idinforme_medico, int idasistenciales, String correlativo_informemedico, String nombre_paciente, String apellidos_paciente, String historia_clinica, String direccion, String sexo, String edad, String tipo_documento, String num_documento, String fecha_registro, String diagnostico) {
+    public vinforme_medico(int idinforme_medico, int idiasistenciales, String correlativo_informemedico, String nombre_paciente, String apellidos_paciente, String historia_clinica, String direccion, String sexo, String edad, String tipo_documento, String num_documento, String fecha_registro, String diagnostico) {
         this.idinforme_medico = idinforme_medico;
-        this.idasistenciales = idasistenciales;
+        this.idiasistenciales = idiasistenciales;
         this.correlativo_informemedico = correlativo_informemedico;
         this.nombre_paciente = nombre_paciente;
         this.apellidos_paciente = apellidos_paciente;
@@ -51,12 +51,12 @@ public class vinforme_medico {
         this.idinforme_medico = idinforme_medico;
     }
 
-    public int getIdasistenciales() {
-        return idasistenciales;
+    public int getIdiasistenciales() {
+        return idiasistenciales;
     }
 
-    public void setIdasistenciales(int idasistenciales) {
-        this.idasistenciales = idasistenciales;
+    public void setIdiasistenciales(int idiasistenciales) {
+        this.idiasistenciales = idiasistenciales;
     }
 
     public String getCorrelativo_informemedico() {
@@ -147,6 +147,5 @@ public class vinforme_medico {
         this.diagnostico = diagnostico;
     }
 
-    
-    
+   
 }

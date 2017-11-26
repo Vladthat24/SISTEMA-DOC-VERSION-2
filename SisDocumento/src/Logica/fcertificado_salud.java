@@ -35,8 +35,8 @@ public class fcertificado_salud {
 
         totalregistros = 0;
         modelo = new DefaultTableModel(null, titulos);
-        sql = "select idcertificado_salud, idasistenciales, (select nombre from asistenciales where idasistenciales=idasistenciales)as nombre_asisten,"
-                + "(select apellidos from asistenciales where idasistenciales=idasistenciales)as apellidos_asisten,"
+        sql = "select idcertificado_salud, idcerasistenciales, (select nombre from asistenciales where idasistenciales=idcerasistenciales)as nombre_asisten,"
+                + "(select apellidos from asistenciales where idasistenciales=idcerasistenciales)as apellidos_asisten,"
                 + "nombre,apellidos,edad,tipo_doc,num_doc,direccion,serelogia,examen_rx,fecha_registro from certificado_salud where num_doc like '%" + buscar + "%' order by idcertificado_salud desc";
 
         try {
@@ -45,7 +45,7 @@ public class fcertificado_salud {
 
             while (rs.next()) {
                 registro[0] = rs.getString("idcertificado_salud");
-                registro[1] = rs.getString("idasistenciales");
+                registro[1] = rs.getString("idcerasistenciales");
                 registro[2] = rs.getString("nombre_asisten") + "" + rs.getString("apellidos_asisten");
                 registro[3] = rs.getString("nombre");
                 registro[4] = rs.getString("apellidos");
@@ -70,14 +70,14 @@ public class fcertificado_salud {
     }
 
     public boolean insertar(vcertificado_salud dts) {
-        sql = "insert into certificado_salud (idcertificado_salud,idasistenciales,nombre,apellidos,edad,tipo_doc,num_doc,"
+        sql = "insert into certificado_salud (idcertificado_salud,idcerasistenciales,nombre,apellidos,edad,tipo_doc,num_doc,"
                 + "direccion,serelogia,examen_rx,fecha_registro)"
                 + "values (?,?,?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement pst = cn.prepareStatement(sql);
 
             pst.setInt(1, dts.getIdcertificado_salud());
-            pst.setInt(2, dts.getIdasistenciales());
+            pst.setInt(2, dts.getIdcerasistenciales());
             pst.setString(3, dts.getNombre());
             pst.setString(4, dts.getApellidos());
             pst.setString(5, dts.getEdad());
@@ -102,13 +102,13 @@ public class fcertificado_salud {
     }
 
     public boolean editar(vcertificado_salud dts) {
-        sql = "update certificado_salud set idcertificado_salud=?,idasistenciales=?,nombre=?,apellidos=?,edad=?,tipo_doc=?,num_doc=?,direccion=?,serelogia=?,examen_rx=?,fecha_registro=?";
+        sql = "update certificado_salud set idcertificado_salud=?,idcerasistenciales=?,nombre=?,apellidos=?,edad=?,tipo_doc=?,num_doc=?,direccion=?,serelogia=?,examen_rx=?,fecha_registro=?";
 
         try {
             PreparedStatement pst = cn.prepareStatement(sql);
 
             pst.setInt (1, dts.getIdcertificado_salud());
-            pst.setInt (2, dts.getIdasistenciales());
+            pst.setInt (2, dts.getIdcerasistenciales());
             pst.setString(3, dts.getNombre());
             pst.setString(4, dts.getApellidos());
             pst.setString(5, dts.getEdad());

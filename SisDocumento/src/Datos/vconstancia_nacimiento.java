@@ -14,7 +14,7 @@ import java.sql.Date;
 public class vconstancia_nacimiento {
     
     private int idconstancia_nacimiento;
-    private int idasistenciales;
+    private int idcasistenciales;
     private String correlativo_constancia;
     private String nombre;
     private String apellidos;
@@ -30,12 +30,15 @@ public class vconstancia_nacimiento {
     private String num_doc_nacido;
     private String fecha_nacimiento_letra;
     private String fecha_registro;
+    private String iniciales;
+    
+    
     public vconstancia_nacimiento() {
     }
 
-    public vconstancia_nacimiento(int idconstancia_nacimiento, int idasistenciales, String correlativo_constancia, String nombre, String apellidos, String tipo_doc, String num_doc, String direccion, String historia_clinica, String sexo, String peso, String talla, Date fecha_nacimiento, String hora_nacimiento, String num_doc_nacido, String fecha_nacimiento_letra, String fecha_registro) {
+    public vconstancia_nacimiento(int idconstancia_nacimiento, int idcasistenciales, String correlativo_constancia, String nombre, String apellidos, String tipo_doc, String num_doc, String direccion, String historia_clinica, String sexo, String peso, String talla, Date fecha_nacimiento, String hora_nacimiento, String num_doc_nacido, String fecha_nacimiento_letra, String fecha_registro, String iniciales) {
         this.idconstancia_nacimiento = idconstancia_nacimiento;
-        this.idasistenciales = idasistenciales;
+        this.idcasistenciales = idcasistenciales;
         this.correlativo_constancia = correlativo_constancia;
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -51,6 +54,7 @@ public class vconstancia_nacimiento {
         this.num_doc_nacido = num_doc_nacido;
         this.fecha_nacimiento_letra = fecha_nacimiento_letra;
         this.fecha_registro = fecha_registro;
+        this.iniciales = iniciales;
     }
 
     public int getIdconstancia_nacimiento() {
@@ -61,12 +65,12 @@ public class vconstancia_nacimiento {
         this.idconstancia_nacimiento = idconstancia_nacimiento;
     }
 
-    public int getIdasistenciales() {
-        return idasistenciales;
+    public int getIdcasistenciales() {
+        return idcasistenciales;
     }
 
-    public void setIdasistenciales(int idasistenciales) {
-        this.idasistenciales = idasistenciales;
+    public void setIdcasistenciales(int idcasistenciales) {
+        this.idcasistenciales = idcasistenciales;
     }
 
     public String getCorrelativo_constancia() {
@@ -189,5 +193,14 @@ public class vconstancia_nacimiento {
         this.fecha_registro = fecha_registro;
     }
 
- 
+    public String getIniciales() {
+        return iniciales;
+    }
+
+    public void setIniciales(String iniciales) {
+        this.iniciales = iniciales;
+    }
+
+   
+  
 }

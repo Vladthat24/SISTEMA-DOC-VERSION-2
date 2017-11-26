@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="num_doc" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select idconstancia_nacimiento,idcasistenciales,(select nombre from asistenciales where idasistenciales=idcasistenciales)as nombre_asisten,(select apellidos from asistenciales where idasistenciales=idcasistenciales)as apellidos_asisten,(select colegiatura from asistenciales where idasistenciales=idcasistenciales)as colegiatura_asisten,(select num_colegiatura from asistenciales where idasistenciales=idcasistenciales)as num_colegiatura_asisten,correlativo_constancia,nombre,apellidos,tipo_doc,num_doc,direccion,historia_clinica,sexo,peso,talla,fecha_nacimiento,hora_nacimiento,num_doc_nacido,fecha_nacimiento_letra,fecha_registro,iniciales from constancia_nacimiento where num_doc=$P{num_doc};]]>
+	</queryString>
+	<field name="idconstancia_nacimiento" class="java.lang.Integer"/>
+	<field name="idcasistenciales" class="java.lang.Integer"/>
+	<field name="nombre_asisten" class="java.lang.String"/>
+	<field name="apellidos_asisten" class="java.lang.String"/>
+	<field name="colegiatura_asisten" class="java.lang.String"/>
+	<field name="num_colegiatura_asisten" class="java.lang.String"/>
+	<field name="correlativo_constancia" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="apellidos" class="java.lang.String"/>
+	<field name="tipo_doc" class="java.lang.String"/>
+	<field name="num_doc" class="java.lang.String"/>
+	<field name="direccion" class="java.lang.String"/>
+	<field name="historia_clinica" class="java.lang.String"/>
+	<field name="sexo" class="java.lang.String"/>
+	<field name="peso" class="java.lang.String"/>
+	<field name="talla" class="java.lang.String"/>
+	<field name="fecha_nacimiento" class="java.sql.Date"/>
+	<field name="hora_nacimiento" class="java.lang.String"/>
+	<field name="num_doc_nacido" class="java.lang.String"/>
+	<field name="fecha_nacimiento_letra" class="java.lang.String"/>
+	<field name="fecha_registro" class="java.lang.String"/>
+	<field name="iniciales" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="20" y="16" width="333" height="38"/>
+				<imageExpression class="java.lang.String"><![CDATA["C:\\Users\\Desarrollo\\Documents\\GitHub\\SistemaDoc\\SisDocumento\\build\\classes\\Files\\cintillooficial.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="369" y="34" width="186" height="20"/>
+				<textElement/>
+				<text><![CDATA["Años del Buen Servicio al Ciudadano"]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="49" splitType="Stretch">
+			<staticText>
+				<reportElement x="136" y="0" width="286" height="23"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[CONSTANCIA DE NACIMIENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="23" width="24" height="24"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[N°]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="233" y="22" width="58" height="22"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{correlativo_constancia}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="282" y="23" width="71" height="24"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[- 2017]]></text>
+			</staticText>
+			<line>
+				<reportElement x="136" y="22" width="266" height="1"/>
+			</line>
+			<line>
+				<reportElement x="200" y="46" width="133" height="1"/>
+			</line>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="588" splitType="Stretch">
+			<staticText>
+				<reportElement x="36" y="30" width="160" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Se hace constar que la Sra.:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="195" y="30" width="96" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="273" y="30" width="139" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{apellidos}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="402" y="30" width="96" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[,Identificada con ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="493" y="30" width="27" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tipo_doc}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="35" y="50" width="20" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[N°]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="52" y="50" width="73" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{num_doc}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="104" y="50" width="96" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[, domicilio en]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="184" y="50" width="346" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="36" y="70" width="329" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[, del distrito de Villa Maria del Triunfo, con Hisoria Clinica N°]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="355" y="70" width="63" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{historia_clinica}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="35" y="91" width="238" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Daniel Alcides Carrión, a un niño(a) de sexo]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="277" y="91" width="74" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sexo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="333" y="91" width="20" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[de ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="353" y="91" width="55" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{peso}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="398" y="91" width="53" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[de peso y ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="455" y="91" width="48" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{talla}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="36" y="110" width="76" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[talla, el dia ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="101" y="111" width="152" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fecha_nacimiento_letra}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="248" y="111" width="54" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[,a horas:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="302" y="110" width="32" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{hora_nacimiento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="334" y="111" width="142" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[, atendida por la obstetra:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="36" y="131" width="96" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_asisten}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="76" y="131" width="96" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{apellidos_asisten}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="172" y="131" width="64" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{colegiatura_asisten}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="36" y="172" width="284" height="20"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Se expide el presente, a solicitud de la interesada.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="243" y="228" width="137" height="20"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Villa María del Triunfo,]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="369" y="228" width="141" height="20"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fecha_nacimiento_letra}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="312" y="315" width="41" height="20"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[D.N.I. N°]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="353" y="315" width="126" height="20"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{num_doc_nacido}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="33" y="526" width="55" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[C,c,Archivo]]></text>
+			</staticText>
+			<line>
+				<reportElement x="34" y="537" width="446" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="381" y="564" width="74" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Telefono: 4505684]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="541" width="99" height="12"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Av. Pachacutec N° 34701]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="553" width="100" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Villa Maria del Triunfo]]></text>
+			</staticText>
+			<line>
+				<reportElement x="367" y="541" width="1" height="42"/>
+			</line>
+			<staticText>
+				<reportElement x="247" y="544" width="120" height="20"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[e-mail: cmidac@hotmail.com]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="412" y="70" width="108" height="20"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[dio a luz en el C.M.I]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="503" y="90" width="17" height="20"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[de]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="163" y="130" width="9" height="20"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[ - ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="200" y="131" width="100" height="20"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{num_colegiatura_asisten}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="33" y="511" width="55" height="15"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{iniciales}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
