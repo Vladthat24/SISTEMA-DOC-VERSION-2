@@ -7,7 +7,7 @@
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[select idcertificado_salud, idcerasistenciales, (select nombre from asistenciales where idasistenciales=idasistenciales)as nombre_asisten,(select apellidos from asistenciales where idasistenciales=idasistenciales)as apellidos_asisten,nombre,apellidos,edad,tipo_doc,num_doc,direccion,serelogia,examen_rx,fecha_registro from certificado_salud where num_doc=$P{num_doc};]]>
+		<![CDATA[select idcertificado_salud, idcerasistenciales, (select nombre from asistenciales where idasistenciales=idcerasistenciales)as nombre_asisten,(select apellidos from asistenciales where idasistenciales=idcerasistenciales)as apellidos_asisten,nombre,apellidos,edad,tipo_doc,num_doc,direccion,serelogia,examen_rx,fecha_registro from certificado_salud where num_doc=$P{num_doc};]]>
 	</queryString>
 	<field name="idcertificado_salud" class="java.lang.Integer"/>
 	<field name="idcerasistenciales" class="java.lang.Integer"/>
@@ -88,42 +88,42 @@
 				<text><![CDATA[De:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="60" y="20" width="34" height="20"/>
+				<reportElement x="60" y="20" width="48" height="20"/>
 				<textElement>
 					<font fontName="Arial" size="14" isUnderline="false"/>
 				</textElement>
 				<text><![CDATA[AÑOS]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="97" y="20" width="39" height="20"/>
+				<reportElement x="108" y="21" width="39" height="20"/>
 				<textElement>
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<text><![CDATA[Edad:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="139" y="20" width="39" height="20"/>
+				<reportElement x="149" y="19" width="39" height="20"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="Arial" size="14" isUnderline="false"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{edad}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="166" y="20" width="39" height="20"/>
+				<reportElement x="188" y="20" width="39" height="20"/>
 				<textElement>
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{tipo_doc}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="196" y="20" width="19" height="20"/>
+				<reportElement x="218" y="20" width="19" height="20"/>
 				<textElement>
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<text><![CDATA[N°]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="215" y="20" width="248" height="20"/>
+				<reportElement x="237" y="20" width="248" height="20"/>
 				<textElement>
 					<font fontName="Arial" size="14"/>
 				</textElement>
@@ -251,7 +251,7 @@
 				<reportElement x="215" y="39" width="248" height="1"/>
 			</line>
 			<line>
-				<reportElement x="136" y="40" width="30" height="1"/>
+				<reportElement x="149" y="40" width="30" height="1"/>
 			</line>
 			<line>
 				<reportElement x="60" y="41" width="34" height="1"/>

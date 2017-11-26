@@ -39,7 +39,7 @@ public class frmlogin extends javax.swing.JFrame {
         lblprocesar.setVisible(false);
         jbarprocesar.setVisible(false);
         jScrollPane1.setVisible(false);
-        this.setTitle(".::ACCESO SAPT::.");
+        this.setTitle(".:: Sistema de Gestion de Documento ::.");
         this.setLocationRelativeTo(null);
 //        setIconImage(new ImageIcon(getClass().getResource("../Files/icologin.png")).getImage());
     }
