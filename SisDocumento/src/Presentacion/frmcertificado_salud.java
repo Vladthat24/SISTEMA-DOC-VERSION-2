@@ -14,6 +14,7 @@ import java.util.Calendar;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import reports.imprimir_certificado_salud;
+import reports.reporte_certificado_salud;
 
 /**
  *
@@ -27,6 +28,7 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
     String fecha_inicial;
     String fecha_final;
     int num_doc;
+
     public frmcertificado_salud() {
         initComponents();
         mostrar("");
@@ -401,12 +403,6 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblfecha_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnnuevo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnguardar))
                     .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -424,7 +420,16 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtidasistenciales)
                             .addComponent(txtidcertificado_salud, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
-                .addGap(0, 5, Short.MAX_VALUE))
+                .addGap(0, 9, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnnuevo)
+                        .addGap(47, 47, 47)
+                        .addComponent(btnguardar))
+                    .addComponent(lblfecha_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -448,12 +453,12 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnnuevo)
-                        .addComponent(btnguardar))
-                    .addComponent(lblfecha_registro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addComponent(lblfecha_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnnuevo)
+                    .addComponent(btnguardar))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         lbltitulo.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
@@ -505,6 +510,11 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
         });
 
         btnreporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/reporte_2.png"))); // NOI18N
+        btnreporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnreporteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -602,8 +612,9 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
         txtserologia.setText(tablalistado.getValueAt(fila, 9).toString());
         txtexamenrx.setText(tablalistado.getValueAt(fila, 10).toString());
         lblfecha_registro.setText(tablalistado.getValueAt(fila, 11).toString());
-        
-        num_doc=Integer.parseInt(txtnum_doc.getText());
+        fecha_inicial = lblfecha_registro.getText();
+        fecha_final = lblfecha_registro.getText();
+        num_doc = Integer.parseInt(txtnum_doc.getText());
     }//GEN-LAST:event_tablalistadoMouseClicked
 
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
@@ -642,10 +653,19 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
 
     private void btnimpresoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnimpresoraActionPerformed
         // TODO add your handling code here:
-        imprimir_certificado_salud gw= new imprimir_certificado_salud();
+        imprimir_certificado_salud gw = new imprimir_certificado_salud();
         gw.reportePacientes(num_doc);
-        
+
     }//GEN-LAST:event_btnimpresoraActionPerformed
+
+    private void btnreporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreporteActionPerformed
+        // TODO add your handling code here:
+
+        fecha_inicial = JOptionPane.showInputDialog("Ingresa la fecha inicial dia/mes/año");
+        fecha_final = JOptionPane.showInputDialog("Ingresa la fecha final dia/mes/año");
+        reporte_certificado_salud g = new reporte_certificado_salud();
+        g.reportePacientes(fecha_inicial, fecha_final);
+    }//GEN-LAST:event_btnreporteActionPerformed
 
     /**
      * @param args the command line arguments
