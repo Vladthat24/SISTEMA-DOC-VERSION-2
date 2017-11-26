@@ -3,11 +3,14 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<parameter name="num_doc" class="java.lang.Integer">
+	<parameter name="fecha_inicial" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fecha_final" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[select idconstancia_nacimiento,idcasistenciales,(select nombre from asistenciales where idasistenciales=idcasistenciales)as nombre_asisten,(select apellidos from asistenciales where idasistenciales=idcasistenciales)as apellidos_asisten,(select colegiatura from asistenciales where idasistenciales=idcasistenciales)as colegiatura_asisten,(select num_colegiatura from asistenciales where idasistenciales=idasistenciales)as num_colegiatura_asisten,correlativo_constancia,nombre,apellidos,tipo_doc,num_doc,direccion,historia_clinica,sexo,peso,talla,fecha_nacimiento,hora_nacimiento,num_doc_nacido,fecha_nacimiento_letra,fecha_registro from constancia_nacimiento where num_doc=$P{num_doc};]]>
+		<![CDATA[select idconstancia_nacimiento,idcasistenciales,(select nombre from asistenciales where idasistenciales=idcasistenciales)as nombre_asisten,(select apellidos from asistenciales where idasistenciales=idcasistenciales)as apellidos_asisten,(select colegiatura from asistenciales where idasistenciales=idcasistenciales)as colegiatura_asisten,(select num_colegiatura from asistenciales where idasistenciales=idcasistenciales)as num_colegiatura_asisten,correlativo_constancia,nombre,apellidos,tipo_doc,num_doc,direccion,historia_clinica,sexo,peso,talla,fecha_nacimiento,hora_nacimiento,num_doc_nacido,fecha_nacimiento_letra,fecha_registro,iniciales from constancia_nacimiento where fecha_registro between $P{fecha_inicial} and $P{fecha_final};]]>
 	</queryString>
 	<field name="idconstancia_nacimiento" class="java.lang.Integer"/>
 	<field name="idcasistenciales" class="java.lang.Integer"/>
@@ -30,104 +33,125 @@
 	<field name="num_doc_nacido" class="java.lang.String"/>
 	<field name="fecha_nacimiento_letra" class="java.lang.String"/>
 	<field name="fecha_registro" class="java.lang.String"/>
-	<group name="num_correlativo">
-		<groupExpression><![CDATA[$F{num_correlativo}]]></groupExpression>
+	<field name="iniciales" class="java.lang.String"/>
+	<group name="Nombres y Apellidos">
+		<groupExpression><![CDATA[$F{nombre}]]></groupExpression>
 		<groupHeader>
-			<band height="33">
-				<staticText>
-					<reportElement mode="Opaque" x="0" y="0" width="100" height="32" forecolor="#000000"/>
+			<band height="75">
+				<textField>
+					<reportElement x="160" y="31" width="139" height="44" forecolor="#006599"/>
 					<textElement verticalAlignment="Middle">
-						<font size="12" isBold="true" isItalic="false"/>
+						<font size="24"/>
 					</textElement>
-					<text><![CDATA[N° Correlativo:]]></text>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="294" y="31" width="261" height="44" forecolor="#006599"/>
+					<textElement verticalAlignment="Middle">
+						<font size="24"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{apellidos}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="0" width="555" height="31" forecolor="#006599"/>
+					<textElement textAlignment="Center">
+						<font size="24"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{correlativo_constancia}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="31" width="150" height="44"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nombres y Apellidos]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="num_doc">
+		<groupExpression><![CDATA[$F{idconstancia_nacimiento}]]></groupExpression>
+		<groupHeader>
+			<band height="38">
+				<textField>
+					<reportElement x="0" y="0" width="150" height="38"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{tipo_doc}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="160" y="0" width="395" height="38" forecolor="#006599"/>
+					<textElement verticalAlignment="Middle">
+						<font size="20"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{num_doc}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="historia clinica">
+		<groupExpression><![CDATA[$F{historia_clinica}]]></groupExpression>
+		<groupHeader>
+			<band height="38">
+				<textField>
+					<reportElement x="160" y="0" width="395" height="36" forecolor="#006599"/>
+					<textElement verticalAlignment="Middle">
+						<font size="18"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{historia_clinica}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="150" height="36"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Historia Clinica]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="num doc nacido">
+		<groupExpression><![CDATA[$F{num_doc_nacido}]]></groupExpression>
+		<groupHeader>
+			<band height="35">
+				<textField>
+					<reportElement x="160" y="0" width="395" height="33" forecolor="#006599"/>
+					<textElement verticalAlignment="Middle">
+						<font size="16"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{num_doc_nacido}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="150" height="33"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[N° Doc del Nacido]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="fecha registro">
+		<groupExpression><![CDATA[$F{fecha_registro}]]></groupExpression>
+		<groupHeader>
+			<band height="41">
+				<textField>
+					<reportElement x="160" y="0" width="395" height="36" forecolor="#006599"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{fecha_registro}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="150" height="35"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Fehca de Registro]]></text>
 				</staticText>
 				<line>
-					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666"/>
-				</line>
-			</band>
-		</groupHeader>
-		<groupFooter>
-			<band/>
-		</groupFooter>
-	</group>
-	<group name="receptor">
-		<groupExpression><![CDATA[$F{receptor}]]></groupExpression>
-		<groupHeader>
-			<band height="32">
-				<staticText>
-					<reportElement x="0" y="0" width="100" height="20" forecolor="#000000"/>
-					<textElement verticalAlignment="Middle">
-						<font size="12" isBold="true" isItalic="false"/>
-					</textElement>
-					<text><![CDATA[Dirigido a:]]></text>
-				</staticText>
-			</band>
-		</groupHeader>
-		<groupFooter>
-			<band/>
-		</groupFooter>
-	</group>
-	<group name="cargo_receptor">
-		<groupExpression><![CDATA[$F{cargo_receptor}]]></groupExpression>
-		<groupHeader>
-			<band height="32">
-				<staticText>
-					<reportElement x="0" y="0" width="100" height="20" forecolor="#000000"/>
-					<textElement verticalAlignment="Middle">
-						<font size="12" isBold="true" isItalic="false"/>
-					</textElement>
-					<text><![CDATA[Cargo:]]></text>
-				</staticText>
-			</band>
-		</groupHeader>
-		<groupFooter>
-			<band/>
-		</groupFooter>
-	</group>
-	<group name="fecha">
-		<groupExpression><![CDATA[$F{fecha}]]></groupExpression>
-		<groupHeader>
-			<band height="32">
-				<staticText>
-					<reportElement x="0" y="0" width="100" height="20" forecolor="#000000"/>
-					<textElement verticalAlignment="Middle">
-						<font size="12" isBold="true" isItalic="false"/>
-					</textElement>
-					<text><![CDATA[fecha]]></text>
-				</staticText>
-			</band>
-		</groupHeader>
-		<groupFooter>
-			<band/>
-		</groupFooter>
-	</group>
-	<group name="atencion">
-		<groupExpression><![CDATA[$F{atencion}]]></groupExpression>
-		<groupHeader>
-			<band height="28">
-				<staticText>
-					<reportElement x="0" y="0" width="100" height="20" forecolor="#000000"/>
-					<textElement verticalAlignment="Middle">
-						<font isBold="true" isItalic="false"/>
-					</textElement>
-					<text><![CDATA[Atencion:]]></text>
-				</staticText>
-			</band>
-		</groupHeader>
-	</group>
-	<group name="asunto">
-		<groupExpression><![CDATA[$F{asunto}]]></groupExpression>
-		<groupHeader>
-			<band height="34">
-				<staticText>
-					<reportElement x="0" y="0" width="100" height="20" forecolor="#000000"/>
-					<textElement verticalAlignment="Middle">
-						<font isBold="true" isItalic="false"/>
-					</textElement>
-					<text><![CDATA[Asunto:]]></text>
-				</staticText>
-				<line>
-					<reportElement x="-20" y="32" width="595" height="1"/>
+					<reportElement x="-20" y="35" width="595" height="1"/>
 				</line>
 			</band>
 		</groupHeader>
@@ -153,9 +177,6 @@
 			</frame>
 		</band>
 	</title>
-	<pageHeader>
-		<band height="13"/>
-	</pageHeader>
 	<columnHeader>
 		<band height="21">
 			<line>

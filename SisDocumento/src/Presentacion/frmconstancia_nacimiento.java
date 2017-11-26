@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import reports.imprimir_certificado_salud;
 import reports.imprimir_constancia_nacimiento;
+import reports.reporte_constancia_nacimiento;
 
 /**
  *
@@ -25,6 +26,8 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
     /**
      * Creates new form frmreg_asistenciales
      */
+    String fecha_inicial;
+    String fecha_final;
     int num_doc;
     public frmconstancia_nacimiento() {
         initComponents();
@@ -796,7 +799,8 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
         lblfecha_nacimiento_doc.setText(tablalistado.getValueAt(fila, 17).toString());
         lblfecha_registro.setText(tablalistado.getValueAt(fila, 18).toString());
         txtiniciales.setText(tablalistado.getValueAt(fila, 19).toString());
-        
+        fecha_inicial=lblfecha_registro.getText();
+        fecha_final=lblfecha_registro.getText();
         num_doc=Integer.parseInt(txtnum_doc.getText());
     }//GEN-LAST:event_tablalistadoMouseClicked
 
@@ -884,10 +888,10 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
 
     private void btnreportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreportesActionPerformed
         // TODO add your handling code here:
-//        fecha_inicial = JOptionPane.showInputDialog("Ingresa la fecha inicial dia/mes/año");
-//        fecha_final = JOptionPane.showInputDialog("Ingresa la fecha final dia/mes/año");
-//        reporte_oficio g = new reporte_oficio();
-//        g.reportePacientes(fecha_inicial, fecha_final);
+        fecha_inicial = JOptionPane.showInputDialog("Ingresa la fecha inicial dia/mes/año");
+        fecha_final = JOptionPane.showInputDialog("Ingresa la fecha final dia/mes/año");
+        reporte_constancia_nacimiento g = new reporte_constancia_nacimiento();
+        g.reportePacientes(fecha_inicial, fecha_final);
     }//GEN-LAST:event_btnreportesActionPerformed
 
     private void btnimprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnimprimirActionPerformed
