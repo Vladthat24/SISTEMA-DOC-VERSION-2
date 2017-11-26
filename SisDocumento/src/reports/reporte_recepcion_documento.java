@@ -21,7 +21,7 @@ import org.apache.commons.collections.map.HashedMap;
  *
  * @author Desarrollo
  */
-public class reporte_oficio {
+public class reporte_recepcion_documento {
 
     public Connection connection = new conexion().conectar();
 
@@ -33,7 +33,7 @@ public class reporte_oficio {
         try {
 
             report = JasperCompileManager.compileReport(new File("").getAbsolutePath()
-                    + "/src/reports/reporte_oficio.jrxml");
+                    + "/src/reports/reporte_recepcion_documento.jrxml");
             p.put("fecha_inicial", fecha_incial);
             p.put("fecha_final", fecha_final);
             print = JasperFillManager.fillReport(report, p, connection);

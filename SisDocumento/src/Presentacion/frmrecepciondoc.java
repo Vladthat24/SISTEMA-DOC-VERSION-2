@@ -10,6 +10,7 @@ import Logica.frecepcion;
 import java.util.Calendar;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import reports.reporte_recepcion_documento;
 
 /**
  *
@@ -20,6 +21,9 @@ public class frmrecepciondoc extends javax.swing.JInternalFrame {
     /**
      * Creates new form frmrecepciondoc
      */
+    String fecha_inicial;
+    String fecha_final;
+
     public frmrecepciondoc() {
         initComponents();
         mostrar("");
@@ -125,9 +129,8 @@ public class frmrecepciondoc extends javax.swing.JInternalFrame {
         btnbuscar.setEnabled(false);
         btneliminar.setEnabled(false);
         btntrabajador.setEnabled(false);
-        btnimpresora.setEnabled(false);
         btnreportes.setEnabled(false);
-        
+
         lbltotalregistros.setEnabled(false);
 
         txtcorrelativo.setText("");
@@ -155,7 +158,6 @@ public class frmrecepciondoc extends javax.swing.JInternalFrame {
         btnbuscar.setEnabled(true);
         btneliminar.setEnabled(true);
         btntrabajador.setEnabled(true);
-        btnimpresora.setEnabled(true);
         btnreportes.setEnabled(true);
 
         lbltotalregistros.setEnabled(true);
@@ -221,7 +223,6 @@ public class frmrecepciondoc extends javax.swing.JInternalFrame {
         btnbuscar = new javax.swing.JButton();
         lbltotalregistros = new javax.swing.JLabel();
         btneliminar = new javax.swing.JButton();
-        btnimpresora = new javax.swing.JButton();
         btnreportes = new javax.swing.JButton();
         lbltitulo = new javax.swing.JLabel();
 
@@ -420,11 +421,13 @@ public class frmrecepciondoc extends javax.swing.JInternalFrame {
             }
         });
 
-        btnimpresora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/impresora.png"))); // NOI18N
-        btnimpresora.setBorder(new javax.swing.border.MatteBorder(null));
-
         btnreportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/reporte_2.png"))); // NOI18N
         btnreportes.setBorder(new javax.swing.border.MatteBorder(null));
+        btnreportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnreportesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -434,10 +437,8 @@ public class frmrecepciondoc extends javax.swing.JInternalFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(btneliminar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnbuscar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnimpresora, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btneliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnreportes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -452,12 +453,10 @@ public class frmrecepciondoc extends javax.swing.JInternalFrame {
                         .addComponent(btnbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btneliminar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnimpresora)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnreportes)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbltotalregistros, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -527,6 +526,8 @@ public class frmrecepciondoc extends javax.swing.JInternalFrame {
         txtemisor.setText(tablalistado.getValueAt(fila, 7).toString());
         cborecepcionado.setSelectedItem(tablalistado.getValueAt(fila, 8).toString());
         txtobservaciones.setText(tablalistado.getValueAt(fila, 9).toString());
+        fecha_inicial = lblfecha_actual.getText();
+        fecha_final = lblfecha_actual.getText();
 
     }//GEN-LAST:event_tablalistadoMouseClicked
 
@@ -565,6 +566,14 @@ public class frmrecepciondoc extends javax.swing.JInternalFrame {
         from.setVisible(true);
 
     }//GEN-LAST:event_btntrabajadorActionPerformed
+
+    private void btnreportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreportesActionPerformed
+        // TODO add your handling code here:
+        fecha_inicial = JOptionPane.showInputDialog("Ingresa la fecha inicial dia/mes/año");
+        fecha_final = JOptionPane.showInputDialog("Ingresa la fecha final dia/mes/año");
+        reporte_recepcion_documento g = new reporte_recepcion_documento();
+        g.reportePacientes(fecha_inicial, fecha_final);
+    }//GEN-LAST:event_btnreportesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -605,7 +614,6 @@ public class frmrecepciondoc extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnbuscar;
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnguardar;
-    private javax.swing.JButton btnimpresora;
     private javax.swing.JButton btnnuevo;
     private javax.swing.JButton btnreportes;
     private javax.swing.JButton btntrabajador;
