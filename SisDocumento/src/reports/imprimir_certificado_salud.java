@@ -25,17 +25,18 @@ import org.apache.commons.collections.map.HashedMap;
  */
 
 
-public class Reporte_Paciente {
+public class imprimir_certificado_salud {
     public Connection connection= new conexion().conectar();
-    public void reportePacientes(int idpersona){
+    public void reportePacientes(int num_doc){
         Map p = new HashedMap();
         JasperReport report;
         JasperPrint print;
         try {
 
             report=JasperCompileManager.compileReport(new File("").getAbsolutePath()+
-                    "/src/reports/h_paciente.jrxml");
-            p.put("idpersona", idpersona);
+                    "/src/reports/imprimir_certificado_salud.jrxml");
+            p.put("num_doc", num_doc);
+           
             print= JasperFillManager.fillReport(report, p,connection);
             JasperViewer view= new JasperViewer(print,false);
             view.setTitle("ficha de paciente");

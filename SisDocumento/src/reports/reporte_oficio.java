@@ -33,7 +33,7 @@ public class reporte_oficio {
         try {
 
             report = JasperCompileManager.compileReport(new File("").getAbsolutePath()
-                    + "/src/reports/reporte_oficios.jrxml");
+                    + "/src/reports/reporte_oficio.jrxml");
             p.put("fecha_inicial", fecha_incial);
             p.put("fecha_final", fecha_final);
             print = JasperFillManager.fillReport(report, p, connection);

@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="18"/>
+	<property name="ireport.y" value="0"/>
 	<parameter name="idoficios" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -56,7 +56,7 @@
 				<text><![CDATA[Villa Maria del Triunfo,]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="160" y="0" width="220" height="20"/>
+				<reportElement x="148" y="0" width="220" height="20"/>
 				<textElement/>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{fecha}]]></textFieldExpression>
 			</textField>
@@ -72,14 +72,14 @@
 				<text><![CDATA[OFICIO N°]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="114" y="1" width="64" height="20"/>
+				<reportElement x="103" y="1" width="64" height="20"/>
 				<textElement textAlignment="Center">
 					<font size="13"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{num_correlativo}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="178" y="1" width="347" height="20"/>
+				<reportElement x="156" y="1" width="347" height="20"/>
 				<textElement>
 					<font size="13"/>
 				</textElement>
@@ -91,7 +91,7 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="546" splitType="Stretch">
+		<band height="650" splitType="Stretch">
 			<staticText>
 				<reportElement x="42" y="10" width="100" height="20"/>
 				<textElement>
@@ -130,7 +130,7 @@
 				<text><![CDATA[ASUNTO:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="42" y="169" width="472" height="292"/>
+				<reportElement x="42" y="169" width="472" height="394"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{cuerpo}]]></textFieldExpression>
 			</textField>
@@ -142,36 +142,36 @@
 				<text><![CDATA[Presente.-]]></text>
 			</staticText>
 			<line>
-				<reportElement x="43" y="504" width="472" height="1"/>
+				<reportElement x="43" y="611" width="472" height="1"/>
 			</line>
 			<staticText>
-				<reportElement x="43" y="492" width="46" height="12"/>
+				<reportElement x="43" y="599" width="46" height="12"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
 				<text><![CDATA[C.c. Archivo]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="43" y="473" width="72" height="20"/>
+				<reportElement x="43" y="580" width="72" height="20"/>
 				<textElement/>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{iniciales}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="426" y="505" width="99" height="12"/>
+				<reportElement x="426" y="612" width="99" height="12"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
 				<text><![CDATA[Av. Pachacutec N° 34701]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="426" y="517" width="100" height="11"/>
+				<reportElement x="426" y="624" width="100" height="11"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
 				<text><![CDATA[Villa Maria del Triunfo]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="427" y="528" width="74" height="11"/>
+				<reportElement x="427" y="635" width="74" height="11"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>

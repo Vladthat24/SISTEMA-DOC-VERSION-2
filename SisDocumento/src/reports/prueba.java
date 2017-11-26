@@ -14,20 +14,20 @@ import java.sql.Connection;
  */
 public class prueba {
     
-    public static Connection conecction;
-    public static void main(String[] args){
-        try {
-        Connection Connection = new conexion().conectar();
-        System.out.println("Conectado");
-        
-        
-        Reporte_Paciente g=new Reporte_Paciente();
-        g.reportePacientes(1);
-
-        } catch (Exception e) {
-            System.out.println("error de prueba" + e);
-        }
-
-    }
+//    public static Connection conecction;
+//    public static void main(String[] args){
+//        try {
+//        Connection Connection = new conexion().conectar();
+//        System.out.println("Conectado");
+//        
+//        
+//        Reporte_Paciente g=new Reporte_Paciente();
+//        g.reportePacientes(1);
+//
+//        } catch (Exception e) {
+//            System.out.println("error de prueba" + e);
+//        }
+//
+//    }
     
 }
