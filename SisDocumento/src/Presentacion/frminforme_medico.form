@@ -636,6 +636,9 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnimpresoraActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnreporte">
           <Properties>
@@ -648,6 +651,9 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnreporteActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

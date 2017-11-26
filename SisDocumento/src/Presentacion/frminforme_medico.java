@@ -12,6 +12,8 @@ import Logica.finforme_medico;
 import java.util.Calendar;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import reports.imprimir_informe_medico;
+import reports.reporte_informe_medico;
 
 /**
  *
@@ -22,6 +24,10 @@ public class frminforme_medico extends javax.swing.JInternalFrame {
     /**
      * Creates new form frmreg_asistenciales
      */
+    String fecha_inicial;
+    String fecha_final;
+    int num_doc;
+
     public frminforme_medico() {
         initComponents();
         mostrar("");
@@ -558,9 +564,19 @@ public class frminforme_medico extends javax.swing.JInternalFrame {
 
         btnimpresora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/impresora.png"))); // NOI18N
         btnimpresora.setBorder(new javax.swing.border.MatteBorder(null));
+        btnimpresora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnimpresoraActionPerformed(evt);
+            }
+        });
 
         btnreporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/reporte_2.png"))); // NOI18N
         btnreporte.setBorder(new javax.swing.border.MatteBorder(null));
+        btnreporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnreporteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -668,7 +684,9 @@ public class frminforme_medico extends javax.swing.JInternalFrame {
         txtnum_doc.setText(tablalistado.getValueAt(fila, 12).toString());
         lblfecha_registro.setText(tablalistado.getValueAt(fila, 13).toString());
         txtdiagnostico.setText(tablalistado.getValueAt(fila, 14).toString());
-
+        fecha_inicial = lblfecha_registro.getText();
+        fecha_final = lblfecha_registro.getText();
+        num_doc = Integer.parseInt(txtnum_doc.getText());
     }//GEN-LAST:event_tablalistadoMouseClicked
 
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
@@ -709,6 +727,21 @@ public class frminforme_medico extends javax.swing.JInternalFrame {
         form.setVisible(true);
 
     }//GEN-LAST:event_btnasistencialActionPerformed
+
+    private void btnimpresoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnimpresoraActionPerformed
+        // TODO add your handling code here:
+        imprimir_informe_medico gw = new imprimir_informe_medico();
+        gw.reportePacientes(num_doc);
+
+
+    }//GEN-LAST:event_btnimpresoraActionPerformed
+
+    private void btnreporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreporteActionPerformed
+        fecha_inicial = JOptionPane.showInputDialog("Ingresa la fecha inicial dia/mes/año");
+        fecha_final = JOptionPane.showInputDialog("Ingresa la fecha final dia/mes/año");
+        reporte_informe_medico g = new reporte_informe_medico();
+        g.reportePacientes(fecha_inicial, fecha_final);
+    }//GEN-LAST:event_btnreporteActionPerformed
 
     /**
      * @param args the command line arguments
