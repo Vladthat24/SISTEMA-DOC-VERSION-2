@@ -70,55 +70,45 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="lblnombre_apellidos_asisten" max="32767" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="lblcolegiatura_asisten" min="-2" pref="153" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="txtcorrelativo" min="-2" pref="159" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="lblfecha_registro" max="32767" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btnasistencial" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="txtnombre" max="32767" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="txtapellidos" min="-2" pref="232" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jPanel3" max="32767" attributes="0"/>
-                          </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="txtcorrelativo" min="-2" pref="115" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
+                          <Component id="lblfecha_registro" min="-2" pref="236" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="btnasistencial" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lblnombre_apellidos_asisten" min="-2" pref="274" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="lblcolegiatura_asisten" min="-2" pref="153" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="lblfecha_nacimiento_doc" min="-2" pref="12" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
-                                  <Component id="btnnuevo" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="btnguardar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="txtdireccion" min="-2" pref="363" max="-2" attributes="0"/>
+                          <Component id="lblfecha_nacimiento_doc" min="-2" pref="12" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                          <Component id="btnnuevo" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="btnguardar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                          <Component id="txtidasistenciales" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                          <Component id="txtidconstancia_nacimiento" min="-2" pref="6" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="txtdireccion" min="-2" pref="341" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="txtiniciales" min="-2" pref="105" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="txtidasistenciales" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                  <Component id="txtidconstancia_nacimiento" min="-2" pref="6" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="txtiniciales" min="-2" pref="105" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                              </Group>
+                          <Component id="jPanel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="txtnombre" min="-2" pref="242" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txtapellidos" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
+                  <EmptySpace pref="38" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -133,15 +123,15 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="lblfecha_registro" pref="56" max="32767" attributes="0"/>
-                              <Component id="txtcorrelativo" max="32767" attributes="0"/>
+                              <Component id="lblfecha_registro" max="32767" attributes="0"/>
+                              <Component id="txtcorrelativo" pref="64" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="lblnombre_apellidos_asisten" min="-2" pref="55" max="-2" attributes="0"/>
-                      <Component id="lblcolegiatura_asisten" min="-2" pref="57" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="lblnombre_apellidos_asisten" pref="66" max="32767" attributes="0"/>
+                      <Component id="lblcolegiatura_asisten" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -151,19 +141,17 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtdireccion" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
-                              <Component id="txtiniciales" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                              <Component id="txtdireccion" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
+                              <Component id="txtiniciales" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblfecha_nacimiento_doc" min="-2" pref="52" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="btnnuevo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnguardar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnnuevo" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnguardar" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblfecha_nacimiento_doc" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -266,38 +254,35 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="dcofecha_nacimiento" min="-2" pref="169" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="dcofecha_nacimiento" min="-2" pref="169" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="txthora_nacimiento" min="-2" pref="100" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="cbotipo_doc" min="-2" pref="98" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txtnum_doc" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="txthora_nacimiento" min="-2" pref="100" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="cbosexo" min="-2" pref="120" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="txtnum_doc_nacido" max="32767" attributes="0"/>
+                                  <Component id="cbosexo" pref="131" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="txtpeso" min="-2" pref="98" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="txttalla" min="-2" pref="131" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="cbotipo_doc" min="-2" pref="84" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="txtnum_doc" min="-2" pref="153" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="txtpeso" max="32767" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtnum_historia" min="-2" pref="131" max="-2" attributes="0"/>
-                                  <Component id="txtnum_doc_nacido" alignment="0" min="-2" pref="131" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="txttalla" min="-2" pref="134" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="txtnum_historia" min="-2" pref="131" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -306,37 +291,32 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txthora_nacimiento" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
-                              <Component id="cbosexo" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
-                          </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                               <Component id="dcofecha_nacimiento" min="-2" pref="39" max="-2" attributes="0"/>
                           </Group>
-                      </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="cbotipo_doc" min="-2" pref="62" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                          </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtnum_doc" alignment="3" min="-2" pref="62" max="-2" attributes="0"/>
-                                  <Component id="txtnum_doc_nacido" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Component id="txthora_nacimiento" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
+                                  <Component id="cbosexo" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txtnum_doc_nacido" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Component id="txtnum_doc" alignment="3" min="-2" pref="62" max="-2" attributes="0"/>
+                                  <Component id="cbotipo_doc" alignment="3" min="-2" pref="62" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txttalla" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                              <Component id="txtnum_historia" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                          <Component id="txtpeso" min="-2" pref="61" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="txtnum_historia" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
+                              <Component id="txttalla" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="txtpeso" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="22" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -356,7 +336,7 @@
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder>
+                    <TitledBorder title="Tipo Doc:">
                       <Font PropertyName="font" name="Arial" size="12" style="2"/>
                     </TitledBorder>
                   </Border>

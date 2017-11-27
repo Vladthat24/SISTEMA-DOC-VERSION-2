@@ -10,6 +10,7 @@ import Logica.fasistenciales;
 import java.util.Calendar;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import reports.reporte_regasistencial;
 
 /**
  *
@@ -20,6 +21,9 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
     /**
      * Creates new form frmreg_asistenciales
      */
+    String fecha_inicial;
+    String fecha_final;
+
     public frmreg_asistenciales() {
         initComponents();
         mostrar("");
@@ -380,31 +384,31 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
                         .addComponent(txtcelular, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtcargo_institucion)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtcargo_institucion)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(lblfecha_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(cbotipo_doc, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtnum_doc, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(cboprofesion, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtapellidos)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(22, 22, 22)
+                                    .addComponent(txtidasistenciales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtemail))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblfecha_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(cbotipo_doc, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtnum_doc, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cboprofesion, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtapellidos)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addComponent(txtidasistenciales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtemail))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnnuevo)
-                        .addGap(45, 45, 45)
-                        .addComponent(btnguardar)
-                        .addGap(90, 90, 90))))
+                                .addComponent(btnnuevo)
+                                .addGap(45, 45, 45)
+                                .addComponent(btnguardar)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -487,6 +491,11 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
 
         btnreportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/reporte_2.png"))); // NOI18N
         btnreportes.setBorder(new javax.swing.border.MatteBorder(null));
+        btnreportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnreportesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -582,6 +591,10 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
         txtcelular.setText(tablalistado.getValueAt(fila, 10).toString());
         lblfecha_registro.setText(tablalistado.getValueAt(fila, 11).toString());
         txtemail.setText(tablalistado.getValueAt(fila, 12).toString());
+
+        fecha_inicial = lblfecha_registro.getText();
+        fecha_final = lblfecha_registro.getText();
+
     }//GEN-LAST:event_tablalistadoMouseClicked
 
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
@@ -615,6 +628,14 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
     private void txtnum_docActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnum_docActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtnum_docActionPerformed
+
+    private void btnreportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreportesActionPerformed
+        // TODO add your handling code here:
+        fecha_inicial = JOptionPane.showInputDialog("Ingresa la fecha inicial dia/mes/año");
+        fecha_final = JOptionPane.showInputDialog("Ingresa la fecha final dia/mes/año");
+        reporte_regasistencial g = new reporte_regasistencial();
+        g.reportePacientes(fecha_inicial, fecha_final);
+    }//GEN-LAST:event_btnreportesActionPerformed
 
     /**
      * @param args the command line arguments

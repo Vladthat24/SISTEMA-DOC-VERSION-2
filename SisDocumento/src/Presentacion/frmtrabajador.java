@@ -14,6 +14,7 @@ import java.sql.Date;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import reports.reporte_regadministrativo;
 
 /**
  *
@@ -24,6 +25,9 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
     /**
      * Creates new form frmcliente
      */
+    String fecha_inicial;
+    String fecha_final;
+
     public frmtrabajador() {
         initComponents();
         mostrar("");
@@ -460,6 +464,11 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
 
         btnreportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/reporte_2.png"))); // NOI18N
         btnreportes.setBorder(new javax.swing.border.MatteBorder(null));
+        btnreportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnreportesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -646,6 +655,8 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
         txtemail.setText(tablalistado.getValueAt(fila, 10).toString());
         lblfecha_registro.setText(tablalistado.getValueAt(fila, 11).toString());
 
+        fecha_inicial = lblfecha_registro.getText();
+        fecha_final = lblfecha_registro.getText();
 
     }//GEN-LAST:event_tablalistadoMouseClicked
 
@@ -818,6 +829,15 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
             evt.consume();
         }
     }//GEN-LAST:event_txtmodalidad_contratoKeyTyped
+
+    private void btnreportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreportesActionPerformed
+        // TODO add your handling code here:
+        fecha_inicial = JOptionPane.showInputDialog("Ingresa la fecha inicial dia/mes/año");
+        fecha_final = JOptionPane.showInputDialog("Ingresa la fecha final dia/mes/año");
+        reporte_regadministrativo g = new reporte_regadministrativo();
+        g.reportePacientes(fecha_inicial, fecha_final);
+
+    }//GEN-LAST:event_btnreportesActionPerformed
 
     /**
      * @param args the command line arguments
