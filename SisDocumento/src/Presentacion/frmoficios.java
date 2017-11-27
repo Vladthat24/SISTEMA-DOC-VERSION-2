@@ -563,8 +563,8 @@ public class frmoficios extends javax.swing.JInternalFrame {
                         .addComponent(btnreportes)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane2))
-                .addGap(18, 18, 18)
-                .addComponent(lbltotalregistro, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbltotalregistro, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
