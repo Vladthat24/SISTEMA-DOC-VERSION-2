@@ -69,9 +69,9 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                           <Component id="btnnuevo" min="-2" pref="109" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Component id="btnguardar" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
@@ -119,36 +119,31 @@
                   <Component id="txtidtrabajador" min="-2" pref="9" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="txtcargo_intitucion" pref="45" max="32767" attributes="0"/>
+                      <Component id="txtcargo_intitucion" pref="53" max="32767" attributes="0"/>
                       <Component id="txtmodalidad_contrato" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="cbotipo_documento" alignment="0" pref="46" max="32767" attributes="0"/>
-                      <Component id="txtnombre" alignment="0" max="32767" attributes="0"/>
-                      <Component id="txtnum_documento" alignment="0" max="32767" attributes="0"/>
+                      <Component id="cbotipo_documento" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtnum_documento" alignment="0" min="-2" pref="62" max="-2" attributes="0"/>
+                      <Component id="txtnombre" alignment="0" min="-2" pref="62" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtapaterno" min="-2" pref="57" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                          <Component id="txtamaterno" max="32767" attributes="0"/>
-                      </Group>
+                  <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="txtamaterno" min="-2" pref="63" max="-2" attributes="0"/>
+                      <Component id="txtapaterno" min="-2" pref="62" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="txtemail" min="-2" pref="60" max="-2" attributes="0"/>
                       <Component id="txtcelular" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="lblfecha_registro" pref="51" max="32767" attributes="0"/>
+                      <Component id="lblfecha_registro" pref="56" max="32767" attributes="0"/>
                       <Component id="txtprofesion" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnnuevo" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnguardar" alignment="3" min="-2" max="-2" attributes="0"/>
