@@ -29,6 +29,7 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
     String fecha_inicial;
     String fecha_final;
     int num_doc;
+
     public frmconstancia_nacimiento() {
         initComponents();
         mostrar("");
@@ -375,9 +376,19 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
 
         txtcorrelativo.setBackground(new java.awt.Color(158, 179, 193));
         txtcorrelativo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "N° Correlativo:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtcorrelativo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtcorrelativoKeyTyped(evt);
+            }
+        });
 
         txtapellidos.setBackground(new java.awt.Color(158, 179, 193));
         txtapellidos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Apellidos:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtapellidos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtapellidosKeyTyped(evt);
+            }
+        });
 
         lblfecha_registro.setBackground(new java.awt.Color(158, 179, 193));
         lblfecha_registro.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fecha de Registro", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
@@ -412,6 +423,11 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
                 txtnum_docActionPerformed(evt);
             }
         });
+        txtnum_doc.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnum_docKeyTyped(evt);
+            }
+        });
 
         cbosexo.setBackground(new java.awt.Color(158, 179, 193));
         cbosexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Masculino", "Femenino", " " }));
@@ -424,6 +440,11 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
                 txtpesoActionPerformed(evt);
             }
         });
+        txtpeso.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtpesoKeyTyped(evt);
+            }
+        });
 
         txtnum_historia.setBackground(new java.awt.Color(158, 179, 193));
         txtnum_historia.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "N° Historia:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
@@ -432,12 +453,22 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
                 txtnum_historiaActionPerformed(evt);
             }
         });
+        txtnum_historia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnum_historiaKeyTyped(evt);
+            }
+        });
 
         txttalla.setBackground(new java.awt.Color(158, 179, 193));
         txttalla.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Talla:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
         txttalla.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txttallaActionPerformed(evt);
+            }
+        });
+        txttalla.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txttallaKeyTyped(evt);
             }
         });
 
@@ -451,9 +482,19 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
 
         txthora_nacimiento.setBackground(new java.awt.Color(158, 179, 193));
         txthora_nacimiento.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Hora Nac.:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txthora_nacimiento.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txthora_nacimientoKeyTyped(evt);
+            }
+        });
 
         txtnum_doc_nacido.setBackground(new java.awt.Color(158, 179, 193));
         txtnum_doc_nacido.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "N° Doc Nacido:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtnum_doc_nacido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnum_doc_nacidoKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -512,9 +553,19 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
 
         txtnombre.setBackground(new java.awt.Color(158, 179, 193));
         txtnombre.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nombres:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtnombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnombreKeyTyped(evt);
+            }
+        });
 
         txtdireccion.setBackground(new java.awt.Color(158, 179, 193));
         txtdireccion.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Direccion:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtdireccion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtdireccionKeyTyped(evt);
+            }
+        });
 
         lblfecha_nacimiento_doc.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
@@ -538,6 +589,11 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
         txtiniciales.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtinicialesActionPerformed(evt);
+            }
+        });
+        txtiniciales.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtinicialesKeyTyped(evt);
             }
         });
 
@@ -610,10 +666,11 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
                             .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtiniciales, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(11, 11, 11)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnnuevo)
-                            .addComponent(btnguardar)
-                            .addComponent(lblfecha_nacimiento_doc, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblfecha_nacimiento_doc, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btnnuevo)
+                                .addComponent(btnguardar))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(98, 98, 98)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -787,9 +844,11 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
         lblfecha_nacimiento_doc.setText(tablalistado.getValueAt(fila, 17).toString());
         lblfecha_registro.setText(tablalistado.getValueAt(fila, 18).toString());
         txtiniciales.setText(tablalistado.getValueAt(fila, 19).toString());
-        fecha_inicial=lblfecha_registro.getText();
-        fecha_final=lblfecha_registro.getText();
-        num_doc=Integer.parseInt(txtnum_doc.getText());
+        
+        
+        fecha_inicial = lblfecha_registro.getText();
+        fecha_final = lblfecha_registro.getText();
+        num_doc = Integer.parseInt(txtnum_doc.getText());
     }//GEN-LAST:event_tablalistadoMouseClicked
 
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
@@ -890,6 +949,129 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
     private void txtinicialesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtinicialesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtinicialesActionPerformed
+
+    private void txtcorrelativoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcorrelativoKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 4;
+        if (!Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtcorrelativo.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtcorrelativoKeyTyped
+
+    private void txtnombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnombreKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 30;
+        if (Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtnombre.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtnombreKeyTyped
+
+    private void txtapellidosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtapellidosKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 50;
+        if (Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtapellidos.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtapellidosKeyTyped
+
+    private void txthora_nacimientoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txthora_nacimientoKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 6;
+        if (txthora_nacimiento.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txthora_nacimientoKeyTyped
+
+    private void txtnum_docKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnum_docKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 7;
+        if (!Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtnum_doc.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtnum_docKeyTyped
+
+    private void txtnum_doc_nacidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnum_doc_nacidoKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 7;
+        if (!Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtnum_doc_nacido.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtnum_doc_nacidoKeyTyped
+
+    private void txtpesoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpesoKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 20;
+
+        if (txtpeso.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtpesoKeyTyped
+
+    private void txttallaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txttallaKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 20;
+
+        if (txttalla.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txttallaKeyTyped
+
+    private void txtnum_historiaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnum_historiaKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 10;
+        if (!Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtnum_historia.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtnum_historiaKeyTyped
+
+    private void txtdireccionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtdireccionKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 300;
+
+        if (txtdireccion.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtdireccionKeyTyped
+
+    private void txtinicialesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtinicialesKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 6;
+        if (Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtiniciales.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtinicialesKeyTyped
 
     /**
      * @param args the command line arguments

@@ -328,9 +328,19 @@ public class frminforme_medico extends javax.swing.JInternalFrame {
 
         txtcorrelativo.setBackground(new java.awt.Color(158, 179, 193));
         txtcorrelativo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "N° Correlativo:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtcorrelativo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtcorrelativoKeyTyped(evt);
+            }
+        });
 
         txtapellidos.setBackground(new java.awt.Color(158, 179, 193));
         txtapellidos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Apellidos:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtapellidos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtapellidosKeyTyped(evt);
+            }
+        });
 
         lblfecha_registro.setBackground(new java.awt.Color(158, 179, 193));
         lblfecha_registro.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fecha de Registro", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
@@ -365,15 +375,30 @@ public class frminforme_medico extends javax.swing.JInternalFrame {
                 txtnum_docActionPerformed(evt);
             }
         });
+        txtnum_doc.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnum_docKeyTyped(evt);
+            }
+        });
 
         txtedad.setBackground(new java.awt.Color(158, 179, 193));
         txtedad.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Edad:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtedad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtedadKeyTyped(evt);
+            }
+        });
 
         txtnum_historia.setBackground(new java.awt.Color(158, 179, 193));
         txtnum_historia.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "N° Historia:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
         txtnum_historia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtnum_historiaActionPerformed(evt);
+            }
+        });
+        txtnum_historia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnum_historiaKeyTyped(evt);
             }
         });
 
@@ -384,6 +409,11 @@ public class frminforme_medico extends javax.swing.JInternalFrame {
 
         txtdiagnostico.setBackground(new java.awt.Color(158, 179, 193));
         txtdiagnostico.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Diagnostico:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtdiagnostico.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtdiagnosticoKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -427,6 +457,11 @@ public class frminforme_medico extends javax.swing.JInternalFrame {
 
         txtnombre.setBackground(new java.awt.Color(158, 179, 193));
         txtnombre.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nombre:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtnombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnombreKeyTyped(evt);
+            }
+        });
 
         lblnombre_apellidos_asisten.setBackground(new java.awt.Color(158, 179, 193));
         lblnombre_apellidos_asisten.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nombre y Apellidos del Asistencial:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
@@ -443,6 +478,11 @@ public class frminforme_medico extends javax.swing.JInternalFrame {
 
         txtdireccion.setBackground(new java.awt.Color(158, 179, 193));
         txtdireccion.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Direccion:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtdireccion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtdireccionKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -736,6 +776,98 @@ public class frminforme_medico extends javax.swing.JInternalFrame {
         reporte_informe_medico g = new reporte_informe_medico();
         g.reportePacientes(fecha_inicial, fecha_final);
     }//GEN-LAST:event_btnreporteActionPerformed
+
+    private void txtcorrelativoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcorrelativoKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 5;
+        if (!Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtcorrelativo.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtcorrelativoKeyTyped
+
+    private void txtnombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnombreKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 20;
+        if (Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtnombre.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtnombreKeyTyped
+
+    private void txtnum_docKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnum_docKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 7;
+        if (!Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtnum_doc.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtnum_docKeyTyped
+
+    private void txtedadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtedadKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 3;
+        if (!Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtedad.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtedadKeyTyped
+
+    private void txtnum_historiaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnum_historiaKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 6;
+        if (!Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtnum_historia.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtnum_historiaKeyTyped
+
+    private void txtdiagnosticoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtdiagnosticoKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 30;
+
+        if (txtcorrelativo.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtdiagnosticoKeyTyped
+
+    private void txtdireccionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtdireccionKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 300;
+
+        if (txtcorrelativo.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtdireccionKeyTyped
+
+    private void txtapellidosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtapellidosKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 45;
+        if (Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtapellidos.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtapellidosKeyTyped
 
     /**
      * @param args the command line arguments

@@ -304,6 +304,11 @@ public class frmoficios extends javax.swing.JInternalFrame {
         txtcuerpo.setColumns(20);
         txtcuerpo.setRows(5);
         txtcuerpo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cuerpo:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 11))); // NOI18N
+        txtcuerpo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtcuerpoKeyTyped(evt);
+            }
+        });
         jScrollPane1.setViewportView(txtcuerpo);
 
         jPanel4.setBackground(new java.awt.Color(158, 179, 193));
@@ -311,6 +316,11 @@ public class frmoficios extends javax.swing.JInternalFrame {
 
         txtnum_correlativo.setBackground(new java.awt.Color(158, 178, 193));
         txtnum_correlativo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "N° Correlativo:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 11))); // NOI18N
+        txtnum_correlativo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnum_correlativoKeyTyped(evt);
+            }
+        });
 
         txtidtrabajador.setText("jTextField2");
 
@@ -334,6 +344,11 @@ public class frmoficios extends javax.swing.JInternalFrame {
 
         txtiniciales.setBackground(new java.awt.Color(158, 178, 193));
         txtiniciales.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Iniciales:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 11))); // NOI18N
+        txtiniciales.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtinicialesKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -366,9 +381,19 @@ public class frmoficios extends javax.swing.JInternalFrame {
 
         txtatencion.setBackground(new java.awt.Color(158, 178, 193));
         txtatencion.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Atencion:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 11))); // NOI18N
+        txtatencion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtatencionKeyTyped(evt);
+            }
+        });
 
         txtasunto.setBackground(new java.awt.Color(158, 178, 193));
         txtasunto.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Asunto:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 11))); // NOI18N
+        txtasunto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtasuntoKeyTyped(evt);
+            }
+        });
 
         btnnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/document_add.png"))); // NOI18N
         btnnuevo.setText("Nuevo");
@@ -388,9 +413,19 @@ public class frmoficios extends javax.swing.JInternalFrame {
 
         txtreceptor.setBackground(new java.awt.Color(158, 178, 193));
         txtreceptor.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nombres y Apellidos:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 11))); // NOI18N
+        txtreceptor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtreceptorKeyTyped(evt);
+            }
+        });
 
         txtcargo_receptor.setBackground(new java.awt.Color(158, 178, 193));
         txtcargo_receptor.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cargo:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 11))); // NOI18N
+        txtcargo_receptor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtcargo_receptorKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -671,6 +706,85 @@ public class frmoficios extends javax.swing.JInternalFrame {
         imprimir_oficios gw = new imprimir_oficios();
         gw.reportePacientes(num_correlativo);
     }//GEN-LAST:event_btnimprimirActionPerformed
+
+    private void txtnum_correlativoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnum_correlativoKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 4;
+        if (!Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtnum_correlativo.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtnum_correlativoKeyTyped
+
+    private void txtreceptorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtreceptorKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 45;
+        if (Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtreceptor.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtreceptorKeyTyped
+
+    private void txtcargo_receptorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcargo_receptorKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 99;
+        if (Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtcargo_receptor.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtcargo_receptorKeyTyped
+
+    private void txtatencionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtatencionKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 100;
+
+        if (txtatencion.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtatencionKeyTyped
+
+    private void txtasuntoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtasuntoKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 100;
+        if (!Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtasunto.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtasuntoKeyTyped
+
+    private void txtinicialesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtinicialesKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 6;
+        if (Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtiniciales.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtinicialesKeyTyped
+
+    private void txtcuerpoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcuerpoKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 1000;
+        if (txtcuerpo.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtcuerpoKeyTyped
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

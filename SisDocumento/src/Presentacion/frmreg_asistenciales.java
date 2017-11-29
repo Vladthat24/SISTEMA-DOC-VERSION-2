@@ -273,15 +273,35 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
 
         txtnombre.setBackground(new java.awt.Color(158, 179, 193));
         txtnombre.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nombre:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtnombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnombreKeyTyped(evt);
+            }
+        });
 
         txtapellidos.setBackground(new java.awt.Color(158, 179, 193));
         txtapellidos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Apellidos:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtapellidos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtapellidosKeyTyped(evt);
+            }
+        });
 
         txtcargo_institucion.setBackground(new java.awt.Color(158, 179, 193));
         txtcargo_institucion.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cargos en la Institucion:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtcargo_institucion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtcargo_institucionKeyTyped(evt);
+            }
+        });
 
         txtmodalidad_contrato.setBackground(new java.awt.Color(158, 179, 193));
         txtmodalidad_contrato.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Modalidad de Contrato:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtmodalidad_contrato.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtmodalidad_contratoKeyTyped(evt);
+            }
+        });
 
         lblfecha_registro.setBackground(new java.awt.Color(158, 179, 193));
         lblfecha_registro.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fecha de Registro", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
@@ -319,6 +339,11 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
 
         txtnum_colegiatura.setBackground(new java.awt.Color(158, 179, 193));
         txtnum_colegiatura.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Numero de Colegiatura:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtnum_colegiatura.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnum_colegiaturaKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -359,9 +384,19 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
                 txtnum_docActionPerformed(evt);
             }
         });
+        txtnum_doc.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnum_docKeyTyped(evt);
+            }
+        });
 
         txtcelular.setBackground(new java.awt.Color(158, 179, 193));
         txtcelular.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Celular:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtcelular.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtcelularKeyTyped(evt);
+            }
+        });
 
         cboprofesion.setBackground(new java.awt.Color(158, 179, 193));
         cboprofesion.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -370,6 +405,11 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
 
         txtemail.setBackground(new java.awt.Color(158, 179, 193));
         txtemail.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Correo:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtemail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtemailKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -438,7 +478,7 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addComponent(txtidasistenciales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -637,6 +677,99 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
         reporte_regasistencial g = new reporte_regasistencial();
         g.reportePacientes(fecha_inicial, fecha_final);
     }//GEN-LAST:event_btnreportesActionPerformed
+
+    private void txtnombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnombreKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 45;
+        if (Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtnombre.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtnombreKeyTyped
+
+    private void txtapellidosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtapellidosKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 45;
+        if (Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtapellidos.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtapellidosKeyTyped
+
+    private void txtcargo_institucionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcargo_institucionKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 100;
+        if (Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtcargo_institucion.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtcargo_institucionKeyTyped
+
+    private void txtmodalidad_contratoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtmodalidad_contratoKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 45;
+        if (Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtmodalidad_contrato.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtmodalidad_contratoKeyTyped
+
+    private void txtcelularKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcelularKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 9;
+        if (!Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtcelular.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtcelularKeyTyped
+
+    private void txtnum_docKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnum_docKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 7;
+        if (!Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtnum_doc.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtnum_docKeyTyped
+
+    private void txtnum_colegiaturaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnum_colegiaturaKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 10;
+        if (!Character.isDigit(c)) {
+            evt.consume();
+        }
+        if (txtnum_colegiatura.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtnum_colegiaturaKeyTyped
+
+    private void txtemailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtemailKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        int limite = 15;
+        if (txtemail.getText().length() == limite) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtemailKeyTyped
 
     /**
      * @param args the command line arguments

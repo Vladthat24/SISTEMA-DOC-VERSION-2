@@ -108,6 +108,9 @@
                   </Border>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtcuerpoKeyTyped"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -213,6 +216,9 @@
                   </Border>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtnum_correlativoKeyTyped"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtidtrabajador">
               <Properties>
@@ -331,6 +337,9 @@
                       </Border>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtinicialesKeyTyped"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -347,6 +356,9 @@
                   </Border>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtatencionKeyTyped"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtasunto">
               <Properties>
@@ -361,6 +373,9 @@
                   </Border>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtasuntoKeyTyped"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnnuevo">
               <Properties>
@@ -397,6 +412,9 @@
                   </Border>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtreceptorKeyTyped"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtcargo_receptor">
               <Properties>
@@ -411,6 +429,9 @@
                   </Border>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtcargo_receptorKeyTyped"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

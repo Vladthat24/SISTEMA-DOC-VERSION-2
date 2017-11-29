@@ -23,7 +23,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author INFORMATICA
+ * @author 
  */
 public class frmlogin extends javax.swing.JFrame {
 
@@ -143,6 +143,7 @@ public class frmlogin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImage(new ImageIcon(getClass().getResource("/Files/logogestion.png")).getImage());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -291,7 +292,7 @@ public class frmlogin extends javax.swing.JFrame {
                         .addGap(0, 126, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 534, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
