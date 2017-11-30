@@ -56,7 +56,6 @@ public class frminicio extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("C.M.I. Daniel Alcides Carrion - Sistema de Gestion de Documento");
-        setIconImage(new ImageIcon(getClass().getResource("/Files/logogestion.png")).getImage());
 
         escritorio.setBackground(new java.awt.Color(167, 186, 186));
 
