@@ -34,7 +34,7 @@ public class foficios {
 
         totalregistros = 0;
         modelo = new DefaultTableModel(null, titulos);
-        sql = "select idoficios,idtrabajador,(select nombre from persona_trabajador where idptrabajador=idptrabajador) as nombre_trab,"
+        sql = "select idoficios,idotrabajador,(select nombre from persona_trabajador where idptrabajador=idptrabajador) as nombre_trab,"
                 + "(select apaterno from persona_trabajador where idptrabajador=idptrabajador)as apaterno_trab,"
                 + "(select amaterno from persona_trabajador where idptrabajador=idptrabajador)as amaterno_trab,"
                 + "num_correlativo,receptor,cargo_receptor,atencion,asunto,cuerpo,iniciales,fecha from oficio where num_correlativo like '%" + buscar + "%' order by idoficios desc";
@@ -45,7 +45,7 @@ public class foficios {
 
             while (rs.next()) {
                 registro[0] = rs.getString("idoficios");
-                registro[1] = rs.getString("idtrabajador");
+                registro[1] = rs.getString("idotrabajador");
                 registro[2] = rs.getString("nombre_trab") + " " + rs.getString("apaterno_trab") + " " + rs.getString("amaterno_trab");
                 registro[3] = rs.getString("num_correlativo");
                 registro[4] = rs.getString("receptor");
@@ -69,21 +69,21 @@ public class foficios {
     }
 
     public boolean insertar(voficio dts) {
-        sql = "insert into oficio (idoficios,idtrabajador,num_correlativo,receptor,cargo_receptor,atencion,asunto,cuerpo,iniciales,fecha)"
-                + "values (?,?,?,?,?,?,?,?,?,?)";
+        sql = "insert into oficio (idotrabajador,num_correlativo,receptor,cargo_receptor,atencion,asunto,cuerpo,iniciales,fecha)"
+                + "values (?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement pst = cn.prepareStatement(sql);
 
-            pst.setInt(1, dts.getIdoficios());
-            pst.setInt(2, dts.getIdtrabajador());
-            pst.setString(3, dts.getNum_correlativo());
-            pst.setString(4, dts.getReceptor());
-            pst.setString(5, dts.getCargo_receptor());
-            pst.setString(6, dts.getAtencion());
-            pst.setString(7, dts.getAsunto());
-            pst.setString(8, dts.getCuerpo());
-            pst.setString(9, dts.getIniciales());
-            pst.setString(10, dts.getFecha());
+            
+            pst.setInt(1, dts.getIdotrabajador());
+            pst.setString(2, dts.getNum_correlativo());
+            pst.setString(3, dts.getReceptor());
+            pst.setString(4, dts.getCargo_receptor());
+            pst.setString(5, dts.getAtencion());
+            pst.setString(6, dts.getAsunto());
+            pst.setString(7, dts.getCuerpo());
+            pst.setString(8, dts.getIniciales());
+            pst.setString(9, dts.getFecha());
 
             int n = pst.executeUpdate();
             if (n != 0) {
@@ -99,21 +99,23 @@ public class foficios {
     }
 
     public boolean editar(voficio dts) {
-        sql = "update oficio set idoficios=?,idtrabajador=?,num_correlativo=?,receptor=?,cargo_receptor=?,atencion=?,asunto=?,cuerpo=?,iniciales=?,fecha=?";
+        sql = "update oficio set idotrabajador=?,num_correlativo=?,receptor=?,cargo_receptor=?,atencion=?,asunto=?,cuerpo=?,iniciales=?,fecha=? where idoficios=?";
 
         try {
             PreparedStatement pst = cn.prepareStatement(sql);
 
-            pst.setInt(1, dts.getIdoficios());
-            pst.setInt(2, dts.getIdtrabajador());
-            pst.setString(3, dts.getNum_correlativo());
-            pst.setString(4, dts.getReceptor());
-            pst.setString(5, dts.getCargo_receptor());
-            pst.setString(6, dts.getAtencion());
-            pst.setString(7, dts.getAsunto());
-            pst.setString(8, dts.getCuerpo());
-            pst.setString(9, dts.getIniciales());
-            pst.setString(10, dts.getFecha());
+            
+            pst.setInt(1, dts.getIdotrabajador());
+            pst.setString(2, dts.getNum_correlativo());
+            pst.setString(3, dts.getReceptor());
+            pst.setString(4, dts.getCargo_receptor());
+            pst.setString(5, dts.getAtencion());
+            pst.setString(6, dts.getAsunto());
+            pst.setString(7, dts.getCuerpo());
+            pst.setString(8, dts.getIniciales());
+            pst.setString(9, dts.getFecha());
+            
+            pst.setInt(10, dts.getIdoficios());
 
             int n = pst.executeUpdate();
             if (n != 0) {

@@ -72,25 +72,25 @@ public class fasistenciales {
     }
 
     public boolean insertar(vasistenciales dts) {
-        sql = "insert into asistenciales (idasistenciales,nombre,apellidos,cargo_institucion,modalidad_contrato,colegiatura,"
+        sql = "insert into asistenciales (nombre,apellidos,cargo_institucion,modalidad_contrato,colegiatura,"
                 +"num_colegiatura,profesion,tipo_documento,num_documento,celular,fecha_registro,email)"
-                +"values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                +"values (?,?,?,?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement pst = cn.prepareStatement(sql);
 
-            pst.setInt(1, dts.getIdasistenciales());
-            pst.setString(2, dts.getNombre());
-            pst.setString(3, dts.getApellidos());
-            pst.setString(4, dts.getCargo_institucion());
-            pst.setString(5, dts.getModalidad_contrato());
-            pst.setString(6, dts.getColegiatura());
-            pst.setString(7, dts.getNum_colegiatura());
-            pst.setString(8, dts.getProfesion());
-            pst.setString(9, dts.getTipo_documento());
-            pst.setString(10, dts.getNum_documento());
-            pst.setString(11, dts.getCelular());
-            pst.setString(12, dts.getFecha_registro());
-            pst.setString(13, dts.getEmail());
+     
+            pst.setString(1, dts.getNombre());
+            pst.setString(2, dts.getApellidos());
+            pst.setString(3, dts.getCargo_institucion());
+            pst.setString(4, dts.getModalidad_contrato());
+            pst.setString(5, dts.getColegiatura());
+            pst.setString(6, dts.getNum_colegiatura());
+            pst.setString(7, dts.getProfesion());
+            pst.setString(8, dts.getTipo_documento());
+            pst.setString(9, dts.getNum_documento());
+            pst.setString(10, dts.getCelular());
+            pst.setString(11, dts.getFecha_registro());
+            pst.setString(12, dts.getEmail());
 
             int n = pst.executeUpdate();
             if (n != 0) {

@@ -33,9 +33,9 @@ public class frmacceso extends javax.swing.JInternalFrame {
         tablalistado.getColumnModel().getColumn(0).setMinWidth(0);
         tablalistado.getColumnModel().getColumn(0).setPreferredWidth(0);
 
-        tablalistado.getColumnModel().getColumn(2).setMaxWidth(0);
-        tablalistado.getColumnModel().getColumn(2).setMinWidth(0);
-        tablalistado.getColumnModel().getColumn(2).setPreferredWidth(0);
+        tablalistado.getColumnModel().getColumn(1).setMaxWidth(0);
+        tablalistado.getColumnModel().getColumn(1).setMinWidth(0);
+        tablalistado.getColumnModel().getColumn(1).setPreferredWidth(0);
 
         tablalistado.getColumnModel().getColumn(5).setMaxWidth(0);
         tablalistado.getColumnModel().getColumn(5).setMinWidth(0);
@@ -267,8 +267,7 @@ public class frmacceso extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtidtrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnguardar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(btnguardar)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -289,7 +288,7 @@ public class frmacceso extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtidtrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtidacceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(btnnuevo)
                         .addComponent(btnguardar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -424,9 +423,9 @@ public class frmacceso extends javax.swing.JInternalFrame {
         int fila = tablalistado.rowAtPoint(evt.getPoint());
 
         txtidacceso.setText(tablalistado.getValueAt(fila, 0).toString());
-        cboacceso.setSelectedItem(tablalistado.getValueAt(fila, 1).toString());
-        txtidtrabajador.setText(tablalistado.getValueAt(fila, 2).toString());
-        txttrabajador.setText(tablalistado.getValueAt(fila, 3).toString());
+        txtidtrabajador.setText(tablalistado.getValueAt(fila, 1).toString());
+        txttrabajador.setText(tablalistado.getValueAt(fila, 2).toString());
+        cboacceso.setSelectedItem(tablalistado.getValueAt(fila, 3).toString());
         txtlogin.setText(tablalistado.getValueAt(fila, 4).toString());
         txtpassword.setText(tablalistado.getValueAt(fila, 5).toString());
         cboestado.setSelectedItem(tablalistado.getValueAt(fila, 6).toString());

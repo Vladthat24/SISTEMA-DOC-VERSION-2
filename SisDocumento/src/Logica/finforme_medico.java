@@ -30,7 +30,7 @@ public class finforme_medico {
     public DefaultTableModel mostrar(String buscar) {
         DefaultTableModel modelo;
 
-        String[] titulos = {"ID", "idiasistenciales", "nombre y apelldios","Colegiatura","N° Correlativo", "Nombre Paciente", "Apellidos Paciente", "N° Historia", "direccion", "sexo", "edad", "Tipo Doc", "N° Doc", "fecha_registro","diagnostico"};
+        String[] titulos = {"ID", "idiasistenciales", "nombre y apelldios", "Colegiatura", "N° Correlativo", "Nombre Paciente", "Apellidos Paciente", "N° Historia", "direccion", "sexo", "edad", "Tipo Doc", "N° Doc", "fecha_registro", "diagnostico"};
         String[] registro = new String[15];
 
         totalregistros = 0;
@@ -50,7 +50,7 @@ public class finforme_medico {
                 registro[0] = rs.getString("idinforme_medico");
                 registro[1] = rs.getString("idiasistenciales");
                 registro[2] = rs.getString("nombre_asisten") + " " + rs.getString("apellidos_asisten");
-                registro[3] = rs.getString("colegiatura_asisten")+ "" + rs.getString("num_colegiatura_asisten");
+                registro[3] = rs.getString("colegiatura_asisten") + "" + rs.getString("num_colegiatura_asisten");
                 registro[4] = rs.getString("correlativo_informemedico");
                 registro[5] = rs.getString("nombre_paciente");
                 registro[6] = rs.getString("apellidos_paciente");
@@ -76,25 +76,24 @@ public class finforme_medico {
     }
 
     public boolean insertar(vinforme_medico dts) {
-        sql = "insert into informe_medico (idinforme_medico,idiasistenciales,correlativo_informemedico,nombre_paciente,apellidos_paciente,historia_clinica,"
+        sql = "insert into informe_medico (idiasistenciales,correlativo_informemedico,nombre_paciente,apellidos_paciente,historia_clinica,"
                 + "direccion,sexo,edad,tipo_documento,num_documento,fecha_registro,diagnostico)"
-                + "values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                + "values (?,?,?,?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement pst = cn.prepareStatement(sql);
 
-            pst.setInt(1, dts.getIdinforme_medico());
-            pst.setInt(2, dts.getIdiasistenciales());
-            pst.setString(3, dts.getCorrelativo_informemedico());
-            pst.setString(4, dts.getNombre_paciente());
-            pst.setString(5, dts.getApellidos_paciente());
-            pst.setString(6, dts.getHistoria_clinica());
-            pst.setString(7, dts.getDireccion());
-            pst.setString(8, dts.getSexo());
-            pst.setString(9, dts.getEdad());
-            pst.setString(10, dts.getTipo_documento());
-            pst.setString(11, dts.getNum_documento());
-            pst.setString(12, dts.getFecha_registro());
-            pst.setString(13, dts.getDiagnostico());
+            pst.setInt(1, dts.getIdiasistenciales());
+            pst.setString(2, dts.getCorrelativo_informemedico());
+            pst.setString(3, dts.getNombre_paciente());
+            pst.setString(4, dts.getApellidos_paciente());
+            pst.setString(5, dts.getHistoria_clinica());
+            pst.setString(6, dts.getDireccion());
+            pst.setString(7, dts.getSexo());
+            pst.setString(8, dts.getEdad());
+            pst.setString(9, dts.getTipo_documento());
+            pst.setString(10, dts.getNum_documento());
+            pst.setString(11, dts.getFecha_registro());
+            pst.setString(12, dts.getDiagnostico());
 
             int n = pst.executeUpdate();
             if (n != 0) {
@@ -110,26 +109,26 @@ public class finforme_medico {
     }
 
     public boolean editar(vinforme_medico dts) {
-        sql = "update informe_medico set idinforme_medico=?,idiasistenciales=?,correlativo_informemedico=?,nombre_paciente=?,apellidos_paciente=?,"
-                + "historia_clinica=?,direccion=?,sexo=?,edad=?,tipo_documento=?,num_documento=?,fecha_registro=?,diagnostico=?";
+        sql = "update informe_medico set idiasistenciales=?,correlativo_informemedico=?,nombre_paciente=?,apellidos_paciente=?,"
+                + "historia_clinica=?,direccion=?,sexo=?,edad=?,tipo_documento=?,num_documento=?,fecha_registro=?,diagnostico=? where idinforme_medico=?";
 
         try {
             PreparedStatement pst = cn.prepareStatement(sql);
 
-            pst.setInt(1, dts.getIdinforme_medico());
-            pst.setInt(2, dts.getIdiasistenciales());
-            pst.setString(3, dts.getCorrelativo_informemedico());
-            pst.setString(4, dts.getNombre_paciente());
-            pst.setString(5, dts.getApellidos_paciente());
-            pst.setString(6, dts.getHistoria_clinica());
-            pst.setString(7, dts.getDireccion());
-            pst.setString(8, dts.getSexo());
-            pst.setString(9, dts.getEdad());
-            pst.setString(10, dts.getTipo_documento());
-            pst.setString(11, dts.getNum_documento());
-            pst.setString(12, dts.getFecha_registro());
-            pst.setString(13, dts.getDiagnostico());
-            
+            pst.setInt(1, dts.getIdiasistenciales());
+            pst.setString(2, dts.getCorrelativo_informemedico());
+            pst.setString(3, dts.getNombre_paciente());
+            pst.setString(4, dts.getApellidos_paciente());
+            pst.setString(5, dts.getHistoria_clinica());
+            pst.setString(6, dts.getDireccion());
+            pst.setString(7, dts.getSexo());
+            pst.setString(8, dts.getEdad());
+            pst.setString(9, dts.getTipo_documento());
+            pst.setString(10, dts.getNum_documento());
+            pst.setString(11, dts.getFecha_registro());
+            pst.setString(12, dts.getDiagnostico());
+
+            pst.setInt(13, dts.getIdinforme_medico());
 
             int n = pst.executeUpdate();
             if (n != 0) {

@@ -70,23 +70,23 @@ public class fcertificado_salud {
     }
 
     public boolean insertar(vcertificado_salud dts) {
-        sql = "insert into certificado_salud (idcertificado_salud,idcerasistenciales,nombre,apellidos,edad,tipo_doc,num_doc,"
+        sql = "insert into certificado_salud (idcerasistenciales,nombre,apellidos,edad,tipo_doc,num_doc,"
                 + "direccion,serelogia,examen_rx,fecha_registro)"
-                + "values (?,?,?,?,?,?,?,?,?,?,?)";
+                + "values (?,?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement pst = cn.prepareStatement(sql);
 
-            pst.setInt(1, dts.getIdcertificado_salud());
-            pst.setInt(2, dts.getIdcerasistenciales());
-            pst.setString(3, dts.getNombre());
-            pst.setString(4, dts.getApellidos());
-            pst.setString(5, dts.getEdad());
-            pst.setString(6, dts.getTipo_doc());
-            pst.setString(7, dts.getNum_doc());
-            pst.setString(8, dts.getDireccion());
-            pst.setString(9, dts.getSerelogia());
-            pst.setString(10, dts.getExamen_rx());
-            pst.setString(11, dts.getFecha_registro());
+           
+            pst.setInt(1, dts.getIdcerasistenciales());
+            pst.setString(2, dts.getNombre());
+            pst.setString(3, dts.getApellidos());
+            pst.setString(4, dts.getEdad());
+            pst.setString(5, dts.getTipo_doc());
+            pst.setString(6, dts.getNum_doc());
+            pst.setString(7, dts.getDireccion());
+            pst.setString(8, dts.getSerelogia());
+            pst.setString(9, dts.getExamen_rx());
+            pst.setString(10, dts.getFecha_registro());
 
             int n = pst.executeUpdate();
             if (n != 0) {
@@ -102,22 +102,25 @@ public class fcertificado_salud {
     }
 
     public boolean editar(vcertificado_salud dts) {
-        sql = "update certificado_salud set idcertificado_salud=?,idcerasistenciales=?,nombre=?,apellidos=?,edad=?,tipo_doc=?,num_doc=?,direccion=?,serelogia=?,examen_rx=?,fecha_registro=?";
+        sql = "update certificado_salud set idcerasistenciales=?,nombre=?,apellidos=?,edad=?,tipo_doc=?,num_doc=?,direccion=?,serelogia=?,examen_rx=?,fecha_registro=? "
+                + "where idcertificado_salud=?";
 
         try {
             PreparedStatement pst = cn.prepareStatement(sql);
 
-            pst.setInt (1, dts.getIdcertificado_salud());
-            pst.setInt (2, dts.getIdcerasistenciales());
-            pst.setString(3, dts.getNombre());
-            pst.setString(4, dts.getApellidos());
-            pst.setString(5, dts.getEdad());
-            pst.setString(6, dts.getTipo_doc());
-            pst.setString(7, dts.getNum_doc());
-            pst.setString(8, dts.getDireccion());
-            pst.setString(9, dts.getSerelogia());
-            pst.setString(10, dts.getExamen_rx());
-            pst.setString(11, dts.getFecha_registro());
+            
+            pst.setInt (1, dts.getIdcerasistenciales());
+            pst.setString(2, dts.getNombre());
+            pst.setString(3, dts.getApellidos());
+            pst.setString(4, dts.getEdad());
+            pst.setString(5, dts.getTipo_doc());
+            pst.setString(6, dts.getNum_doc());
+            pst.setString(7, dts.getDireccion());
+            pst.setString(8, dts.getSerelogia());
+            pst.setString(9, dts.getExamen_rx());
+            pst.setString(10, dts.getFecha_registro());
+            
+             pst.setInt (11, dts.getIdcertificado_salud());
            
 
             int n = pst.executeUpdate();

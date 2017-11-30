@@ -111,7 +111,7 @@ public class frmoficios extends javax.swing.JInternalFrame {
         voficio dts = new voficio();
         foficios func = new foficios();
 
-        dts.setIdtrabajador(Integer.parseInt(txtidtrabajador.getText()));
+        dts.setIdotrabajador(Integer.parseInt(txtidtrabajador.getText()));
         dts.setNum_correlativo(txtnum_correlativo.getText());
         dts.setReceptor(txtreceptor.getText());
         dts.setCargo_receptor(txtcargo_receptor.getText());
@@ -757,9 +757,7 @@ public class frmoficios extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         char c = evt.getKeyChar();
         int limite = 100;
-        if (!Character.isDigit(c)) {
-            evt.consume();
-        }
+
         if (txtasunto.getText().length() == limite) {
             evt.consume();
         }

@@ -80,30 +80,30 @@ public class fconstancia_nacimiento {
     }
 
     public boolean insertar(vconstancia_nacimiento dts) {
-        sql = "insert into constancia_nacimiento (idconstancia_nacimiento,idcasistenciales,correlativo_constancia,nombre,apellidos,tipo_doc,num_doc,"
+        sql = "insert into constancia_nacimiento (idcasistenciales,correlativo_constancia,nombre,apellidos,tipo_doc,num_doc,"
                 + "direccion,historia_clinica,sexo,peso,talla,fecha_nacimiento,hora_nacimiento,num_doc_nacido,fecha_nacimiento_letra,fecha_registro,iniciales)"
-                + "values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                + "values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement pst = cn.prepareStatement(sql);
 
-            pst.setInt(1, dts.getIdconstancia_nacimiento());
-            pst.setInt(2, dts.getIdcasistenciales());
-            pst.setString(3, dts.getCorrelativo_constancia());
-            pst.setString(4, dts.getNombre());
-            pst.setString(5, dts.getApellidos());
-            pst.setString(6, dts.getTipo_doc());
-            pst.setString(7, dts.getNum_doc());
-            pst.setString(8, dts.getDireccion());
-            pst.setString(9, dts.getHistoria_clinica());
-            pst.setString(10, dts.getSexo());
-            pst.setString(11, dts.getPeso());
-            pst.setString(12, dts.getTalla());
-            pst.setDate(13, dts.getFecha_nacimiento());
-            pst.setString(14, dts.getHora_nacimiento());
-            pst.setString(15, dts.getNum_doc_nacido());
-            pst.setString(16, dts.getFecha_nacimiento_letra());
-            pst.setString(17, dts.getFecha_registro());
-            pst.setString(18, dts.getIniciales());
+            
+            pst.setInt(1, dts.getIdcasistenciales());
+            pst.setString(2, dts.getCorrelativo_constancia());
+            pst.setString(3, dts.getNombre());
+            pst.setString(4, dts.getApellidos());
+            pst.setString(5, dts.getTipo_doc());
+            pst.setString(6, dts.getNum_doc());
+            pst.setString(7, dts.getDireccion());
+            pst.setString(8, dts.getHistoria_clinica());
+            pst.setString(9, dts.getSexo());
+            pst.setString(10, dts.getPeso());
+            pst.setString(11, dts.getTalla());
+            pst.setDate(12, dts.getFecha_nacimiento());
+            pst.setString(13, dts.getHora_nacimiento());
+            pst.setString(14, dts.getNum_doc_nacido());
+            pst.setString(15, dts.getFecha_nacimiento_letra());
+            pst.setString(16, dts.getFecha_registro());
+            pst.setString(17, dts.getIniciales());
 
             int n = pst.executeUpdate();
             if (n != 0) {
@@ -119,30 +119,32 @@ public class fconstancia_nacimiento {
     }
 
     public boolean editar(vconstancia_nacimiento dts) {
-        sql = "update constancia_nacimiento set idconstancia_nacimiento=?,idcasistenciales=?,correlativo_constancia=?,nombre=?,apellidos=?,"
-                + "tipo_doc=?,num_doc=?,direccion=?,historia_clinica=?,sexo=?,peso=?,talla=?,fecha_nacimiento=?,hora_nacimiento=?,num_doc_nacido=?,fecha_nacimiento_letra=?,fecha_registro=?,iniciales=?";
+        sql = "update constancia_nacimiento set idcasistenciales=?,correlativo_constancia=?,nombre=?,apellidos=?,"
+                + "tipo_doc=?,num_doc=?,direccion=?,historia_clinica=?,sexo=?,peso=?,talla=?,fecha_nacimiento=?,hora_nacimiento=?,num_doc_nacido=?,fecha_nacimiento_letra=?,fecha_registro=?,iniciales=? where idconstancia_nacimiento=?";
 
         try {
             PreparedStatement pst = cn.prepareStatement(sql);
 
-            pst.setInt(1, dts.getIdconstancia_nacimiento());
-            pst.setInt(2, dts.getIdcasistenciales());
-            pst.setString(3, dts.getCorrelativo_constancia());
-            pst.setString(4, dts.getNombre());
-            pst.setString(5, dts.getApellidos());
-            pst.setString(6, dts.getTipo_doc());
-            pst.setString(7, dts.getNum_doc());
-            pst.setString(8, dts.getDireccion());
-            pst.setString(9, dts.getHistoria_clinica());
-            pst.setString(10, dts.getSexo());
-            pst.setString(11, dts.getPeso());
-            pst.setString(12, dts.getTalla());
-            pst.setDate(13, dts.getFecha_nacimiento());
-            pst.setString(14, dts.getHora_nacimiento());
-            pst.setString(15, dts.getNum_doc_nacido());
-            pst.setString(16, dts.getFecha_nacimiento_letra());
-            pst.setString(17, dts.getFecha_registro());
-            pst.setString(18, dts.getIniciales());
+            
+            pst.setInt(1, dts.getIdcasistenciales());
+            pst.setString(2, dts.getCorrelativo_constancia());
+            pst.setString(3, dts.getNombre());
+            pst.setString(4, dts.getApellidos());
+            pst.setString(5, dts.getTipo_doc());
+            pst.setString(6, dts.getNum_doc());
+            pst.setString(7, dts.getDireccion());
+            pst.setString(8, dts.getHistoria_clinica());
+            pst.setString(9, dts.getSexo());
+            pst.setString(10, dts.getPeso());
+            pst.setString(11, dts.getTalla());
+            pst.setDate(12, dts.getFecha_nacimiento());
+            pst.setString(13, dts.getHora_nacimiento());
+            pst.setString(14, dts.getNum_doc_nacido());
+            pst.setString(15, dts.getFecha_nacimiento_letra());
+            pst.setString(16, dts.getFecha_registro());
+            pst.setString(17, dts.getIniciales());
+            
+            pst.setInt(18, dts.getIdconstancia_nacimiento());
 
             int n = pst.executeUpdate();
             if (n != 0) {

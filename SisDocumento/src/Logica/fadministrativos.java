@@ -71,23 +71,23 @@ public class fadministrativos {
     }
 
     public boolean insertar(vadministrativos dts) {
-        sql = "insert into administrativos (idadministrativos,nombre,apellidos,cargo_institucion,modalidad_contrato,"
+        sql = "insert into administrativos (nombre,apellidos,cargo_institucion,modalidad_contrato,"
                 +"profesion,tipo_documento,num_documento,celular,fecha_registro,email)"
-                +"values (?,?,?,?,?,?,?,?,?,?,?)";
+                +"values (?,?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement pst = cn.prepareStatement(sql);
 
-            pst.setInt(1, dts.getIdadministrativos());
-            pst.setString(2, dts.getNombre());
-            pst.setString(3, dts.getApellidos());
-            pst.setString(4, dts.getCargo_institucion());
-            pst.setString(5, dts.getModalidad_contrato());
-            pst.setString(6, dts.getProfesion());
-            pst.setString(7, dts.getTipo_documento());
-            pst.setString(8, dts.getNum_documento());
-            pst.setString(9, dts.getCelular());
-            pst.setString(10, dts.getFecha_registro());
-            pst.setString(11, dts.getEmail());
+
+            pst.setString(1, dts.getNombre());
+            pst.setString(2, dts.getApellidos());
+            pst.setString(3, dts.getCargo_institucion());
+            pst.setString(4, dts.getModalidad_contrato());
+            pst.setString(5, dts.getProfesion());
+            pst.setString(6, dts.getTipo_documento());
+            pst.setString(7, dts.getNum_documento());
+            pst.setString(8, dts.getCelular());
+            pst.setString(9, dts.getFecha_registro());
+            pst.setString(10, dts.getEmail());
 
             int n = pst.executeUpdate();
             if (n != 0) {

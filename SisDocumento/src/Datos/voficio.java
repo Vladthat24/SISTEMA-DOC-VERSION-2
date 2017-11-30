@@ -12,7 +12,7 @@ package Datos;
 public class voficio {
     
     private int idoficios;
-    private int idtrabajador;
+    private int idotrabajador;
     private String num_correlativo;
     private String receptor;
     private String cargo_receptor;
@@ -25,9 +25,9 @@ public class voficio {
     public voficio() {
     }
 
-    public voficio(int idoficios, int idtrabajador, String num_correlativo, String receptor, String cargo_receptor, String atencion, String asunto, String cuerpo, String iniciales, String fecha) {
+    public voficio(int idoficios, int idotrabajador, String num_correlativo, String receptor, String cargo_receptor, String atencion, String asunto, String cuerpo, String iniciales, String fecha) {
         this.idoficios = idoficios;
-        this.idtrabajador = idtrabajador;
+        this.idotrabajador = idotrabajador;
         this.num_correlativo = num_correlativo;
         this.receptor = receptor;
         this.cargo_receptor = cargo_receptor;
@@ -46,12 +46,12 @@ public class voficio {
         this.idoficios = idoficios;
     }
 
-    public int getIdtrabajador() {
-        return idtrabajador;
+    public int getIdotrabajador() {
+        return idotrabajador;
     }
 
-    public void setIdtrabajador(int idtrabajador) {
-        this.idtrabajador = idtrabajador;
+    public void setIdotrabajador(int idotrabajador) {
+        this.idotrabajador = idotrabajador;
     }
 
     public String getNum_correlativo() {
@@ -118,6 +118,5 @@ public class voficio {
         this.fecha = fecha;
     }
 
-   
     
 }

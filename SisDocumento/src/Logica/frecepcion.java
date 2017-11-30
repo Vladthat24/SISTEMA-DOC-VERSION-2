@@ -68,20 +68,20 @@ public class frecepcion {
     }
 
     public boolean insertar(vrecepcion dts) {
-        sql = "insert into recepcion (idrecepcion,idtrabajador,correlativo,referencia,asunto,fecha,emisor,recepcionado,observaciones)"
-                + "values(?,?,?,?,?,?,?,?,?)";
+        sql = "insert into recepcion (idtrabajador,correlativo,referencia,asunto,fecha,emisor,recepcionado,observaciones)"
+                + "values(?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement pst = cn.prepareStatement(sql);
 
-            pst.setInt(1, dts.getIdrecepcion());
-            pst.setInt(2, dts.getIdtrabajador());
-            pst.setString(3, dts.getCorrelativo());
-            pst.setString(4, dts.getReferencia());
-            pst.setString(5, dts.getAsunto());
-            pst.setString(6, dts.getFecha());
-            pst.setString(7, dts.getEmisor());
-            pst.setString(8, dts.getRecepcionado());
-            pst.setString(9, dts.getObservaciones());
+           
+            pst.setInt(1, dts.getIdtrabajador());
+            pst.setString(2, dts.getCorrelativo());
+            pst.setString(3, dts.getReferencia());
+            pst.setString(4, dts.getAsunto());
+            pst.setString(5, dts.getFecha());
+            pst.setString(6, dts.getEmisor());
+            pst.setString(7, dts.getRecepcionado());
+            pst.setString(8, dts.getObservaciones());
 
             int n = pst.executeUpdate();
             if (n != 0) {
