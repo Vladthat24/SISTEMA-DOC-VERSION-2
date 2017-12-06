@@ -230,7 +230,7 @@ public class frmrecepciondoc extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("C.M.I. Daniel Alcides Carrion -  Sistema de Gestion de Documentos");
+        setTitle("C.M.I. Daniel Alcides Carrion -  Sistema Administrativo de Documentos");
 
         jPanel1.setBackground(new java.awt.Color(158, 179, 193));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Registro de Recepcion:"));

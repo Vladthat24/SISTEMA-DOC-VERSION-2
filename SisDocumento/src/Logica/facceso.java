@@ -159,14 +159,14 @@ public class facceso {
 
     public DefaultTableModel login(String login, String password) {
         DefaultTableModel modelo;
-        String[] titulos = {"ID", "Acceso", "Login", "Password", "Estado"};
-        String[] registros = new String[5];
+        String[] titulos = {"ID","Trabajador", "Acceso", "Login", "Password", "Estado"};
+        String[] registros = new String[6];
 
         totalregistros = 0;
 
         modelo = new DefaultTableModel(null, titulos);
 
-        sSQL = "select idacceso,acceso,login,password,estado from acceso where login='"
+        sSQL = "select idacceso,idtrabajador,acceso,login,password,estado from acceso where login='"
                 + login + "'and password='" + password + "' and estado='A'";
         try {
             Statement st = cn.createStatement();
@@ -174,10 +174,11 @@ public class facceso {
 
             while (rs.next()) {
                 registros[0] = rs.getString("idacceso");
-                registros[1] = rs.getString("acceso");
-                registros[2] = rs.getString("login");
-                registros[3] = rs.getString("password");
-                registros[4] = rs.getString("estado");
+                registros[1] = rs.getString("idtrabajador");
+                registros[2] = rs.getString("acceso");
+                registros[3] = rs.getString("login");
+                registros[4] = rs.getString("password");
+                registros[5] = rs.getString("estado");
 
                 totalregistros = totalregistros + 1;
                 modelo.addRow(registros);

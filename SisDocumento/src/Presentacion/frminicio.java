@@ -3,14 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package Presentacion;
 
-import java.awt.event.KeyEvent;
+import static Presentacion.frminicio.escritorio;
 import javax.swing.ImageIcon;
 
 /**
  *
- * @author
+ * @author CARLOS
  */
 public class frminicio extends javax.swing.JFrame {
 
@@ -19,10 +20,9 @@ public class frminicio extends javax.swing.JFrame {
      */
     public frminicio() {
         initComponents();
-        lblidacceso.setVisible(false);
+        lblidpersona.setVisible(false);
         this.setExtendedState(frminicio.MAXIMIZED_BOTH);
-        this.setTitle(".:: C.M.I. Daniel Alcides Carrion - Sistema de Gestion de Documento ::.");
-//        setIconImage(new ImageIcon(getClass().getResource("../Files/icodeinicio")).getImage());
+        this.setTitle("Sistema de Reserva de Habitaciones y Gestión de ventas - Hotel Paraíso");
     }
 
     /**
@@ -35,66 +35,63 @@ public class frminicio extends javax.swing.JFrame {
     private void initComponents() {
 
         escritorio = new javax.swing.JDesktopPane();
-        lblidacceso = new javax.swing.JLabel();
+        lblidpersona = new javax.swing.JLabel();
         lblacceso = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         mnusisreserva = new javax.swing.JMenu();
-        jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        mnuconsultas = new javax.swing.JMenu();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        mnureservas = new javax.swing.JMenu();
+        mnurecepcion = new javax.swing.JMenu();
+        cutMenuItem = new javax.swing.JMenuItem();
+        mnuremiciondedoc = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem10 = new javax.swing.JMenuItem();
+        mnuregistros = new javax.swing.JMenu();
         jMenuItem8 = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        menutrabajador = new javax.swing.JMenu();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        mnuconfiguraciones = new javax.swing.JMenu();
         menuacceso = new javax.swing.JMenuItem();
         mnusalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("C.M.I. Daniel Alcides Carrion - Sistema de Gestion de Documento");
+        setIconImage(new ImageIcon(getClass().getResource("/Files/logogestion.png")).getImage());
 
-        escritorio.setBackground(new java.awt.Color(167, 186, 186));
+        escritorio.setBackground(new java.awt.Color(102, 255, 255));
 
-        lblidacceso.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        lblidacceso.setText("jLabel1");
-        escritorio.add(lblidacceso);
-        lblidacceso.setBounds(20, 10, 130, 16);
+        lblidpersona.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        lblidpersona.setText("jLabel1");
+        escritorio.add(lblidpersona);
+        lblidpersona.setBounds(20, 10, 130, 16);
 
         lblacceso.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         lblacceso.setText("jLabel7");
         escritorio.add(lblacceso);
         lblacceso.setBounds(20, 40, 130, 16);
 
-        menuBar.setBackground(new java.awt.Color(255, 255, 255));
-
         mnusisreserva.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/iniciosistema.png"))); // NOI18N
         mnusisreserva.setMnemonic('f');
-        mnusisreserva.add(jSeparator1);
-
         menuBar.add(mnusisreserva);
 
-        mnuconsultas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/folder_add.png"))); // NOI18N
-        mnuconsultas.setText("Recep. Doc.");
+        mnurecepcion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/folder_add.png"))); // NOI18N
+        mnurecepcion.setMnemonic('e');
+        mnurecepcion.setText("Recepcion Doc.");
 
-        jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/factura(1).png"))); // NOI18N
-        jMenuItem7.setText("Recepcion");
-        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+        cutMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
+        cutMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/factura(1).png"))); // NOI18N
+        cutMenuItem.setMnemonic('t');
+        cutMenuItem.setText("Recepcion");
+        cutMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem7ActionPerformed(evt);
+                cutMenuItemActionPerformed(evt);
             }
         });
-        mnuconsultas.add(jMenuItem7);
+        mnurecepcion.add(cutMenuItem);
 
-        menuBar.add(mnuconsultas);
+        menuBar.add(mnurecepcion);
 
-        mnureservas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/emisiondedoc.png"))); // NOI18N
-        mnureservas.setMnemonic('h');
-        mnureservas.setText("Emision de Doc.");
+        mnuremiciondedoc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/emisiondedoc.png"))); // NOI18N
+        mnuremiciondedoc.setMnemonic('h');
+        mnuremiciondedoc.setText("Emision de Doc.");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/memo.png"))); // NOI18N
@@ -104,7 +101,7 @@ public class frminicio extends javax.swing.JFrame {
                 jMenuItem1ActionPerformed(evt);
             }
         });
-        mnureservas.add(jMenuItem1);
+        mnuremiciondedoc.add(jMenuItem1);
 
         aboutMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
         aboutMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/oficios.png"))); // NOI18N
@@ -115,7 +112,7 @@ public class frminicio extends javax.swing.JFrame {
                 aboutMenuItemActionPerformed(evt);
             }
         });
-        mnureservas.add(aboutMenuItem);
+        mnuremiciondedoc.add(aboutMenuItem);
 
         jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/memecircular.png"))); // NOI18N
@@ -125,47 +122,47 @@ public class frminicio extends javax.swing.JFrame {
                 jMenuItem6ActionPerformed(evt);
             }
         });
-        mnureservas.add(jMenuItem6);
+        mnuremiciondedoc.add(jMenuItem6);
 
-        jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/informe_medico.png"))); // NOI18N
-        jMenuItem8.setText("INFOR. MEDICO");
+        jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/informe_medico.png"))); // NOI18N
+        jMenuItem10.setText("INFOR. MEDICO");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
+        mnuremiciondedoc.add(jMenuItem10);
+
+        menuBar.add(mnuremiciondedoc);
+
+        mnuregistros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/registro.png"))); // NOI18N
+        mnuregistros.setText("Registros");
+
+        jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/asistencial.png"))); // NOI18N
+        jMenuItem8.setText("Asistenciales");
         jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem8ActionPerformed(evt);
             }
         });
-        mnureservas.add(jMenuItem8);
+        mnuregistros.add(jMenuItem8);
 
-        menuBar.add(mnureservas);
-
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/registro.png"))); // NOI18N
-        jMenu1.setText("Registro");
-
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/asistencial.png"))); // NOI18N
-        jMenuItem4.setText("Asistenciales");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/admin.png"))); // NOI18N
+        jMenuItem9.setText("Administrativos");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                jMenuItem9ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem4);
+        mnuregistros.add(jMenuItem9);
 
-        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_MASK));
-        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/admin.png"))); // NOI18N
-        jMenuItem5.setText("Administrativos");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem5);
+        menuBar.add(mnuregistros);
 
-        menuBar.add(jMenu1);
-
-        menutrabajador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/configuraciones.png"))); // NOI18N
-        menutrabajador.setText("Configuraciones");
+        mnuconfiguraciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/Configuraciones.png"))); // NOI18N
+        mnuconfiguraciones.setText("Configuraciones");
 
         menuacceso.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
         menuacceso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/acceso.png"))); // NOI18N
@@ -175,19 +172,15 @@ public class frminicio extends javax.swing.JFrame {
                 menuaccesoActionPerformed(evt);
             }
         });
-        menutrabajador.add(menuacceso);
+        mnuconfiguraciones.add(menuacceso);
 
-        menuBar.add(menutrabajador);
+        menuBar.add(mnuconfiguraciones);
 
-        mnusalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/salir.png"))); // NOI18N
+        mnusalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/Salir.png"))); // NOI18N
+        mnusalir.setText("Salir");
         mnusalir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 mnusalirMouseClicked(evt);
-            }
-        });
-        mnusalir.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                mnusalirKeyPressed(evt);
             }
         });
         menuBar.add(mnusalir);
@@ -198,29 +191,44 @@ public class frminicio extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 861, Short.MAX_VALUE)
+            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 849, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
+            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 453, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void aboutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutMenuItemActionPerformed
+    private void cutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cutMenuItemActionPerformed
         // TODO add your handling code here:
-        frmoficios form = new frmoficios();
+        frmrecepciondoc form = new frmrecepciondoc();
         escritorio.add(form);
         form.toFront();
         form.setVisible(true);
-
-    }//GEN-LAST:event_aboutMenuItemActionPerformed
+    }//GEN-LAST:event_cutMenuItemActionPerformed
 
     private void mnusalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnusalirMouseClicked
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_mnusalirMouseClicked
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+        frmreg_asistenciales form = new frmreg_asistenciales();
+        escritorio.add(form);
+        form.toFront();
+        form.setVisible(true);
+
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        frmtrabajador form = new frmtrabajador();
+        escritorio.add(form);
+        form.toFront();
+        form.setVisible(true);
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void menuaccesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuaccesoActionPerformed
         // TODO add your handling code here:
@@ -230,35 +238,6 @@ public class frminicio extends javax.swing.JFrame {
         form.setVisible(true);
     }//GEN-LAST:event_menuaccesoActionPerformed
 
-    private void mnusalirKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mnusalirKeyPressed
-
-    }//GEN-LAST:event_mnusalirKeyPressed
-
-    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
-        // TODO add your handling code here:
-        frmrecepciondoc form = new frmrecepciondoc();
-        escritorio.add(form);
-        form.toFront();
-        form.setVisible(true);
-    }//GEN-LAST:event_jMenuItem7ActionPerformed
-
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
-        frmreg_asistenciales form = new frmreg_asistenciales();
-        escritorio.add(form);
-        form.toFront();
-        form.setVisible(true);
-
-
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
-
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        frmtrabajador form = new frmtrabajador();
-        escritorio.add(form);
-        form.toFront();
-        form.setVisible(true);
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
-
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         frmconstancia_nacimiento form = new frmconstancia_nacimiento();
         escritorio.add(form);
@@ -266,20 +245,28 @@ public class frminicio extends javax.swing.JFrame {
         form.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void aboutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutMenuItemActionPerformed
+        // TODO add your handling code here:
+        frmoficios form = new frmoficios();
+        escritorio.add(form);
+        form.toFront();
+        form.setVisible(true);
+    }//GEN-LAST:event_aboutMenuItemActionPerformed
+
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-       frmcertificado_salud form= new frmcertificado_salud();
-       escritorio.add(form);
-       form.toFront();
-       form.setVisible(true);
+        frmcertificado_salud form= new frmcertificado_salud();
+        escritorio.add(form);
+        form.toFront();
+        form.setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
-    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
         // TODO add your handling code here:
         frminforme_medico  form= new frminforme_medico();
         escritorio.add(form);
         form.toFront();
         form.setVisible(true);
-    }//GEN-LAST:event_jMenuItem8ActionPerformed
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -307,6 +294,9 @@ public class frminicio extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(frminicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -318,22 +308,21 @@ public class frminicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;
+    private javax.swing.JMenuItem cutMenuItem;
     public static javax.swing.JDesktopPane escritorio;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JMenuItem jMenuItem9;
     public static javax.swing.JLabel lblacceso;
-    public static javax.swing.JLabel lblidacceso;
+    public static javax.swing.JLabel lblidpersona;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem menuacceso;
-    public static javax.swing.JMenu menutrabajador;
-    private javax.swing.JMenu mnuconsultas;
-    private javax.swing.JMenu mnureservas;
+    public static javax.swing.JMenu mnuconfiguraciones;
+    public static javax.swing.JMenu mnurecepcion;
+    private javax.swing.JMenu mnuregistros;
+    private javax.swing.JMenu mnuremiciondedoc;
     private javax.swing.JMenu mnusalir;
     private javax.swing.JMenu mnusisreserva;
     // End of variables declaration//GEN-END:variables
