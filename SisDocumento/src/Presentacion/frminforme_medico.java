@@ -804,7 +804,7 @@ public class frminforme_medico extends javax.swing.JInternalFrame {
     private void txtnum_docKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnum_docKeyTyped
         // TODO add your handling code here:
         char c = evt.getKeyChar();
-        int limite = 7;
+        int limite = 8;
         if (!Character.isDigit(c)) {
             evt.consume();
         }
