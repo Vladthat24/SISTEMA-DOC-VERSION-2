@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="144"/>
+	<property name="ireport.y" value="299"/>
 	<parameter name="num_doc" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -73,124 +73,148 @@
 	<detail>
 		<band height="588" splitType="Stretch">
 			<staticText>
-				<reportElement x="107" y="33" width="57" height="20"/>
-				<textElement/>
+				<reportElement x="83" y="13" width="72" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="13"/>
+				</textElement>
 				<text><![CDATA[PACIENTE:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="164" y="33" width="100" height="20"/>
-				<textElement/>
+				<reportElement x="136" y="33" width="257" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_paciente}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="264" y="33" width="257" height="20"/>
-				<textElement/>
+				<reportElement x="136" y="53" width="257" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{apellidos_paciente}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="107" y="63" width="57" height="20"/>
-				<textElement/>
+				<reportElement x="83" y="91" width="57" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{tipo_documento}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="136" y="63" width="233" height="20"/>
-				<textElement/>
+				<reportElement x="120" y="91" width="233" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{num_documento}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="20" y="98" width="87" height="14"/>
+				<reportElement x="20" y="126" width="87" height="14"/>
 				<textElement textAlignment="Justified"/>
 				<text><![CDATA[Paciente de Sexo]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="107" y="98" width="57" height="14"/>
+				<reportElement x="104" y="126" width="57" height="14"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{sexo}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="161" y="98" width="15" height="14"/>
-				<textElement textAlignment="Justified"/>
+				<reportElement x="149" y="126" width="15" height="14"/>
+				<textElement textAlignment="Center"/>
 				<text><![CDATA[de]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="176" y="98" width="50" height="14"/>
+				<reportElement x="164" y="126" width="50" height="14"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{edad}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="194" y="98" width="65" height="14"/>
+				<reportElement x="182" y="126" width="82" height="14"/>
 				<textElement textAlignment="Justified"/>
-				<text><![CDATA[domiciliada en ]]></text>
+				<text><![CDATA[domiciliado(a) en ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="264" y="98" width="267" height="14"/>
+				<reportElement x="259" y="126" width="273" height="14"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{direccion}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="20" y="112" width="209" height="14"/>
+				<reportElement x="20" y="140" width="206" height="14"/>
 				<textElement textAlignment="Justified"/>
 				<text><![CDATA[- Villa María del Triunfo con historia clinica N°]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="229" y="112" width="90" height="14"/>
-				<textElement textAlignment="Justified"/>
+				<reportElement x="219" y="140" width="40" height="14"/>
+				<textElement textAlignment="Center"/>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{historia_clinica}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="283" y="112" width="248" height="14"/>
+				<reportElement x="259" y="140" width="272" height="14"/>
 				<textElement textAlignment="Justified"/>
-				<text><![CDATA[es atendida en el Serivicio de Medicina del C.M.I Daniel]]></text>
+				<text><![CDATA[es atendido(a) en el Serivicio de Medicina del C.M.I Daniel]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="20" y="126" width="116" height="13"/>
+				<reportElement x="20" y="154" width="116" height="13"/>
 				<textElement textAlignment="Justified"/>
 				<text><![CDATA[Alices Carrión, el ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="104" y="126" width="90" height="13"/>
+				<reportElement x="97" y="154" width="122" height="13"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{fecha_registro}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="184" y="126" width="45" height="13"/>
+				<reportElement x="214" y="154" width="45" height="13"/>
 				<textElement textAlignment="Justified"/>
 				<text><![CDATA[con el Dx:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="229" y="126" width="268" height="13"/>
+				<reportElement x="259" y="154" width="272" height="13"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{diagnostico}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="20" y="156" width="109" height="13"/>
+				<reportElement x="20" y="184" width="144" height="13"/>
 				<textElement textAlignment="Justified"/>
-				<text><![CDATA[Persona atendica por el ]]></text>
+				<text><![CDATA[Persona atendida por el Medico:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="129" y="156" width="100" height="13"/>
+				<reportElement x="176" y="184" width="100" height="13"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_asisten}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="194" y="156" width="100" height="13"/>
+				<reportElement x="236" y="184" width="100" height="13"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{apellidos_asisten}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="305" y="156" width="100" height="13"/>
+				<reportElement x="176" y="197" width="100" height="13"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{colegiatura_asisten}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="339" y="156" width="100" height="13"/>
+				<reportElement x="226" y="197" width="100" height="13"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{num_colegiatura_asisten}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="20" y="191" width="309" height="15"/>
+				<reportElement x="20" y="222" width="309" height="15"/>
 				<textElement/>
 				<text><![CDATA[La expedición del presente informe no es válida para fines judiciales.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="83" y="33" width="53" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[NOMBRES:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="83" y="53" width="53" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[APELLIDOS:]]></text>
 			</staticText>
 		</band>
 	</detail>

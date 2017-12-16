@@ -3,17 +3,28 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<queryString language="SQL">
-		<![CDATA[select idoficios,idtrabajador,(select nombre from persona_trabajador where idptrabajador=idptrabajador) as nombre_trab,(select apaterno from
+	<parameter name="fecha_inicial" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fecha_final" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select idoficios,idotrabajador,(select nombre from persona_trabajador where idptrabajador=idptrabajador) as nombre_trab,(select apaterno from
 persona_trabajador where idptrabajador=idptrabajador)as apaterno_trab,(select amaterno from persona_trabajador where idptrabajador=idptrabajador)
-as amaterno_trab,num_correlativo,receptor,cargo_receptor,atencion,asunto,cuerpo,iniciales,fecha from oficio where idoficios=idoficios;]]>
+as amaterno_trab,num_correlativo,receptor,cargo_receptor,atencion,asunto,cuerpo,iniciales,fecha from oficio where fecha between $P{fecha_inicial} and $P{fecha_final};]]>
 	</queryString>
 	<field name="idoficios" class="java.lang.Integer"/>
+	<field name="idotrabajador" class="java.lang.Integer"/>
+	<field name="nombre_trab" class="java.lang.String"/>
+	<field name="apaterno_trab" class="java.lang.String"/>
+	<field name="amaterno_trab" class="java.lang.String"/>
 	<field name="num_correlativo" class="java.lang.String"/>
 	<field name="receptor" class="java.lang.String"/>
 	<field name="cargo_receptor" class="java.lang.String"/>
 	<field name="atencion" class="java.lang.String"/>
 	<field name="asunto" class="java.lang.String"/>
+	<field name="cuerpo" class="java.lang.String"/>
 	<field name="iniciales" class="java.lang.String"/>
 	<field name="fecha" class="java.lang.String"/>
 	<group name="num_correlativo">

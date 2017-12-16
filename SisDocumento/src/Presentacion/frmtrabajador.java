@@ -94,6 +94,8 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
 
         btnguardar.setEnabled(false);
         btneliminar.setEnabled(false);
+        btnbuscar.setEnabled(false);
+        btnreportes.setEnabled(false);
 
         txtidtrabajador.setText("");
         txtnombre.setText("");
@@ -124,8 +126,9 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
         lblfecha_registro.setEnabled(true);
 
         btnguardar.setEnabled(true);
-
         btneliminar.setEnabled(true);
+        btnbuscar.setEnabled(true);
+        btnreportes.setEnabled(true);
 
         txtidtrabajador.setText("");
         txtnombre.setText("");
@@ -780,6 +783,9 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         char c = evt.getKeyChar();
         int limite = 30;
+        if (Character.isDigit(c)) {
+            evt.consume();
+        }
         if (txtemail.getText().length() == limite) {
             evt.consume();
         }

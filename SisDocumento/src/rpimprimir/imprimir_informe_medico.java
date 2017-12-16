@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package reports;
+package rpimprimir;
 
+import reports.*;
 import Logica.conexion;
 import java.io.File;
 import java.sql.Connection;
@@ -25,16 +26,16 @@ import org.apache.commons.collections.map.HashedMap;
  */
 
 
-public class imprimir_certificado_salud {
+public class imprimir_informe_medico {
     public Connection connection= new conexion().conectar();
     public void reportePacientes(int num_doc){
-        Map p = new HashedMap();
+        Map p = new HashMap();
         JasperReport report;
         JasperPrint print;
         try {
 
             report=JasperCompileManager.compileReport(new File("").getAbsolutePath()+
-                    "/src/reports/imprimir_certificado_salud.jrxml");
+                    "/src/rpimprimir/imprimir_informe_medico.jrxml");
             p.put("num_doc", num_doc);
            
             print= JasperFillManager.fillReport(report, p,connection);

@@ -3,23 +3,14 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<parameter name="idoficios" class="java.lang.Integer">
-		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
-	</parameter>
-	<parameter name="idadministrativos" class="java.lang.Integer">
-		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
-	</parameter>
-	<parameter name="idasistenciales" class="java.lang.Integer">
-		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
-	</parameter>
 	<parameter name="num_correlativo" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[select idoficios,idtrabajador,(select nombre from persona_trabajador where idptrabajador=idptrabajador) as nombre_trab,(select apaterno from persona_trabajador where idptrabajador=idptrabajador)as apaterno_trab,(select amaterno from persona_trabajador where idptrabajador=idptrabajador)as amaterno_trab,num_correlativo,receptor,cargo_receptor,atencion,asunto,cuerpo,iniciales,fecha from oficio where num_correlativo=$P{num_correlativo};]]>
+		<![CDATA[select idoficios,idotrabajador,(select nombre from persona_trabajador where idptrabajador=idptrabajador) as nombre_trab,(select apaterno from persona_trabajador where idptrabajador=idptrabajador)as apaterno_trab,(select amaterno from persona_trabajador where idptrabajador=idptrabajador)as amaterno_trab,num_correlativo,receptor,cargo_receptor,atencion,asunto,cuerpo,iniciales,fecha from oficio where num_correlativo=$P{num_correlativo};]]>
 	</queryString>
 	<field name="idoficios" class="java.lang.Integer"/>
-	<field name="idtrabajador" class="java.lang.Integer"/>
+	<field name="idotrabajador" class="java.lang.Integer"/>
 	<field name="nombre_trab" class="java.lang.String"/>
 	<field name="apaterno_trab" class="java.lang.String"/>
 	<field name="amaterno_trab" class="java.lang.String"/>

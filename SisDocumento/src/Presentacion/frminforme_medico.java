@@ -12,7 +12,7 @@ import Logica.finforme_medico;
 import java.util.Calendar;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import reports.imprimir_informe_medico;
+import rpimprimir.imprimir_informe_medico;
 import reports.reporte_informe_medico;
 
 /**

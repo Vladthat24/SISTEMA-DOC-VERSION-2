@@ -13,8 +13,9 @@ import java.sql.Date;
 import java.util.Calendar;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import reports.imprimir_certificado_salud;
+
 import reports.reporte_certificado_salud;
+import rpimprimir.imprimir_certificado_salud;
 
 /**
  *

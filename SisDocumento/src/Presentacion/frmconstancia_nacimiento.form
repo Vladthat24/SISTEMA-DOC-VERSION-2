@@ -25,28 +25,23 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
           <Group type="102" attributes="0">
               <Component id="lbltitulo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="718" max="32767" attributes="0"/>
           </Group>
-          <Group type="102" attributes="0">
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
+          <Component id="jPanel4" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <Component id="lbltitulo" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jPanel4" max="32767" attributes="0"/>
-                  <Component id="jPanel1" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+              <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -67,103 +62,92 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="txtcorrelativo" min="-2" pref="115" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="lblfecha_registro" min="-2" pref="236" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnasistencial" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="lblnombre_apellidos_asisten" min="-2" pref="274" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="lblcolegiatura_asisten" min="-2" pref="153" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="jPanel3" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Component id="lblfecha_nacimiento_doc" min="-2" pref="12" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
-                          <Component id="btnnuevo" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btnguardar" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                          <Component id="txtidasistenciales" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="txtidconstancia_nacimiento" min="-2" pref="6" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="txtdireccion" min="-2" pref="341" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="txtiniciales" min="-2" pref="105" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="txtcorrelativo" min="-2" pref="115" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnasistencial" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="lblnombre_apellidos_asisten" min="-2" pref="222" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="lblcolegiatura_asisten" min="-2" pref="278" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="txtiniciales" min="-2" pref="139" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="txtnum_historia" min="-2" pref="131" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="lblfecha_nacimiento_doc" min="-2" pref="12" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txtidasistenciales" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtidconstancia_nacimiento" min="-2" pref="6" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="txtnombre" min="-2" pref="268" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="txtapellidos" min="-2" pref="307" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="txtnum_doc_nacido" min="-2" pref="199" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="lblfecha_registro" min="-2" pref="183" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <Component id="jPanel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="txtnombre" min="-2" pref="242" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txtapellidos" max="32767" attributes="0"/>
-                          </Group>
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="14" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                          <Component id="btnasistencial" min="-2" pref="52" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
+                      <Component id="lblcolegiatura_asisten" min="-2" pref="64" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                                  <Component id="btnasistencial" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="lblnombre_apellidos_asisten" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
+                              <Component id="txtcorrelativo" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lblfecha_nacimiento_doc" min="-2" pref="32" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="txtidasistenciales" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="txtidconstancia_nacimiento" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                  <Component id="txtiniciales" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
+                                  <Component id="txtnum_historia" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txtnombre" alignment="3" min="-2" pref="63" max="-2" attributes="0"/>
+                                  <Component id="txtapellidos" alignment="3" min="-2" pref="63" max="-2" attributes="0"/>
+                                  <Component id="txtnum_doc_nacido" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                              </Group>
                               <Component id="lblfecha_registro" max="32767" attributes="0"/>
-                              <Component id="txtcorrelativo" pref="64" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="lblnombre_apellidos_asisten" pref="66" max="32767" attributes="0"/>
-                      <Component id="lblcolegiatura_asisten" max="32767" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtnombre" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
-                      <Component id="txtapellidos" alignment="3" min="-2" pref="63" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtdireccion" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
-                              <Component id="txtiniciales" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblfecha_nacimiento_doc" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="btnnuevo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnguardar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtidconstancia_nacimiento" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtidasistenciales" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -199,7 +183,7 @@
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Apellidos:">
+                <TitledBorder title="Apellidos de la Madre:">
                   <Font PropertyName="font" name="Arial" size="12" style="2"/>
                 </TitledBorder>
               </Border>
@@ -207,42 +191,6 @@
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtapellidosKeyTyped"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblfecha_registro">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="c1" green="b3" red="9e" type="rgb"/>
-            </Property>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Fecha de Registro">
-                  <Font PropertyName="font" name="Arial" size="12" style="2"/>
-                </TitledBorder>
-              </Border>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnnuevo">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Files/document_add.png"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Nuevo"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnnuevoActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnguardar">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Files/diskette.png"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Guardar"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnguardarActionPerformed"/>
           </Events>
         </Component>
         <Container class="javax.swing.JPanel" name="jPanel3">
@@ -262,35 +210,32 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="dcofecha_nacimiento" min="-2" pref="169" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="txthora_nacimiento" min="-2" pref="100" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="cbotipo_doc" min="-2" pref="98" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtnum_doc" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="txtnum_doc_nacido" max="32767" attributes="0"/>
-                                  <Component id="cbosexo" pref="131" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="dcofecha_nacimiento" min="-2" pref="195" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txthora_nacimiento" pref="156" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="cbosexo" min="-2" pref="100" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="cbotipo_doc" min="-2" pref="102" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txtnum_doc" min="-2" pref="175" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txtpeso" min="-2" pref="104" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txttalla" min="-2" pref="111" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="txtpeso" max="32767" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="txttalla" min="-2" pref="134" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="txtnum_historia" min="-2" pref="131" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="282" max="-2" attributes="0"/>
+                              <Component id="btnnuevo" min="-2" pref="107" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
+                              <Component id="btnguardar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
+                          <Component id="txtdireccion" alignment="1" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -298,29 +243,28 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="dcofecha_nacimiento" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txthora_nacimiento" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                              <Component id="txthora_nacimiento" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="cbosexo" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
+                                  <Component id="cbotipo_doc" alignment="3" min="-2" pref="62" max="-2" attributes="0"/>
+                                  <Component id="txtnum_doc" alignment="3" min="-2" pref="62" max="-2" attributes="0"/>
+                                  <Component id="txtpeso" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
+                                  <Component id="txttalla" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="dcofecha_nacimiento" pref="74" max="32767" attributes="0"/>
-                          <Component id="cbosexo" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtnum_doc_nacido" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                          <Component id="txtnum_doc" alignment="3" min="-2" pref="62" max="-2" attributes="0"/>
-                          <Component id="cbotipo_doc" alignment="3" min="-2" pref="62" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtpeso" min="-2" pref="61" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="txtnum_historia" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
-                              <Component id="txttalla" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
-                          </Group>
+                      <Component id="txtdireccion" min="-2" pref="61" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnguardar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnnuevo" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -340,7 +284,7 @@
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder title="Tipo Doc:">
+                    <TitledBorder title="Tipo Doc.:">
                       <Font PropertyName="font" name="Arial" size="12" style="2"/>
                     </TitledBorder>
                   </Border>
@@ -357,7 +301,7 @@
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder title="N&#xb0; de la Madre:">
+                    <TitledBorder title="N&#xb0; de Doc.de la Madre:">
                       <Font PropertyName="font" name="Arial" size="12" style="2"/>
                     </TitledBorder>
                   </Border>
@@ -382,7 +326,7 @@
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder title="Sexo">
+                    <TitledBorder title="Sexo del Ni&#xf1;o:">
                       <Font PropertyName="font" name="Arial" size="12" style="2"/>
                     </TitledBorder>
                   </Border>
@@ -410,24 +354,6 @@
                 <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtpesoKeyTyped"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtnum_historia">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="c1" green="b3" red="9e" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder title="N&#xb0; Historia del Ni&#xf1;o:">
-                      <Font PropertyName="font" name="Arial" size="12" style="2"/>
-                    </TitledBorder>
-                  </Border>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtnum_historiaActionPerformed"/>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtnum_historiaKeyTyped"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JTextField" name="txttalla">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -453,7 +379,7 @@
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder title="Fecha Nacimiento del Nacido:"/>
+                    <TitledBorder title="Fecha Nac. del Ni&#xf1;o:"/>
                   </Border>
                 </Property>
               </Properties>
@@ -468,7 +394,7 @@
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder title="Hora Nac.:">
+                    <TitledBorder title="Hora Nac del Ni&#xf1;o:">
                       <Font PropertyName="font" name="Arial" size="12" style="2"/>
                     </TitledBorder>
                   </Border>
@@ -478,21 +404,43 @@
                 <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txthora_nacimientoKeyTyped"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtnum_doc_nacido">
+            <Component class="javax.swing.JTextField" name="txtdireccion">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="c1" green="b3" red="9e" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder title="N&#xb0; Doc.del Doctor:">
+                    <TitledBorder title="Direccion de la Paciente :">
                       <Font PropertyName="font" name="Arial" size="12" style="2"/>
                     </TitledBorder>
                   </Border>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtnum_doc_nacidoKeyTyped"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtdireccionKeyTyped"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnnuevo">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Files/document_add.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Nuevo"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnnuevoActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnguardar">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Files/diskette.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Guardar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnguardarActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -504,7 +452,7 @@
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Nombres:">
+                <TitledBorder title="Nombres de la Madre:">
                   <Font PropertyName="font" name="Arial" size="12" style="2"/>
                 </TitledBorder>
               </Border>
@@ -512,23 +460,6 @@
           </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtnombreKeyTyped"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtdireccion">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="c1" green="b3" red="9e" type="rgb"/>
-            </Property>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Direccion del Paciente:">
-                  <Font PropertyName="font" name="Arial" size="12" style="2"/>
-                </TitledBorder>
-              </Border>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtdireccionKeyTyped"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblfecha_nacimiento_doc">
@@ -547,7 +478,9 @@
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Nombres y Apelldios del Asistencial:"/>
+                <TitledBorder title="Nombres de la Obstetra:">
+                  <Font PropertyName="font" name="Arial" size="12" style="2"/>
+                </TitledBorder>
               </Border>
             </Property>
           </Properties>
@@ -562,7 +495,9 @@
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Colegiatura:"/>
+                <TitledBorder title="Apellidos de la Obstetra:">
+                  <Font PropertyName="font" name="Arial" size="12" style="2"/>
+                </TitledBorder>
               </Border>
             </Property>
           </Properties>
@@ -585,6 +520,37 @@
             <Property name="text" type="java.lang.String" value="jTextField1"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JTextField" name="txtnum_doc_nacido">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="c1" green="b3" red="9e" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="N&#xb0; Doc del Doctor:">
+                  <Font PropertyName="font" name="Arial" size="12" style="2"/>
+                </TitledBorder>
+              </Border>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtnum_doc_nacidoKeyTyped"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblfecha_registro">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="c1" green="b3" red="9e" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="Fecha de Registro">
+                  <Font PropertyName="font" name="Arial" size="12" style="2"/>
+                </TitledBorder>
+              </Border>
+            </Property>
+          </Properties>
+        </Component>
         <Component class="javax.swing.JTextField" name="txtiniciales">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -592,7 +558,7 @@
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Iniciales:">
+                <TitledBorder title="Iniciales Trabj.:">
                   <Font PropertyName="font" name="Arial" size="12" style="2"/>
                 </TitledBorder>
               </Border>
@@ -601,6 +567,24 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtinicialesActionPerformed"/>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtinicialesKeyTyped"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtnum_historia">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="c1" green="b3" red="9e" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="N&#xb0; Historia:">
+                  <Font PropertyName="font" name="Arial" size="12" style="2"/>
+                </TitledBorder>
+              </Border>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtnum_historiaActionPerformed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtnum_historiaKeyTyped"/>
           </Events>
         </Component>
       </SubComponents>
@@ -629,28 +613,31 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="btnimprimir" alignment="0" max="32767" attributes="0"/>
-                      <Component id="btneliminar" alignment="0" max="32767" attributes="0"/>
-                      <Component id="btnbuscar" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="btnreportes" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="lbltotalregistros" min="-2" pref="193" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="jScrollPane1" min="-2" pref="959" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="btneliminar" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="btnbuscar" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Component id="btnreportes" min="-2" pref="40" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="btnimprimir" alignment="1" min="-2" pref="40" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="lbltotalregistros" min="-2" pref="193" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
                           <Component id="btnbuscar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="btneliminar" min="-2" max="-2" attributes="0"/>
@@ -660,11 +647,10 @@
                           <Component id="btnreportes" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="jScrollPane1" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="lbltotalregistros" min="-2" pref="54" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -695,6 +681,7 @@
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tablalistadoMouseClicked"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tablalistadoMouseEntered"/>
               </Events>
             </Component>
           </SubComponents>

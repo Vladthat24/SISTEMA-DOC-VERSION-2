@@ -29,7 +29,7 @@ public class fconstancia_nacimiento {
     public DefaultTableModel mostrar(String buscar) {
         DefaultTableModel modelo;
 
-        String[] titulos = {"ID", "idasistenciales", "nombre_asiste", "apellidos_asisten", "colegiatura_asiten", "N° Correlativo", "Nombre", "Apellidos", "Tipo_Doc", "N° Doc", "Direccion", "N° Historia", "sexo", "peso", "talla", "Fecha Naci", "Hora", "N° Doc. Nacido","fecha_nacimiento_letra","fecha_registro","iniciales"};
+        String[] titulos = {"ID", "idasistenciales", "nombre_asiste", "colegiatura_asiten", "N° Correlativo", "Nombre", "Apellidos", "Tipo_Doc", "N° Doc", "Direccion", "N° Historia", "sexo", "peso", "talla", "Fecha Naci", "Hora", "N° Doc. Doctor","fecha_nacimiento_letra","fecha_registro","iniciales",""};
         String[] registro = new String[21];
 
         totalregistros = 0;
