@@ -82,7 +82,7 @@ public class ftrabajador {
 
             PreparedStatement pst = cn.prepareStatement(sSQL);
             PreparedStatement pst2 = cn.prepareCall(sSQL2);
-
+//insertando primeros datos a la tabla trabajador
             pst.setString(1, dts.getNombre());
             pst.setString(2, dts.getApaterno());
             pst.setString(3, dts.getAmaterno());
@@ -90,7 +90,7 @@ public class ftrabajador {
             pst.setString(5, dts.getCargo_institucion());
             pst.setString(6, dts.getModalidad_contrato());
             pst.setString(7, dts.getTipo_documento());
-
+//insertando segundo datos en la tabla persona_trabajador;
             pst2.setString(1, dts.getNum_documento());
             pst2.setString(2, dts.getCelular());
             pst2.setString(3, dts.getEmail());

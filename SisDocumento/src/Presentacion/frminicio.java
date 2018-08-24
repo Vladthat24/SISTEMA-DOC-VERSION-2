@@ -22,7 +22,7 @@ public class frminicio extends javax.swing.JFrame {
         initComponents();
         lblidpersona.setVisible(false);
         this.setExtendedState(frminicio.MAXIMIZED_BOTH);
-        this.setTitle("Sistema de Reserva de Habitaciones y Gestión de ventas - Hotel Paraíso");
+        this.setTitle("Sistema de Gestion Documentario");
     }
 
     /**
