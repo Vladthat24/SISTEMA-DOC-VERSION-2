@@ -36,6 +36,8 @@ public class frminforme_medico extends javax.swing.JInternalFrame {
     public String accion = "guardar";
 
     void fecha_actual() {
+        int agosto=8;
+        int septiembre=9;
         Calendar today = Calendar.getInstance();
         int fhoy_dia = today.get(Calendar.DAY_OF_MONTH);
         int fhoy_mes = today.get(Calendar.MONTH) + 1;
@@ -54,7 +56,12 @@ public class frminforme_medico extends javax.swing.JInternalFrame {
             mes = "Junio";
         } else if (fhoy_mes == 07) {
             mes = "Julio";
-        } else if (fhoy_mes == 10) {
+        }else if(fhoy_mes==agosto){
+            mes="Agosto";
+        }else if(fhoy_mes==septiembre){
+            mes="Septiembre";
+        }
+        else if (fhoy_mes == 10) {
             mes = "Octubre";
         } else if (fhoy_mes == 11) {
             mes = "Noviembre";

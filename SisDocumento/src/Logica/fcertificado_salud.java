@@ -30,8 +30,8 @@ public class fcertificado_salud {
     public DefaultTableModel mostrar(String buscar) {
         DefaultTableModel modelo;
 
-        String[] titulos = {"ID", "idasistenciales", "nombre_asisten", "apellido_asisten", "Nombres", "Apellidos", "Edad", "Tipo Doc", "N° Doc", "direccion", "serelogia", "examen_rx", "fecha_registro"};
-        String[] registro = new String[13];
+        String[] titulos = {"ID", "idasistenciales", "Dotor", "Nombres", "Apellidos", "Edad", "Tipo Doc", "N°Doc Pac.", "direccion", "serelogia", "examen_rx", "fecha_registro"};
+        String[] registro = new String[12];
 
         totalregistros = 0;
         modelo = new DefaultTableModel(null, titulos);
@@ -46,7 +46,7 @@ public class fcertificado_salud {
             while (rs.next()) {
                 registro[0] = rs.getString("idcertificado_salud");
                 registro[1] = rs.getString("idcerasistenciales");
-                registro[2] = rs.getString("nombre_asisten") + "" + rs.getString("apellidos_asisten");
+                registro[2] = rs.getString("nombre_asisten") + " " + rs.getString("apellidos_asisten");
                 registro[3] = rs.getString("nombre");
                 registro[4] = rs.getString("apellidos");
                 registro[5] = rs.getString("edad");

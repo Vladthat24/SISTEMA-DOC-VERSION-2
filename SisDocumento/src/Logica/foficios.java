@@ -34,9 +34,9 @@ public class foficios {
 
         totalregistros = 0;
         modelo = new DefaultTableModel(null, titulos);
-        sql = "select idoficios,idotrabajador,(select nombre from persona_trabajador where idptrabajador=idptrabajador) as nombre_trab,"
-                + "(select apaterno from persona_trabajador where idptrabajador=idptrabajador)as apaterno_trab,"
-                + "(select amaterno from persona_trabajador where idptrabajador=idptrabajador)as amaterno_trab,"
+        sql = "select idoficios,idotrabajador,(select nombre from persona_trabajador where idptrabajador=idotrabajador) as nombre_trab,"
+                + "(select apaterno from persona_trabajador where idptrabajador=idotrabajador)as apaterno_trab,"
+                + "(select amaterno from persona_trabajador where idptrabajador=idotrabajador)as amaterno_trab,"
                 + "num_correlativo,receptor,cargo_receptor,atencion,asunto,cuerpo,iniciales,fecha from oficio where num_correlativo like '%" + buscar + "%' order by idoficios desc";
 
         try {

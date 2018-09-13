@@ -2,17 +2,24 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="20"/>
 	<parameter name="num_doc" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[select idcertificado_salud, idcerasistenciales, (select nombre from asistenciales where idasistenciales=idcerasistenciales)as nombre_asisten,(select apellidos from asistenciales where idasistenciales=idcerasistenciales)as apellidos_asisten,nombre,apellidos,edad,tipo_doc,num_doc,direccion,serelogia,examen_rx,fecha_registro from certificado_salud where num_doc=$P{num_doc};]]>
+		<![CDATA[select idcertificado_salud, idcerasistenciales,
+(select nombre from asistenciales where idasistenciales=idcerasistenciales)as nombre_asisten,
+(select apellidos from asistenciales where idasistenciales=idcerasistenciales)as apellidos_asisten,
+(select colegiatura from asistenciales where idasistenciales=idcerasistenciales)as colegiatura,
+(select num_colegiatura from asistenciales where idasistenciales=idcerasistenciales) as num_colegiatura,
+nombre,apellidos,edad,tipo_doc,num_doc,direccion,serelogia,examen_rx,fecha_registro from certificado_salud where num_doc=$P{num_doc};]]>
 	</queryString>
 	<field name="idcertificado_salud" class="java.lang.Integer"/>
 	<field name="idcerasistenciales" class="java.lang.Integer"/>
 	<field name="nombre_asisten" class="java.lang.String"/>
 	<field name="apellidos_asisten" class="java.lang.String"/>
+	<field name="colegiatura" class="java.lang.String"/>
+	<field name="num_colegiatura" class="java.lang.String"/>
 	<field name="nombre" class="java.lang.String"/>
 	<field name="apellidos" class="java.lang.String"/>
 	<field name="edad" class="java.lang.String"/>
@@ -138,24 +145,21 @@
 				<text><![CDATA[NOMBRE DEL MÉDICO QUE CERTIFICA:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="10" y="329" width="149" height="20"/>
+				<reportElement x="5" y="370" width="149" height="20"/>
 				<textElement>
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<text><![CDATA[Villa María del Triunfo,]]></text>
 			</staticText>
-			<line>
-				<reportElement x="284" y="315" width="252" height="1"/>
-			</line>
 			<textField>
-				<reportElement x="284" y="295" width="79" height="20"/>
+				<reportElement x="89" y="316" width="79" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_asisten}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="358" y="295" width="178" height="20"/>
+				<reportElement x="168" y="316" width="178" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="14"/>
 				</textElement>
@@ -196,7 +200,7 @@
 				<text><![CDATA[N°]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="159" y="329" width="216" height="20"/>
+				<reportElement x="154" y="370" width="216" height="20"/>
 				<textElement>
 					<font fontName="Arial" size="14"/>
 				</textElement>
@@ -271,6 +275,20 @@
 			<line>
 				<reportElement x="41" y="51" width="34" height="1"/>
 			</line>
+			<textField>
+				<reportElement x="86" y="337" width="100" height="20"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{colegiatura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="168" y="337" width="178" height="20"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{num_colegiatura}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 </jasperReport>

@@ -38,6 +38,8 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
     public String accion = "guardar";
 
     void fecha_actual() {
+        int agosto=8;
+        int septiembre=9;
         Calendar today = Calendar.getInstance();
         int fhoy_dia = today.get(Calendar.DAY_OF_MONTH);
         int fhoy_mes = today.get(Calendar.MONTH) + 1;
@@ -56,15 +58,20 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
             mes = "Junio";
         } else if (fhoy_mes == 07) {
             mes = "Julio";
-        } else if (fhoy_mes == 10) {
+        }else if(fhoy_mes==agosto){
+            mes="Agosto";
+        }else if(fhoy_mes==septiembre){
+            mes="Septiembre";
+        }
+        else if (fhoy_mes == 10) {
             mes = "Octubre";
         } else if (fhoy_mes == 11) {
             mes = "Noviembre";
         } else if (fhoy_mes == 12) {
             mes = "Diciembre";
         }
-
         int fhoy_year = today.get(Calendar.YEAR);
+
         lblfecha_registro.setText(fhoy_dia + " de " + mes + " del " + fhoy_year);
     }
 
@@ -144,30 +151,30 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
         tablalistado.getColumnModel().getColumn(1).setMaxWidth(0);
         tablalistado.getColumnModel().getColumn(1).setMinWidth(0);
         tablalistado.getColumnModel().getColumn(1).setPreferredWidth(0);
+//
+//        tablalistado.getColumnModel().getColumn(2).setMaxWidth(0);
+//        tablalistado.getColumnModel().getColumn(2).setMinWidth(0);
+//        tablalistado.getColumnModel().getColumn(2).setPreferredWidth(0);
+//
+//        tablalistado.getColumnModel().getColumn(8).setMaxWidth(0);
+//        tablalistado.getColumnModel().getColumn(8).setMinWidth(0);
+//        tablalistado.getColumnModel().getColumn(8).setPreferredWidth(0);
 
-        tablalistado.getColumnModel().getColumn(2).setMaxWidth(0);
-        tablalistado.getColumnModel().getColumn(2).setMinWidth(0);
-        tablalistado.getColumnModel().getColumn(2).setPreferredWidth(0);
-
-        tablalistado.getColumnModel().getColumn(3).setMaxWidth(0);
-        tablalistado.getColumnModel().getColumn(3).setMinWidth(0);
-        tablalistado.getColumnModel().getColumn(3).setPreferredWidth(0);
-
-        tablalistado.getColumnModel().getColumn(9).setMaxWidth(0);
-        tablalistado.getColumnModel().getColumn(9).setMinWidth(0);
-        tablalistado.getColumnModel().getColumn(9).setPreferredWidth(0);
-
-        tablalistado.getColumnModel().getColumn(10).setMaxWidth(0);
-        tablalistado.getColumnModel().getColumn(10).setMinWidth(0);
-        tablalistado.getColumnModel().getColumn(10).setPreferredWidth(0);
-
-        tablalistado.getColumnModel().getColumn(11).setMaxWidth(0);
-        tablalistado.getColumnModel().getColumn(11).setMinWidth(0);
-        tablalistado.getColumnModel().getColumn(11).setPreferredWidth(0);
-
-        tablalistado.getColumnModel().getColumn(12).setMaxWidth(0);
-        tablalistado.getColumnModel().getColumn(12).setMinWidth(0);
-        tablalistado.getColumnModel().getColumn(12).setPreferredWidth(0);
+//        tablalistado.getColumnModel().getColumn(9).setMaxWidth(0);
+//        tablalistado.getColumnModel().getColumn(9).setMinWidth(0);
+//        tablalistado.getColumnModel().getColumn(9).setPreferredWidth(0);
+//
+//        tablalistado.getColumnModel().getColumn(10).setMaxWidth(0);
+//        tablalistado.getColumnModel().getColumn(10).setMinWidth(0);
+//        tablalistado.getColumnModel().getColumn(10).setPreferredWidth(0);
+//
+//        tablalistado.getColumnModel().getColumn(11).setMaxWidth(0);
+//        tablalistado.getColumnModel().getColumn(11).setMinWidth(0);
+//        tablalistado.getColumnModel().getColumn(11).setPreferredWidth(0);
+//
+//        tablalistado.getColumnModel().getColumn(12).setMaxWidth(0);
+//        tablalistado.getColumnModel().getColumn(12).setMinWidth(0);
+//        tablalistado.getColumnModel().getColumn(12).setPreferredWidth(0);
 
     }
 
