@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="20"/>
+	<property name="ireport.y" value="17"/>
 	<parameter name="num_doc" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -47,11 +47,11 @@ nombre,apellidos,edad,tipo_doc,num_doc,direccion,serelogia,examen_rx,fecha_regis
 	<title>
 		<band height="102" splitType="Stretch">
 			<staticText>
-				<reportElement x="5" y="39" width="120" height="11"/>
+				<reportElement x="5" y="28" width="120" height="11"/>
 				<textElement textAlignment="Center">
 					<font size="6"/>
 				</textElement>
-				<text><![CDATA[CMI Daniel A Carrion]]></text>
+				<text><![CDATA[CMI Daniel Alcides Carrion]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="102" y="50" width="388" height="49"/>
@@ -59,13 +59,6 @@ nombre,apellidos,edad,tipo_doc,num_doc,direccion,serelogia,examen_rx,fecha_regis
 					<font size="30" isBold="true"/>
 				</textElement>
 				<text><![CDATA[CERTIFICADO DE SALUD]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="5" y="28" width="120" height="11"/>
-				<textElement textAlignment="Center">
-					<font size="6"/>
-				</textElement>
-				<text><![CDATA[MICRORED DAC-TL]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="5" y="3" width="120" height="14"/>
@@ -79,7 +72,16 @@ nombre,apellidos,edad,tipo_doc,num_doc,direccion,serelogia,examen_rx,fecha_regis
 				<textElement textAlignment="Center">
 					<font size="6"/>
 				</textElement>
-				<text><![CDATA[DISA II -LS]]></text>
+				<text><![CDATA[DIRIS LIMA SUR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="284" y="4" width="256" height="35" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[“Decenio de la Igualdad de oportunidades
+Para mujeres y hombres”
+]]></text>
 			</staticText>
 		</band>
 	</title>

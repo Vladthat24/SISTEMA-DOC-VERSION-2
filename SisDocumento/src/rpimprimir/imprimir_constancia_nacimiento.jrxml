@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="110"/>
+	<property name="ireport.y" value="0"/>
 	<parameter name="num_doc" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -53,13 +53,17 @@ fecha_registro,iniciales from constancia_nacimiento where num_doc=$P{num_doc};]]
 	<title>
 		<band height="79" splitType="Stretch">
 			<staticText>
-				<reportElement x="359" y="28" width="186" height="20"/>
-				<textElement/>
-				<text><![CDATA["Años del Buen Servicio al Ciudadano"]]></text>
+				<reportElement x="328" y="34" width="227" height="35" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[“Decenio de la Igualdad de oportunidades
+Para mujeres y hombres”
+]]></text>
 			</staticText>
 			<image>
-				<reportElement x="10" y="10" width="333" height="38"/>
-				<imageExpression class="java.lang.String"><![CDATA["C:\\Users\\Desarrollo\\Documents\\GitHub\\SistemaDoc\\SisDocumento\\build\\classes\\Files\\cintillooficial.jpg"]]></imageExpression>
+				<reportElement x="7" y="24" width="323" height="34"/>
+				<imageExpression class="java.lang.String"><![CDATA["C:\\Users\\Informatica\\Documents\\GitHub\\SistemaDoc\\SisDocumento\\build\\classes\\Files\\cintillodiris.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>
@@ -80,7 +84,7 @@ fecha_registro,iniciales from constancia_nacimiento where num_doc=$P{num_doc};]]
 			</line>
 			<textField>
 				<reportElement x="195" y="32" width="58" height="22"/>
-				<textElement verticalAlignment="Middle">
+				<textElement verticalAlignment="Bottom">
 					<font size="16" isBold="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{correlativo_constancia}]]></textFieldExpression>
@@ -104,7 +108,7 @@ fecha_registro,iniciales from constancia_nacimiento where num_doc=$P{num_doc};]]
 	<detail>
 		<band height="564" splitType="Stretch">
 			<staticText>
-				<reportElement x="373" y="152" width="53" height="20"/>
+				<reportElement x="373" y="152" width="57" height="20"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="12"/>
 				</textElement>
@@ -182,7 +186,7 @@ fecha_registro,iniciales from constancia_nacimiento where num_doc=$P{num_doc};]]
 			</textField>
 			<textField>
 				<reportElement x="138" y="90" width="73" height="20"/>
-				<textElement textAlignment="Justified">
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
 					<font fontName="Arial" size="11" isBold="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{num_doc}]]></textFieldExpression>
@@ -219,7 +223,7 @@ fecha_registro,iniciales from constancia_nacimiento where num_doc=$P{num_doc};]]
 				<text><![CDATA[Telefono: 4505684]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="478" y="151" width="17" height="20"/>
+				<reportElement x="498" y="152" width="17" height="20"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
@@ -286,7 +290,7 @@ fecha_registro,iniciales from constancia_nacimiento where num_doc=$P{num_doc};]]
 			</staticText>
 			<textField>
 				<reportElement x="87" y="90" width="33" height="20"/>
-				<textElement textAlignment="Justified">
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
 					<font fontName="Arial" size="11" isBold="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{tipo_doc}]]></textFieldExpression>
@@ -299,7 +303,7 @@ fecha_registro,iniciales from constancia_nacimiento where num_doc=$P{num_doc};]]
 				<text><![CDATA[C,c,Archivo]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="430" y="152" width="48" height="20"/>
+				<reportElement x="430" y="152" width="68" height="20"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="11" isBold="true"/>
 				</textElement>
@@ -355,7 +359,7 @@ fecha_registro,iniciales from constancia_nacimiento where num_doc=$P{num_doc};]]
 				<text><![CDATA[e-mail: cmidac@hotmail.com]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="383" y="131" width="112" height="20"/>
+				<reportElement x="403" y="132" width="112" height="20"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
@@ -376,7 +380,7 @@ fecha_registro,iniciales from constancia_nacimiento where num_doc=$P{num_doc};]]
 				<text><![CDATA[Se hace constar que la paciente con:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="162" y="111" width="333" height="20"/>
+				<reportElement x="162" y="111" width="353" height="20"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="11" isBold="true"/>
 				</textElement>

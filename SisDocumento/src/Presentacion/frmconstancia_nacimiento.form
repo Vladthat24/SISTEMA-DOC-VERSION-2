@@ -490,7 +490,7 @@
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder title="Nombres de la Obstetra:">
+                    <TitledBorder title="Datos Obstetra:">
                       <Font PropertyName="font" name="Arial" size="12" style="2"/>
                     </TitledBorder>
                   </Border>
@@ -507,7 +507,7 @@
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder title="Apellidos de la Obstetra:">
+                    <TitledBorder title="Colegiatura y N&#xb0;">
                       <Font PropertyName="font" name="Arial" size="12" style="2"/>
                     </TitledBorder>
                   </Border>

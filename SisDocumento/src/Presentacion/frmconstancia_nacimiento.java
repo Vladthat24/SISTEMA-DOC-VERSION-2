@@ -16,7 +16,6 @@ import javax.swing.table.DefaultTableModel;
 import reports.reporte_constancia_nacimiento;
 import rpimprimir.imprimir_constancia_nacimiento;
 
-
 /**
  *
  * @author root
@@ -37,13 +36,43 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
     }
     public String accion = "guardar";
 
-    void fecha_actual() {
+    void fecha_actual_imprimir() {
+        int agosto = 8;
+        int septiembre = 9;
         Calendar today = Calendar.getInstance();
         int fhoy_dia = today.get(Calendar.DAY_OF_MONTH);
         int fhoy_mes = today.get(Calendar.MONTH) + 1;
+        String mes = null;
+        if (fhoy_mes == 01) {
+            mes = "Enero";
+        } else if (fhoy_mes == 02) {
+            mes = "Febreso";
+        } else if (fhoy_mes == 03) {
+            mes = "Marzo";
+        } else if (fhoy_mes == 04) {
+            mes = "Abril";
+        } else if (fhoy_mes == 05) {
+            mes = "Mayo";
+        } else if (fhoy_mes == 06) {
+            mes = "Junio";
+        } else if (fhoy_mes == 07) {
+            mes = "Julio";
+        } else if (fhoy_mes == agosto) {
+            mes = "Agosto";
+        } else if (fhoy_mes == septiembre) {
+            mes = "Septiembre";
+        } else if (fhoy_mes == 10) {
+            mes = "Octubre";
+        } else if (fhoy_mes == 11) {
+            mes = "Noviembre";
+        } else if (fhoy_mes == 12) {
+            mes = "Diciembre";
+        }
         int fhoy_year = today.get(Calendar.YEAR);
-        lblfecha_registro.setText(fhoy_dia + "/" + fhoy_mes + "/" + fhoy_year);
+
+        lblfecha_registro.setText(fhoy_dia + " de " + mes + " del " + fhoy_year);
     }
+     
 
     void guardar() {
         if (txtcorrelativo.getText().length() == 0) {
@@ -181,7 +210,7 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
         tablalistado.getColumnModel().getColumn(14).setMaxWidth(0);
         tablalistado.getColumnModel().getColumn(14).setMinWidth(0);
         tablalistado.getColumnModel().getColumn(14).setPreferredWidth(0);
-        
+
         tablalistado.getColumnModel().getColumn(17).setMaxWidth(0);
         tablalistado.getColumnModel().getColumn(17).setMinWidth(0);
         tablalistado.getColumnModel().getColumn(17).setPreferredWidth(0);
@@ -549,10 +578,10 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
         lblfecha_nacimiento_doc.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         lblnombre_apellidos_asisten.setBackground(new java.awt.Color(158, 179, 193));
-        lblnombre_apellidos_asisten.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nombres de la Obstetra:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        lblnombre_apellidos_asisten.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos Obstetra:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
 
         lblcolegiatura_asisten.setBackground(new java.awt.Color(158, 179, 193));
-        lblcolegiatura_asisten.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Apellidos de la Obstetra:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        lblcolegiatura_asisten.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Colegiatura y N°", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
 
         btnasistencial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/asistencial.png"))); // NOI18N
         btnasistencial.addActionListener(new java.awt.event.ActionListener() {
@@ -796,7 +825,7 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
         habilitar();
         btnguardar.setText("Guardar");
         accion = "guardar";
-        fecha_actual();
+        fecha_actual_imprimir();
     }//GEN-LAST:event_btnnuevoActionPerformed
 
     private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
@@ -838,7 +867,7 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
         num_doc = Integer.parseInt(txtnum_doc.getText());
         fecha_inicial = lblfecha_registro.getText();
         fecha_final = lblfecha_registro.getText();
-       
+
     }//GEN-LAST:event_tablalistadoMouseClicked
 
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed

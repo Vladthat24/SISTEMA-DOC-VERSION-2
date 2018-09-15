@@ -34,12 +34,40 @@ public class frmrecepciondoc extends javax.swing.JInternalFrame {
     private String accion = "guardar";
 
     void fecha_actual() {
+        int agosto = 8;
+        int septiembre = 9;
         Calendar today = Calendar.getInstance();
         int fhoy_dia = today.get(Calendar.DAY_OF_MONTH);
         int fhoy_mes = today.get(Calendar.MONTH) + 1;
+        String mes = null;
+        if (fhoy_mes == 01) {
+            mes = "Enero";
+        } else if (fhoy_mes == 02) {
+            mes = "Febreso";
+        } else if (fhoy_mes == 03) {
+            mes = "Marzo";
+        } else if (fhoy_mes == 04) {
+            mes = "Abril";
+        } else if (fhoy_mes == 05) {
+            mes = "Mayo";
+        } else if (fhoy_mes == 06) {
+            mes = "Junio";
+        } else if (fhoy_mes == 07) {
+            mes = "Julio";
+        } else if (fhoy_mes == agosto) {
+            mes = "Agosto";
+        } else if (fhoy_mes == septiembre) {
+            mes = "Septiembre";
+        } else if (fhoy_mes == 10) {
+            mes = "Octubre";
+        } else if (fhoy_mes == 11) {
+            mes = "Noviembre";
+        } else if (fhoy_mes == 12) {
+            mes = "Diciembre";
+        }
         int fhoy_year = today.get(Calendar.YEAR);
 
-        lblfecha_actual.setText(fhoy_dia + "/" + fhoy_mes + "/" + fhoy_year);
+        lblfecha_actual.setText(fhoy_dia + " de " + mes + " del " + fhoy_year);
     }
 
     void guardar() {
@@ -593,7 +621,7 @@ public class frmrecepciondoc extends javax.swing.JInternalFrame {
     private void txtcorrelativoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcorrelativoKeyTyped
         // CODIGO PARA VALIDAR LA CAJA DE TEXTO
         char c=evt.getKeyChar();
-        int limite=3;
+        int limite=15;
         if(!Character.isDigit(c)){
            evt.consume();
         }

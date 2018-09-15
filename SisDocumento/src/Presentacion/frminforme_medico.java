@@ -804,7 +804,7 @@ public class frminforme_medico extends javax.swing.JInternalFrame {
     private void txtcorrelativoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcorrelativoKeyTyped
         // TODO add your handling code here:
         char c = evt.getKeyChar();
-        int limite = 5;
+        int limite = 15;
         if (!Character.isDigit(c)) {
             evt.consume();
         }

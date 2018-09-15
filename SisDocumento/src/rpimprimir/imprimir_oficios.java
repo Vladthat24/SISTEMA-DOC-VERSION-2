@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package reports;
+package rpimprimir;
 
 import Logica.conexion;
 import java.io.File;
@@ -25,17 +25,17 @@ import org.apache.commons.collections.map.HashedMap;
  */
 
 
-public class imprimir_informe_medico {
+public class imprimir_oficios {
     public Connection connection= new conexion().conectar();
-    public void reportePacientes(int num_doc){
-        Map p = new HashMap();
+    public void reportePacientes(int num_correlativo){
+        Map p = new HashedMap();
         JasperReport report;
         JasperPrint print;
         try {
 
             report=JasperCompileManager.compileReport(new File("").getAbsolutePath()+
-                    "/src/rpimprimir/imprimir_informe_medico.jrxml");
-            p.put("num_doc", num_doc);
+                    "/src/rpimprimir/imprimir_oficio.jrxml");
+            p.put("num_correlativo", num_correlativo);
            
             print= JasperFillManager.fillReport(report, p,connection);
             JasperViewer view= new JasperViewer(print,false);

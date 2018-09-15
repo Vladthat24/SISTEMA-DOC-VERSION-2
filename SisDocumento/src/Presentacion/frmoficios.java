@@ -10,7 +10,7 @@ import Logica.foficios;
 import java.util.Calendar;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import reports.imprimir_oficios;
+import rpimprimir.imprimir_oficios;
 import reports.reporte_oficio;
 
 /**
@@ -35,6 +35,8 @@ public class frmoficios extends javax.swing.JInternalFrame {
     }
 
     void fecha_actual() {
+        int agosto=8;
+        int septiembre=9;
         Calendar today = Calendar.getInstance();
         int fhoy_dia = today.get(Calendar.DAY_OF_MONTH);
         int fhoy_mes = today.get(Calendar.MONTH) + 1;
@@ -53,7 +55,12 @@ public class frmoficios extends javax.swing.JInternalFrame {
             mes = "Junio";
         } else if (fhoy_mes == 07) {
             mes = "Julio";
-        } else if (fhoy_mes == 10) {
+        }else if(fhoy_mes==agosto){
+            mes="Agosto";
+        }else if(fhoy_mes==septiembre){
+            mes="Septiembre";
+        }
+        else if (fhoy_mes == 10) {
             mes = "Octubre";
         } else if (fhoy_mes == 11) {
             mes = "Noviembre";
@@ -61,6 +68,7 @@ public class frmoficios extends javax.swing.JInternalFrame {
             mes = "Diciembre";
         }
         int fhoy_year = today.get(Calendar.YEAR);
+
         lblfecha_registro.setText(fhoy_dia + " de " + mes + " del " + fhoy_year);
     }
 
@@ -225,8 +233,8 @@ public class frmoficios extends javax.swing.JInternalFrame {
         btnreportes.setEnabled(true);
 
         txtnum_correlativo.setText("");
-        txtreceptor.setText("M.C.OLIVERA CARHUALLANQUI HUBERT");
-        txtcargo_receptor.setText("Medico Jefe de la Administracion de la DRS SJM-VMT");
+        txtreceptor.setText("M.C.ELADIO BENJAMIN PIMENTEL ROMAN ");
+        txtcargo_receptor.setText("DIRECTOR GENERAL - DIRIS LIMAR SUR");
         lblnombre_apellido_trab.setText("");
         txtatencion.setText("");
         txtasunto.setText("");
@@ -709,7 +717,7 @@ public class frmoficios extends javax.swing.JInternalFrame {
     private void txtnum_correlativoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnum_correlativoKeyTyped
         // TODO add your handling code here:
         char c = evt.getKeyChar();
-        int limite = 4;
+        int limite = 14;
         if (!Character.isDigit(c)) {
             evt.consume();
         }

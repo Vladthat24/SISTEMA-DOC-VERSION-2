@@ -7,7 +7,7 @@ package reports;
 
 import Logica.conexion;
 import java.sql.Connection;
-import rpimprimir.imprimir_constancia_nacimiento;
+import rpimprimir.imprimir_informe_medico;
 
 /**
  *
