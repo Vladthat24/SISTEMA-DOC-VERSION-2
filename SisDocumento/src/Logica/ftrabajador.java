@@ -36,17 +36,17 @@ public class ftrabajador {
         totalregistros = 0;
         modelo = new DefaultTableModel(null, titulos);
 
-        sSQL = "select p.idptrabajador,p.nombre,p.apaterno,p.amaterno,p.profesion,p.cargo_institucion,p.modalidad_contrato,p.tipo_documento,"
+        sSQL = "select p.idpersona_trabajador,p.nombre,p.apaterno,p.amaterno,p.profesion,p.cargo_institucion,p.modalidad_contrato,p.tipo_documento,"
                 + "t.num_documento,t.celular,t.email,t.fecha_registro from persona_trabajador p inner join trabajador t "
-                + "on p.idptrabajador=t.idptrabajador where num_documento like '%"
-                + buscar + "%' order by idptrabajador desc";
+                + "on p.idpersona_trabajador=t.idptrabajador where num_documento like '%"
+                + buscar + "%' order by idpersona_trabajador desc";
 
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sSQL);
 
             while (rs.next()) {
-                registro[0] = rs.getString("idptrabajador");
+                registro[0] = rs.getString("idpersona_trabajador");
                 registro[1] = rs.getString("nombre");
                 registro[2] = rs.getString("apaterno");
                 registro[3] = rs.getString("amaterno");
@@ -76,7 +76,7 @@ public class ftrabajador {
         sSQL = "insert into persona_trabajador (nombre,apaterno,amaterno,profesion,cargo_institucion,modalidad_contrato,tipo_documento)"
                 + "values (?,?,?,?,?,?,?)";
         sSQL2 = "insert into trabajador(idptrabajador,num_documento,celular,email,fecha_registro)"
-                + "values ((select idptrabajador from persona_trabajador order by idptrabajador desc limit 1),?,?,?,?)";
+                + "values ((select idpersona_trabajador from persona_trabajador order by idpersona_trabajador desc limit 1),?,?,?,?)";
 
         try {
 
@@ -117,7 +117,7 @@ public class ftrabajador {
     }
 
     public boolean editar(vtrabajador dts) {
-        sSQL = "update persona_trabajador set nombre=?,apaterno=?,amaterno=?,profesion=?,cargo_institucion=?,modalidad_contrato=?,tipo_documento=? where idptrabajador=?";
+        sSQL = "update persona_trabajador set nombre=?,apaterno=?,amaterno=?,profesion=?,cargo_institucion=?,modalidad_contrato=?,tipo_documento=? where idpersona_trabajador=?";
         sSQL2 = "update trabajador set num_documento=?,celular=?,email=?,fecha_registro=? where idptrabajador=?";
 
         try {
@@ -162,7 +162,7 @@ public class ftrabajador {
 
     public boolean eliminar(vtrabajador dts) {
         sSQL = "delete from trabajador where idptrabajador=?";
-        sSQL2 = "delete from persona_trabajador where idptrabajador=?";
+        sSQL2 = "delete from persona_trabajador where idpersona_trabajador=?";
 
         try {
 

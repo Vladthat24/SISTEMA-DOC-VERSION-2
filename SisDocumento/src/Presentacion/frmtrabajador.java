@@ -784,9 +784,9 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         char c = evt.getKeyChar();
         int limite = 30;
-        if (Character.isDigit(c)) {
-            evt.consume();
-        }
+//        if (Character.isDigit(c)) {
+//            evt.consume();
+//        }
         if (txtemail.getText().length() == limite) {
             evt.consume();
         }

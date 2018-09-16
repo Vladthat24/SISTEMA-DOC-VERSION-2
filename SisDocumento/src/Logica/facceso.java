@@ -39,8 +39,8 @@ public class facceso {
 //        sSQL = "select idacceso,acceso,idtrabajador,login,password,estado from acceso where idtrabajador IN (select nombre from persona_trabajador where idtrabajador=idtrabajador)";
 
         sSQL = "select idacceso,idtrabajador,"
-                + "(select nombre from persona_trabajador where idptrabajador=idtrabajador) as trabajadornombre,"
-                + "(select apaterno from persona_trabajador where idptrabajador=idtrabajador) as trabajadorapellidop,"
+                + "(select nombre from persona_trabajador where idpersona_trabajador=idtrabajador) as trabajadornombre,"
+                + "(select apaterno from persona_trabajador where idpersona_trabajador=idtrabajador) as trabajadorapellidop,"
                 + "acceso,login,password,estado from acceso where login like '%" + buscar + "%' order by idacceso desc";
 
 //SELECT nombrepla FROM plataformas WHERE idpla IN (SELECT idpla FROM notpla WHERE id_not='6')
