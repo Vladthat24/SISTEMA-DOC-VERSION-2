@@ -21,7 +21,7 @@ import org.apache.commons.collections.map.HashedMap;
  *
  * @author Desarrollo
  */
-public class reporte_recepcion_documento {
+public class reporte_recepdoc {
 
     public Connection connection = new conexion().conectar();
 

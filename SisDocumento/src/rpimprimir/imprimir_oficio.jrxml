@@ -30,7 +30,7 @@
 			<elementGroup/>
 			<image>
 				<reportElement x="7" y="24" width="323" height="34"/>
-				<imageExpression class="java.lang.String"><![CDATA["C:\\Users\\Informatica\\Documents\\GitHub\\SistemaDoc\\SisDocumento\\build\\classes\\Files\\cintillodiris.png"]]></imageExpression>
+				<imageExpression class="java.lang.String"><![CDATA["C:\\SisAdministrativoDocumentario\\SistemaDoc\\SisDocumento\\build\\classes\\Files\\cintillodiris.png"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="328" y="34" width="227" height="35" forecolor="#000000"/>

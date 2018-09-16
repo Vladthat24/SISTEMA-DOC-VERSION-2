@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="391"/>
 	<parameter name="num_doc" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -63,7 +63,7 @@ Para mujeres y hombres”
 			</staticText>
 			<image>
 				<reportElement x="7" y="24" width="323" height="34"/>
-				<imageExpression class="java.lang.String"><![CDATA["C:\\Users\\Informatica\\Documents\\GitHub\\SistemaDoc\\SisDocumento\\build\\classes\\Files\\cintillodiris.png"]]></imageExpression>
+				<imageExpression class="java.lang.String"><![CDATA["C:\\SisAdministrativoDocumentario\\SistemaDoc\\SisDocumento\\build\\classes\\Files\\cintillodiris.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>
@@ -74,7 +74,7 @@ Para mujeres y hombres”
 				<textElement>
 					<font size="18"/>
 				</textElement>
-				<text><![CDATA[- 2017]]></text>
+				<text><![CDATA[- 2018]]></text>
 			</staticText>
 			<line>
 				<reportElement x="162" y="56" width="133" height="1"/>
@@ -132,13 +132,6 @@ Para mujeres y hombres”
 				<reportElement x="76" y="172" width="152" height="20"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Arial" size="11" isBold="true"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{fecha_nacimiento_letra}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="346" y="346" width="141" height="20"/>
-				<textElement>
-					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{fecha_nacimiento_letra}]]></textFieldExpression>
 			</textField>
@@ -229,13 +222,6 @@ Para mujeres y hombres”
 				</textElement>
 				<text><![CDATA[de]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="330" y="433" width="126" height="20"/>
-				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{num_doc_nacido}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement x="11" y="110" width="151" height="20"/>
 				<textElement textAlignment="Justified">
@@ -414,6 +400,20 @@ Para mujeres y hombres”
 				</textElement>
 				<text><![CDATA[NOMBRES:]]></text>
 			</staticText>
+			<textField>
+				<reportElement x="357" y="346" width="183" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fecha_registro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="433" width="185" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{num_doc_nacido}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 </jasperReport>

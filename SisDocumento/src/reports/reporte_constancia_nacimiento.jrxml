@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="19"/>
 	<parameter name="fecha_inicial" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -41,21 +41,21 @@
 				<textField>
 					<reportElement x="160" y="31" width="139" height="44" forecolor="#006599"/>
 					<textElement verticalAlignment="Middle">
-						<font size="24"/>
+						<font size="15"/>
 					</textElement>
 					<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre}]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement x="294" y="31" width="261" height="44" forecolor="#006599"/>
 					<textElement verticalAlignment="Middle">
-						<font size="24"/>
+						<font size="15"/>
 					</textElement>
 					<textFieldExpression class="java.lang.String"><![CDATA[$F{apellidos}]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement x="0" y="0" width="555" height="31" forecolor="#006599"/>
 					<textElement textAlignment="Center">
-						<font size="24"/>
+						<font size="15"/>
 					</textElement>
 					<textFieldExpression class="java.lang.String"><![CDATA[$F{correlativo_constancia}]]></textFieldExpression>
 				</textField>
@@ -83,7 +83,7 @@
 				<textField>
 					<reportElement x="160" y="0" width="395" height="38" forecolor="#006599"/>
 					<textElement verticalAlignment="Middle">
-						<font size="20"/>
+						<font size="15"/>
 					</textElement>
 					<textFieldExpression class="java.lang.String"><![CDATA[$F{num_doc}]]></textFieldExpression>
 				</textField>
@@ -97,7 +97,7 @@
 				<textField>
 					<reportElement x="160" y="0" width="395" height="36" forecolor="#006599"/>
 					<textElement verticalAlignment="Middle">
-						<font size="18"/>
+						<font size="15"/>
 					</textElement>
 					<textFieldExpression class="java.lang.String"><![CDATA[$F{historia_clinica}]]></textFieldExpression>
 				</textField>
@@ -118,7 +118,7 @@
 				<textField>
 					<reportElement x="160" y="0" width="395" height="33" forecolor="#006599"/>
 					<textElement verticalAlignment="Middle">
-						<font size="16"/>
+						<font size="15"/>
 					</textElement>
 					<textFieldExpression class="java.lang.String"><![CDATA[$F{num_doc_nacido}]]></textFieldExpression>
 				</textField>
@@ -139,7 +139,7 @@
 				<textField>
 					<reportElement x="160" y="0" width="395" height="36" forecolor="#006599"/>
 					<textElement verticalAlignment="Middle">
-						<font size="14"/>
+						<font size="15"/>
 					</textElement>
 					<textFieldExpression class="java.lang.String"><![CDATA[$F{fecha_registro}]]></textFieldExpression>
 				</textField>

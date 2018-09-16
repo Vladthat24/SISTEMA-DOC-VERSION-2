@@ -33,7 +33,7 @@ fecha_registro,email from asistenciales where fecha_registro between $P{fecha_in
 				<textField>
 					<reportElement x="136" y="0" width="419" height="33" forecolor="#006599"/>
 					<textElement verticalAlignment="Middle">
-						<font size="22"/>
+						<font size="15"/>
 					</textElement>
 					<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre}]]></textFieldExpression>
 				</textField>
@@ -57,7 +57,7 @@ fecha_registro,email from asistenciales where fecha_registro between $P{fecha_in
 				<textField>
 					<reportElement x="136" y="0" width="419" height="36" forecolor="#006599"/>
 					<textElement verticalAlignment="Middle">
-						<font size="20"/>
+						<font size="15"/>
 					</textElement>
 					<textFieldExpression class="java.lang.String"><![CDATA[$F{apellidos}]]></textFieldExpression>
 				</textField>
@@ -78,7 +78,7 @@ fecha_registro,email from asistenciales where fecha_registro between $P{fecha_in
 				<textField>
 					<reportElement x="136" y="0" width="419" height="31" forecolor="#006599"/>
 					<textElement verticalAlignment="Middle">
-						<font size="18"/>
+						<font size="15"/>
 					</textElement>
 					<textFieldExpression class="java.lang.String"><![CDATA[$F{num_documento}]]></textFieldExpression>
 				</textField>
@@ -99,7 +99,7 @@ fecha_registro,email from asistenciales where fecha_registro between $P{fecha_in
 				<textField>
 					<reportElement x="136" y="0" width="419" height="29" forecolor="#006599"/>
 					<textElement verticalAlignment="Middle">
-						<font size="16"/>
+						<font size="15"/>
 					</textElement>
 					<textFieldExpression class="java.lang.String"><![CDATA[$F{fecha_registro}]]></textFieldExpression>
 				</textField>

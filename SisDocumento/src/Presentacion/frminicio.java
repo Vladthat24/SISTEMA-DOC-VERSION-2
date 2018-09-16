@@ -22,7 +22,7 @@ public class frminicio extends javax.swing.JFrame {
         initComponents();
         lblidpersona.setVisible(false);
         this.setExtendedState(frminicio.MAXIMIZED_BOTH);
-        this.setTitle("Sistema de Gestion Documentario");
+        this.setTitle("Sistema de Gestion de Documento");
     }
 
     /**
