@@ -73,23 +73,23 @@ public class frmrecepciondoc extends javax.swing.JInternalFrame {
 
     void guardar() {
         if (txtcorrelativo.getText().length() == 0) {
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar el correlativo");
+            JOptionPane.showMessageDialog(rootPane, "Debes ingresar el correlativo");
             txtcorrelativo.requestFocus();
             return;
         }
         if (txtreferencia.getText().length() == 0) {
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar la referencia");
+            JOptionPane.showMessageDialog(rootPane, "Debes ingresar la referencia");
             txtreferencia.requestFocus();
             return;
         }
 
         if (txtemisor.getText().length() == 0) {
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar el emisor");
+            JOptionPane.showMessageDialog(rootPane, "Debes ingresar el emisor");
             txtemisor.requestFocus();
             return;
         }
         if (txtasunto.getText().length() == 0) {
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar el asunto");
+            JOptionPane.showMessageDialog(rootPane, "Debes ingresar el asunto");
             txtasunto.requestFocus();
             return;
         }
@@ -260,7 +260,7 @@ public class frmrecepciondoc extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("C.M.I. Daniel Alcides Carrion -  Sistema Administrativo de Documentos");
+        setTitle("C.M.I. Daniel Alcides Carrion - Sistema Automatico de Documentación");
 
         lbltitulo.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
         lbltitulo.setText(".:: Recepcion ::.");
@@ -589,7 +589,7 @@ public class frmrecepciondoc extends javax.swing.JInternalFrame {
 
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
         String dni;
-        dni = JOptionPane.showInputDialog("Ingrese el correlativo,asunto o emisor ");
+        dni = JOptionPane.showInputDialog("Ingrese el correlativo, referencia o asunto");
         mostrar(dni);
 
     }//GEN-LAST:event_btnbuscarActionPerformed

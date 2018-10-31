@@ -4,7 +4,7 @@
   <Properties>
     <Property name="closable" type="boolean" value="true"/>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="title" type="java.lang.String" value="C.M.I. Daniel Alcides Carrion -  Sistema Administrativo de Documentos"/>
+    <Property name="title" type="java.lang.String" value="C.M.I. Daniel Alcides Carrion - Sistema Automatico de Documentaci&#xf3;n"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>

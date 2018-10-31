@@ -191,7 +191,7 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setIconifiable(true);
         setResizable(true);
-        setTitle("C.M.I. Daniel Alcides Carrion - Sistema Administrativo de Documento");
+        setTitle("C.M.I. Daniel Alcides Carrion - Sistema Automatico de Documentación");
 
         jPanel1.setBackground(new java.awt.Color(158, 179, 193));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Registro de Trabajador"));
@@ -784,9 +784,9 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         char c = evt.getKeyChar();
         int limite = 30;
-//        if (Character.isDigit(c)) {
-//            evt.consume();
-//        }
+        if (Character.isDigit(c)) {
+            evt.consume();
+        }
         if (txtemail.getText().length() == limite) {
             evt.consume();
         }

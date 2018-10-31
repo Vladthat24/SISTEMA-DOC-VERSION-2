@@ -36,11 +36,11 @@ public class frecepcion {
         totalregistros = 0;
         modelo = new DefaultTableModel(null, titulos);
         sql = "select idrecepcion,idtrabajador,"
-                + "(select nombre from persona_trabajador where idpersona_trabajador=idtrabajador)as nombre_trab,"
-                + "(select apaterno from persona_trabajador where idpersona_trabajador=idtrabajador)as apaterno_trab,"
-                + "(select amaterno from persona_trabajador where idpersona_trabajador=idtrabajador)as amaterno_trab,"
+                + "(select nombre from persona_trabajador where idptrabajador=idtrabajador)as nombre_trab,"
+                + "(select apaterno from persona_trabajador where idptrabajador=idtrabajador)as apaterno_trab,"
+                + "(select amaterno from persona_trabajador where idptrabajador=idtrabajador)as amaterno_trab,"
                 +"correlativo,referencia,asunto,fecha,emisor,recepcionado,observaciones "
-                + " from recepcion where correlativo like '%"+ buscar +"%' order by idrecepcion desc";
+                + " from recepcion where correlativo like '%"+ buscar +"%' or referencia like '%"+buscar+"%' or asunto like '%"+buscar+"%' order by idrecepcion desc";
 
         try {
             Statement st = cn.createStatement();

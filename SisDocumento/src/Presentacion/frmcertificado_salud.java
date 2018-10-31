@@ -306,7 +306,7 @@ public class frmcertificado_salud extends javax.swing.JInternalFrame {
         setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setIconifiable(true);
-        setTitle("C.M.I. Daniel Alcides Carrion - Sistema Administrativo de Documento");
+        setTitle("C.M.I. Daniel Alcides Carrion - Sistema Automatico de Documentación");
 
         lbltitulo.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         lbltitulo.setText(".:: CERTIFICADO DE SALUD ::.");

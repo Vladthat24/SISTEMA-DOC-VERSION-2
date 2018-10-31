@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="391"/>
+	<property name="ireport.y" value="0"/>
 	<parameter name="num_doc" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -61,10 +61,27 @@ fecha_registro,iniciales from constancia_nacimiento where num_doc=$P{num_doc};]]
 Para mujeres y hombres”
 ]]></text>
 			</staticText>
-			<image>
-				<reportElement x="7" y="24" width="323" height="34"/>
-				<imageExpression class="java.lang.String"><![CDATA["C:\\SisAdministrativoDocumentario\\SistemaDoc\\SisDocumento\\build\\classes\\Files\\cintillodiris.png"]]></imageExpression>
-			</image>
+			<staticText>
+				<reportElement x="10" y="24" width="120" height="11"/>
+				<textElement textAlignment="Center">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[DIRIS LIMA SUR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="10" width="120" height="14"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[MINISTERIO DE SALUD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="35" width="120" height="11"/>
+				<textElement textAlignment="Center">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[CMI Daniel Alcides Carrion]]></text>
+			</staticText>
 		</band>
 	</title>
 	<pageHeader>

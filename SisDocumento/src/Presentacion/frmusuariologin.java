@@ -25,7 +25,7 @@ public class frmusuariologin extends javax.swing.JFrame {
      */
     public frmusuariologin() {
         initComponents();
-        this.setTitle(".:: Sistema Administrativo de Documentos ::.");
+        this.setTitle(".:: Sistema Automatico de Documentación ::.");
         this.setLocationRelativeTo(null);
     }
 

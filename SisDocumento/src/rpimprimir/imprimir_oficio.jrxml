@@ -28,10 +28,6 @@
 	<title>
 		<band height="79" splitType="Stretch">
 			<elementGroup/>
-			<image>
-				<reportElement x="7" y="24" width="323" height="34"/>
-				<imageExpression class="java.lang.String"><![CDATA["C:\\SisAdministrativoDocumentario\\SistemaDoc\\SisDocumento\\build\\classes\\Files\\cintillodiris.png"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="328" y="34" width="227" height="35" forecolor="#000000"/>
 				<textElement textAlignment="Center">
@@ -40,6 +36,27 @@
 				<text><![CDATA[“Decenio de la Igualdad de oportunidades
 Para mujeres y hombres”
 ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="24" width="120" height="11"/>
+				<textElement textAlignment="Center">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[DIRIS LIMA SUR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="10" width="120" height="14"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[MINISTERIO DE SALUD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="35" width="120" height="11"/>
+				<textElement textAlignment="Center">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[CMI Daniel Alcides Carrion]]></text>
 			</staticText>
 		</band>
 	</title>

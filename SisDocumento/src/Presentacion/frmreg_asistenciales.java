@@ -296,7 +296,7 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
         setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setIconifiable(true);
-        setTitle("C.M.I. Daniel Alcides Carrion - Sistema Administrativo de Documento");
+        setTitle("C.M.I. Daniel Alcides Carrion - Sistema Automatico de Documentación");
 
         jPanel1.setBackground(new java.awt.Color(158, 179, 193));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Registro Asistenciales:"));
@@ -776,7 +776,7 @@ public class frmreg_asistenciales extends javax.swing.JInternalFrame {
     private void txtnum_docKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnum_docKeyTyped
         // TODO add your handling code here:
         char c = evt.getKeyChar();
-        int limite = 7;
+        int limite = 8;
         if (!Character.isDigit(c)) {
             evt.consume();
         }
