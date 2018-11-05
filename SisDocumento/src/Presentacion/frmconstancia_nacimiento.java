@@ -39,33 +39,36 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
     void fecha_actual_imprimir() {
         int agosto = 8;
         int septiembre = 9;
+        int noviembre=11;
+        int diciembre=12;
+        int enero=01,febrero=02,marzo=03,abril=04,mayo=05,junio=06,julio=07,octubre=10;
         Calendar today = Calendar.getInstance();
         int fhoy_dia = today.get(Calendar.DAY_OF_MONTH);
         int fhoy_mes = today.get(Calendar.MONTH) + 1;
         String mes = null;
-        if (fhoy_mes == 01) {
+        if (fhoy_mes == enero) {
             mes = "Enero";
-        } else if (fhoy_mes == 02) {
-            mes = "Febreso";
-        } else if (fhoy_mes == 03) {
+        } else if (fhoy_mes == febrero) {
+            mes = "Febrero";
+        } else if (fhoy_mes == marzo) {
             mes = "Marzo";
-        } else if (fhoy_mes == 04) {
+        } else if (fhoy_mes == abril) {
             mes = "Abril";
-        } else if (fhoy_mes == 05) {
+        } else if (fhoy_mes == mayo) {
             mes = "Mayo";
-        } else if (fhoy_mes == 06) {
+        } else if (fhoy_mes == junio) {
             mes = "Junio";
-        } else if (fhoy_mes == 07) {
+        } else if (fhoy_mes == julio) {
             mes = "Julio";
         } else if (fhoy_mes == agosto) {
             mes = "Agosto";
         } else if (fhoy_mes == septiembre) {
             mes = "Septiembre";
-        } else if (fhoy_mes == 10) {
+        } else if (fhoy_mes == octubre) {
             mes = "Octubre";
-        } else if (fhoy_mes == 11) {
+        } else if (fhoy_mes == noviembre) {
             mes = "Noviembre";
-        } else if (fhoy_mes == 12) {
+        } else if (fhoy_mes == diciembre) {
             mes = "Diciembre";
         }
         int fhoy_year = today.get(Calendar.YEAR);
@@ -594,6 +597,11 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
 
         txtnum_doc_nacido.setBackground(new java.awt.Color(158, 179, 193));
         txtnum_doc_nacido.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "N° Doc del Doctor:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        txtnum_doc_nacido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnum_doc_nacidoActionPerformed(evt);
+            }
+        });
         txtnum_doc_nacido.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtnum_doc_nacidoKeyTyped(evt);
@@ -873,7 +881,7 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
         // TODO add your handling code here:
         String dni;
-        dni = JOptionPane.showInputDialog("Ingrese el nombre, apellido,cargo,dni");
+        dni = JOptionPane.showInputDialog("Ingrese el NºConstancia o Apellidos ");
         mostrar(dni);
     }//GEN-LAST:event_btnbuscarActionPerformed
 
@@ -1078,7 +1086,7 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
     private void txtinicialesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtinicialesKeyTyped
         // TODO add your handling code here:
         char c = evt.getKeyChar();
-        int limite = 6;
+        int limite = 45;
         if (Character.isDigit(c)) {
             evt.consume();
         }
@@ -1095,6 +1103,10 @@ public class frmconstancia_nacimiento extends javax.swing.JInternalFrame {
         imprimir_constancia_nacimiento gw = new imprimir_constancia_nacimiento();
         gw.imprimir_constancia_nacimiento(num_doc);
     }//GEN-LAST:event_btnimprimirActionPerformed
+
+    private void txtnum_doc_nacidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnum_doc_nacidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnum_doc_nacidoActionPerformed
 
     /**
      * @param args the command line arguments

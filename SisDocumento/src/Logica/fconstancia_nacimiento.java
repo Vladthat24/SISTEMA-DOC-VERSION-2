@@ -39,7 +39,7 @@ public class fconstancia_nacimiento {
                 + "(select apellidos from asistenciales where idasistenciales=idcasistenciales)as apellidos_asisten,"
                 + "(select colegiatura from asistenciales where idasistenciales=idcasistenciales)as colegiatura_asisten,"
                 + "(select num_colegiatura from asistenciales where idasistenciales=idcasistenciales)as num_colegiatura_asisten,"
-                + "correlativo_constancia,nombre,apellidos,tipo_doc,num_doc,direccion,historia_clinica,sexo,peso,talla,fecha_nacimiento,hora_nacimiento,num_doc_nacido,fecha_nacimiento_letra,fecha_registro,iniciales from constancia_nacimiento where num_doc like'%" + buscar + "%' order by idconstancia_nacimiento desc";
+                + "correlativo_constancia,nombre,apellidos,tipo_doc,num_doc,direccion,historia_clinica,sexo,peso,talla,fecha_nacimiento,hora_nacimiento,num_doc_nacido,fecha_nacimiento_letra,fecha_registro,iniciales from constancia_nacimiento where correlativo_constancia like'%" + buscar + "%' or apellidos like '%"+ buscar+"%' order by idconstancia_nacimiento desc";
 
         try {
             Statement st = cn.createStatement();

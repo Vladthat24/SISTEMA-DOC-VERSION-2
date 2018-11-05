@@ -400,7 +400,7 @@ public class frmacceso extends javax.swing.JInternalFrame {
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
         // TODO add your handling code here:
         String dni;
-        dni = JOptionPane.showInputDialog("Ingrese el DNI", "Buscador de Pacientes");
+        dni = JOptionPane.showInputDialog("Ingrese nombre de usuario");
         mostrar(dni);
 
     }//GEN-LAST:event_btnbuscarActionPerformed

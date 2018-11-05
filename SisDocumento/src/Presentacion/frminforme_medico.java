@@ -852,7 +852,7 @@ public class frminforme_medico extends javax.swing.JInternalFrame {
     private void txtnum_historiaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnum_historiaKeyTyped
         // TODO add your handling code here:
         char c = evt.getKeyChar();
-        int limite = 6;
+        int limite = 10;
         if (!Character.isDigit(c)) {
             evt.consume();
         }

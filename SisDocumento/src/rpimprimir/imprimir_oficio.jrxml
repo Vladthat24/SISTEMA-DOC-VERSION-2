@@ -127,8 +127,8 @@ Para mujeres y hombres”
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{atencion}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="103" y="138" width="411" height="20"/>
-				<textElement/>
+				<reportElement x="103" y="138" width="442" height="44"/>
+				<textElement textAlignment="Justified"/>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{asunto}]]></textFieldExpression>
 			</textField>
 			<staticText>
@@ -142,7 +142,7 @@ Para mujeres y hombres”
 				<text><![CDATA[ASUNTO:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="42" y="169" width="472" height="394"/>
+				<reportElement x="42" y="182" width="473" height="381"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{cuerpo}]]></textFieldExpression>
 			</textField>
